@@ -12,6 +12,11 @@
     <OutputPath>.</OutputPath>
     <Name>Lab01</Name>
     <RootNamespace>Lab01</RootNamespace>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterArguments>
+    </InterpreterArguments>
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+    <CommandLineArguments>C:\Users\cal\\Desktop\School\CST456\CST456-Week1\example_input.s19 C:\Users\cal\Desktop\School\CST456\CST456-Week1\test_output.txt</CommandLineArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
