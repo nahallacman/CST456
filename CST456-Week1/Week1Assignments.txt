@@ -1,0 +1,7 @@
+Week 1 Assignments
+	
+	-Read Chapter 1 of “SystemVerilog for Verification”.
+	-Using a language of your choice, develop a script that converts a Motorola SREC file (.s19 file) into a format that can be used by a Verilog simulator. Design to only use records S1, S2, and S3 (data sequences). Run your script on “example_input.s19” and confirm that the script’s output matches “example_out.txt”.
+
+Submit your script via e-mail to steven.bellock@oit.edu
+Assignment is due by January 17th at 6 PM.
