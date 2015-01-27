@@ -1,0 +1,1 @@
+The python script will generate the input assembly for the lab. Output must be manually copied to \FW\lab1.asm, then execute the \FW\build.bat file. After that, copy the lab1.txt file into the proper place in lab1.v file, then add the two files to the http://www.edaplayground.com/ website, and run.

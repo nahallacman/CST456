@@ -1,0 +1,780 @@
+
+AS11, an absolute assembler for Motorola MCU's, version 1.2h
+
+2000                    PROG_START      EQU             $2000
+2000                                            org             PROG_START
+2000 86 00                                      ldaa #$00
+2002 43                                         coma
+2003 b7 40 00                                   staa $4000
+2006 86 01                                      ldaa #$01
+2008 43                                         coma
+2009 b7 40 01                                   staa $4001
+200c 86 02                                      ldaa #$02
+200e 43                                         coma
+200f b7 40 02                                   staa $4002
+2012 86 03                                      ldaa #$03
+2014 43                                         coma
+2015 b7 40 03                                   staa $4003
+2018 86 04                                      ldaa #$04
+201a 43                                         coma
+201b b7 40 04                                   staa $4004
+201e 86 05                                      ldaa #$05
+2020 43                                         coma
+2021 b7 40 05                                   staa $4005
+2024 86 06                                      ldaa #$06
+2026 43                                         coma
+2027 b7 40 06                                   staa $4006
+202a 86 07                                      ldaa #$07
+202c 43                                         coma
+202d b7 40 07                                   staa $4007
+2030 86 08                                      ldaa #$08
+2032 43                                         coma
+2033 b7 40 08                                   staa $4008
+2036 86 09                                      ldaa #$09
+2038 43                                         coma
+2039 b7 40 09                                   staa $4009
+203c 86 0a                                      ldaa #$0a
+203e 43                                         coma
+203f b7 40 0a                                   staa $400a
+2042 86 0b                                      ldaa #$0b
+2044 43                                         coma
+2045 b7 40 0b                                   staa $400b
+2048 86 0c                                      ldaa #$0c
+204a 43                                         coma
+204b b7 40 0c                                   staa $400c
+204e 86 0d                                      ldaa #$0d
+2050 43                                         coma
+2051 b7 40 0d                                   staa $400d
+2054 86 0e                                      ldaa #$0e
+2056 43                                         coma
+2057 b7 40 0e                                   staa $400e
+205a 86 0f                                      ldaa #$0f
+205c 43                                         coma
+205d b7 40 0f                                   staa $400f
+2060 86 10                                      ldaa #$10
+2062 43                                         coma
+2063 b7 40 10                                   staa $4010
+2066 86 11                                      ldaa #$11
+2068 43                                         coma
+2069 b7 40 11                                   staa $4011
+206c 86 12                                      ldaa #$12
+206e 43                                         coma
+206f b7 40 12                                   staa $4012
+2072 86 13                                      ldaa #$13
+2074 43                                         coma
+2075 b7 40 13                                   staa $4013
+2078 86 14                                      ldaa #$14
+207a 43                                         coma
+207b b7 40 14                                   staa $4014
+207e 86 15                                      ldaa #$15
+2080 43                                         coma
+2081 b7 40 15                                   staa $4015
+2084 86 16                                      ldaa #$16
+2086 43                                         coma
+2087 b7 40 16                                   staa $4016
+208a 86 17                                      ldaa #$17
+208c 43                                         coma
+208d b7 40 17                                   staa $4017
+2090 86 18                                      ldaa #$18
+2092 43                                         coma
+2093 b7 40 18                                   staa $4018
+2096 86 19                                      ldaa #$19
+2098 43                                         coma
+2099 b7 40 19                                   staa $4019
+209c 86 1a                                      ldaa #$1a
+209e 43                                         coma
+209f b7 40 1a                                   staa $401a
+20a2 86 1b                                      ldaa #$1b
+20a4 43                                         coma
+20a5 b7 40 1b                                   staa $401b
+20a8 86 1c                                      ldaa #$1c
+20aa 43                                         coma
+20ab b7 40 1c                                   staa $401c
+20ae 86 1d                                      ldaa #$1d
+20b0 43                                         coma
+20b1 b7 40 1d                                   staa $401d
+20b4 86 1e                                      ldaa #$1e
+20b6 43                                         coma
+20b7 b7 40 1e                                   staa $401e
+20ba 86 1f                                      ldaa #$1f
+20bc 43                                         coma
+20bd b7 40 1f                                   staa $401f
+20c0 86 20                                      ldaa #$20
+20c2 43                                         coma
+20c3 b7 40 20                                   staa $4020
+20c6 86 21                                      ldaa #$21
+20c8 43                                         coma
+20c9 b7 40 21                                   staa $4021
+20cc 86 22                                      ldaa #$22
+20ce 43                                         coma
+20cf b7 40 22                                   staa $4022
+20d2 86 23                                      ldaa #$23
+20d4 43                                         coma
+20d5 b7 40 23                                   staa $4023
+20d8 86 24                                      ldaa #$24
+20da 43                                         coma
+20db b7 40 24                                   staa $4024
+20de 86 25                                      ldaa #$25
+20e0 43                                         coma
+20e1 b7 40 25                                   staa $4025
+20e4 86 26                                      ldaa #$26
+20e6 43                                         coma
+20e7 b7 40 26                                   staa $4026
+20ea 86 27                                      ldaa #$27
+20ec 43                                         coma
+20ed b7 40 27                                   staa $4027
+20f0 86 28                                      ldaa #$28
+20f2 43                                         coma
+20f3 b7 40 28                                   staa $4028
+20f6 86 29                                      ldaa #$29
+20f8 43                                         coma
+20f9 b7 40 29                                   staa $4029
+20fc 86 2a                                      ldaa #$2a
+20fe 43                                         coma
+20ff b7 40 2a                                   staa $402a
+2102 86 2b                                      ldaa #$2b
+2104 43                                         coma
+2105 b7 40 2b                                   staa $402b
+2108 86 2c                                      ldaa #$2c
+210a 43                                         coma
+210b b7 40 2c                                   staa $402c
+210e 86 2d                                      ldaa #$2d
+2110 43                                         coma
+2111 b7 40 2d                                   staa $402d
+2114 86 2e                                      ldaa #$2e
+2116 43                                         coma
+2117 b7 40 2e                                   staa $402e
+211a 86 2f                                      ldaa #$2f
+211c 43                                         coma
+211d b7 40 2f                                   staa $402f
+2120 86 30                                      ldaa #$30
+2122 43                                         coma
+2123 b7 40 30                                   staa $4030
+2126 86 31                                      ldaa #$31
+2128 43                                         coma
+2129 b7 40 31                                   staa $4031
+212c 86 32                                      ldaa #$32
+212e 43                                         coma
+212f b7 40 32                                   staa $4032
+2132 86 33                                      ldaa #$33
+2134 43                                         coma
+2135 b7 40 33                                   staa $4033
+2138 86 34                                      ldaa #$34
+213a 43                                         coma
+213b b7 40 34                                   staa $4034
+213e 86 35                                      ldaa #$35
+2140 43                                         coma
+2141 b7 40 35                                   staa $4035
+2144 86 36                                      ldaa #$36
+2146 43                                         coma
+2147 b7 40 36                                   staa $4036
+214a 86 37                                      ldaa #$37
+214c 43                                         coma
+214d b7 40 37                                   staa $4037
+2150 86 38                                      ldaa #$38
+2152 43                                         coma
+2153 b7 40 38                                   staa $4038
+2156 86 39                                      ldaa #$39
+2158 43                                         coma
+2159 b7 40 39                                   staa $4039
+215c 86 3a                                      ldaa #$3a
+215e 43                                         coma
+215f b7 40 3a                                   staa $403a
+2162 86 3b                                      ldaa #$3b
+2164 43                                         coma
+2165 b7 40 3b                                   staa $403b
+2168 86 3c                                      ldaa #$3c
+216a 43                                         coma
+216b b7 40 3c                                   staa $403c
+216e 86 3d                                      ldaa #$3d
+2170 43                                         coma
+2171 b7 40 3d                                   staa $403d
+2174 86 3e                                      ldaa #$3e
+2176 43                                         coma
+2177 b7 40 3e                                   staa $403e
+217a 86 3f                                      ldaa #$3f
+217c 43                                         coma
+217d b7 40 3f                                   staa $403f
+2180 86 40                                      ldaa #$40
+2182 43                                         coma
+2183 b7 40 40                                   staa $4040
+2186 86 41                                      ldaa #$41
+2188 43                                         coma
+2189 b7 40 41                                   staa $4041
+218c 86 42                                      ldaa #$42
+218e 43                                         coma
+218f b7 40 42                                   staa $4042
+2192 86 43                                      ldaa #$43
+2194 43                                         coma
+2195 b7 40 43                                   staa $4043
+2198 86 44                                      ldaa #$44
+219a 43                                         coma
+219b b7 40 44                                   staa $4044
+219e 86 45                                      ldaa #$45
+21a0 43                                         coma
+21a1 b7 40 45                                   staa $4045
+21a4 86 46                                      ldaa #$46
+21a6 43                                         coma
+21a7 b7 40 46                                   staa $4046
+21aa 86 47                                      ldaa #$47
+21ac 43                                         coma
+21ad b7 40 47                                   staa $4047
+21b0 86 48                                      ldaa #$48
+21b2 43                                         coma
+21b3 b7 40 48                                   staa $4048
+21b6 86 49                                      ldaa #$49
+21b8 43                                         coma
+21b9 b7 40 49                                   staa $4049
+21bc 86 4a                                      ldaa #$4a
+21be 43                                         coma
+21bf b7 40 4a                                   staa $404a
+21c2 86 4b                                      ldaa #$4b
+21c4 43                                         coma
+21c5 b7 40 4b                                   staa $404b
+21c8 86 4c                                      ldaa #$4c
+21ca 43                                         coma
+21cb b7 40 4c                                   staa $404c
+21ce 86 4d                                      ldaa #$4d
+21d0 43                                         coma
+21d1 b7 40 4d                                   staa $404d
+21d4 86 4e                                      ldaa #$4e
+21d6 43                                         coma
+21d7 b7 40 4e                                   staa $404e
+21da 86 4f                                      ldaa #$4f
+21dc 43                                         coma
+21dd b7 40 4f                                   staa $404f
+21e0 86 50                                      ldaa #$50
+21e2 43                                         coma
+21e3 b7 40 50                                   staa $4050
+21e6 86 51                                      ldaa #$51
+21e8 43                                         coma
+21e9 b7 40 51                                   staa $4051
+21ec 86 52                                      ldaa #$52
+21ee 43                                         coma
+21ef b7 40 52                                   staa $4052
+21f2 86 53                                      ldaa #$53
+21f4 43                                         coma
+21f5 b7 40 53                                   staa $4053
+21f8 86 54                                      ldaa #$54
+21fa 43                                         coma
+21fb b7 40 54                                   staa $4054
+21fe 86 55                                      ldaa #$55
+2200 43                                         coma
+2201 b7 40 55                                   staa $4055
+2204 86 56                                      ldaa #$56
+2206 43                                         coma
+2207 b7 40 56                                   staa $4056
+220a 86 57                                      ldaa #$57
+220c 43                                         coma
+220d b7 40 57                                   staa $4057
+2210 86 58                                      ldaa #$58
+2212 43                                         coma
+2213 b7 40 58                                   staa $4058
+2216 86 59                                      ldaa #$59
+2218 43                                         coma
+2219 b7 40 59                                   staa $4059
+221c 86 5a                                      ldaa #$5a
+221e 43                                         coma
+221f b7 40 5a                                   staa $405a
+2222 86 5b                                      ldaa #$5b
+2224 43                                         coma
+2225 b7 40 5b                                   staa $405b
+2228 86 5c                                      ldaa #$5c
+222a 43                                         coma
+222b b7 40 5c                                   staa $405c
+222e 86 5d                                      ldaa #$5d
+2230 43                                         coma
+2231 b7 40 5d                                   staa $405d
+2234 86 5e                                      ldaa #$5e
+2236 43                                         coma
+2237 b7 40 5e                                   staa $405e
+223a 86 5f                                      ldaa #$5f
+223c 43                                         coma
+223d b7 40 5f                                   staa $405f
+2240 86 60                                      ldaa #$60
+2242 43                                         coma
+2243 b7 40 60                                   staa $4060
+2246 86 61                                      ldaa #$61
+2248 43                                         coma
+2249 b7 40 61                                   staa $4061
+224c 86 62                                      ldaa #$62
+224e 43                                         coma
+224f b7 40 62                                   staa $4062
+2252 86 63                                      ldaa #$63
+2254 43                                         coma
+2255 b7 40 63                                   staa $4063
+2258 86 64                                      ldaa #$64
+225a 43                                         coma
+225b b7 40 64                                   staa $4064
+225e 86 65                                      ldaa #$65
+2260 43                                         coma
+2261 b7 40 65                                   staa $4065
+2264 86 66                                      ldaa #$66
+2266 43                                         coma
+2267 b7 40 66                                   staa $4066
+226a 86 67                                      ldaa #$67
+226c 43                                         coma
+226d b7 40 67                                   staa $4067
+2270 86 68                                      ldaa #$68
+2272 43                                         coma
+2273 b7 40 68                                   staa $4068
+2276 86 69                                      ldaa #$69
+2278 43                                         coma
+2279 b7 40 69                                   staa $4069
+227c 86 6a                                      ldaa #$6a
+227e 43                                         coma
+227f b7 40 6a                                   staa $406a
+2282 86 6b                                      ldaa #$6b
+2284 43                                         coma
+2285 b7 40 6b                                   staa $406b
+2288 86 6c                                      ldaa #$6c
+228a 43                                         coma
+228b b7 40 6c                                   staa $406c
+228e 86 6d                                      ldaa #$6d
+2290 43                                         coma
+2291 b7 40 6d                                   staa $406d
+2294 86 6e                                      ldaa #$6e
+2296 43                                         coma
+2297 b7 40 6e                                   staa $406e
+229a 86 6f                                      ldaa #$6f
+229c 43                                         coma
+229d b7 40 6f                                   staa $406f
+22a0 86 70                                      ldaa #$70
+22a2 43                                         coma
+22a3 b7 40 70                                   staa $4070
+22a6 86 71                                      ldaa #$71
+22a8 43                                         coma
+22a9 b7 40 71                                   staa $4071
+22ac 86 72                                      ldaa #$72
+22ae 43                                         coma
+22af b7 40 72                                   staa $4072
+22b2 86 73                                      ldaa #$73
+22b4 43                                         coma
+22b5 b7 40 73                                   staa $4073
+22b8 86 74                                      ldaa #$74
+22ba 43                                         coma
+22bb b7 40 74                                   staa $4074
+22be 86 75                                      ldaa #$75
+22c0 43                                         coma
+22c1 b7 40 75                                   staa $4075
+22c4 86 76                                      ldaa #$76
+22c6 43                                         coma
+22c7 b7 40 76                                   staa $4076
+22ca 86 77                                      ldaa #$77
+22cc 43                                         coma
+22cd b7 40 77                                   staa $4077
+22d0 86 78                                      ldaa #$78
+22d2 43                                         coma
+22d3 b7 40 78                                   staa $4078
+22d6 86 79                                      ldaa #$79
+22d8 43                                         coma
+22d9 b7 40 79                                   staa $4079
+22dc 86 7a                                      ldaa #$7a
+22de 43                                         coma
+22df b7 40 7a                                   staa $407a
+22e2 86 7b                                      ldaa #$7b
+22e4 43                                         coma
+22e5 b7 40 7b                                   staa $407b
+22e8 86 7c                                      ldaa #$7c
+22ea 43                                         coma
+22eb b7 40 7c                                   staa $407c
+22ee 86 7d                                      ldaa #$7d
+22f0 43                                         coma
+22f1 b7 40 7d                                   staa $407d
+22f4 86 7e                                      ldaa #$7e
+22f6 43                                         coma
+22f7 b7 40 7e                                   staa $407e
+22fa 86 7f                                      ldaa #$7f
+22fc 43                                         coma
+22fd b7 40 7f                                   staa $407f
+2300 86 80                                      ldaa #$80
+2302 43                                         coma
+2303 b7 40 80                                   staa $4080
+2306 86 81                                      ldaa #$81
+2308 43                                         coma
+2309 b7 40 81                                   staa $4081
+230c 86 82                                      ldaa #$82
+230e 43                                         coma
+230f b7 40 82                                   staa $4082
+2312 86 83                                      ldaa #$83
+2314 43                                         coma
+2315 b7 40 83                                   staa $4083
+2318 86 84                                      ldaa #$84
+231a 43                                         coma
+231b b7 40 84                                   staa $4084
+231e 86 85                                      ldaa #$85
+2320 43                                         coma
+2321 b7 40 85                                   staa $4085
+2324 86 86                                      ldaa #$86
+2326 43                                         coma
+2327 b7 40 86                                   staa $4086
+232a 86 87                                      ldaa #$87
+232c 43                                         coma
+232d b7 40 87                                   staa $4087
+2330 86 88                                      ldaa #$88
+2332 43                                         coma
+2333 b7 40 88                                   staa $4088
+2336 86 89                                      ldaa #$89
+2338 43                                         coma
+2339 b7 40 89                                   staa $4089
+233c 86 8a                                      ldaa #$8a
+233e 43                                         coma
+233f b7 40 8a                                   staa $408a
+2342 86 8b                                      ldaa #$8b
+2344 43                                         coma
+2345 b7 40 8b                                   staa $408b
+2348 86 8c                                      ldaa #$8c
+234a 43                                         coma
+234b b7 40 8c                                   staa $408c
+234e 86 8d                                      ldaa #$8d
+2350 43                                         coma
+2351 b7 40 8d                                   staa $408d
+2354 86 8e                                      ldaa #$8e
+2356 43                                         coma
+2357 b7 40 8e                                   staa $408e
+235a 86 8f                                      ldaa #$8f
+235c 43                                         coma
+235d b7 40 8f                                   staa $408f
+2360 86 90                                      ldaa #$90
+2362 43                                         coma
+2363 b7 40 90                                   staa $4090
+2366 86 91                                      ldaa #$91
+2368 43                                         coma
+2369 b7 40 91                                   staa $4091
+236c 86 92                                      ldaa #$92
+236e 43                                         coma
+236f b7 40 92                                   staa $4092
+2372 86 93                                      ldaa #$93
+2374 43                                         coma
+2375 b7 40 93                                   staa $4093
+2378 86 94                                      ldaa #$94
+237a 43                                         coma
+237b b7 40 94                                   staa $4094
+237e 86 95                                      ldaa #$95
+2380 43                                         coma
+2381 b7 40 95                                   staa $4095
+2384 86 96                                      ldaa #$96
+2386 43                                         coma
+2387 b7 40 96                                   staa $4096
+238a 86 97                                      ldaa #$97
+238c 43                                         coma
+238d b7 40 97                                   staa $4097
+2390 86 98                                      ldaa #$98
+2392 43                                         coma
+2393 b7 40 98                                   staa $4098
+2396 86 99                                      ldaa #$99
+2398 43                                         coma
+2399 b7 40 99                                   staa $4099
+239c 86 9a                                      ldaa #$9a
+239e 43                                         coma
+239f b7 40 9a                                   staa $409a
+23a2 86 9b                                      ldaa #$9b
+23a4 43                                         coma
+23a5 b7 40 9b                                   staa $409b
+23a8 86 9c                                      ldaa #$9c
+23aa 43                                         coma
+23ab b7 40 9c                                   staa $409c
+23ae 86 9d                                      ldaa #$9d
+23b0 43                                         coma
+23b1 b7 40 9d                                   staa $409d
+23b4 86 9e                                      ldaa #$9e
+23b6 43                                         coma
+23b7 b7 40 9e                                   staa $409e
+23ba 86 9f                                      ldaa #$9f
+23bc 43                                         coma
+23bd b7 40 9f                                   staa $409f
+23c0 86 a0                                      ldaa #$a0
+23c2 43                                         coma
+23c3 b7 40 a0                                   staa $40a0
+23c6 86 a1                                      ldaa #$a1
+23c8 43                                         coma
+23c9 b7 40 a1                                   staa $40a1
+23cc 86 a2                                      ldaa #$a2
+23ce 43                                         coma
+23cf b7 40 a2                                   staa $40a2
+23d2 86 a3                                      ldaa #$a3
+23d4 43                                         coma
+23d5 b7 40 a3                                   staa $40a3
+23d8 86 a4                                      ldaa #$a4
+23da 43                                         coma
+23db b7 40 a4                                   staa $40a4
+23de 86 a5                                      ldaa #$a5
+23e0 43                                         coma
+23e1 b7 40 a5                                   staa $40a5
+23e4 86 a6                                      ldaa #$a6
+23e6 43                                         coma
+23e7 b7 40 a6                                   staa $40a6
+23ea 86 a7                                      ldaa #$a7
+23ec 43                                         coma
+23ed b7 40 a7                                   staa $40a7
+23f0 86 a8                                      ldaa #$a8
+23f2 43                                         coma
+23f3 b7 40 a8                                   staa $40a8
+23f6 86 a9                                      ldaa #$a9
+23f8 43                                         coma
+23f9 b7 40 a9                                   staa $40a9
+23fc 86 aa                                      ldaa #$aa
+23fe 43                                         coma
+23ff b7 40 aa                                   staa $40aa
+2402 86 ab                                      ldaa #$ab
+2404 43                                         coma
+2405 b7 40 ab                                   staa $40ab
+2408 86 ac                                      ldaa #$ac
+240a 43                                         coma
+240b b7 40 ac                                   staa $40ac
+240e 86 ad                                      ldaa #$ad
+2410 43                                         coma
+2411 b7 40 ad                                   staa $40ad
+2414 86 ae                                      ldaa #$ae
+2416 43                                         coma
+2417 b7 40 ae                                   staa $40ae
+241a 86 af                                      ldaa #$af
+241c 43                                         coma
+241d b7 40 af                                   staa $40af
+2420 86 b0                                      ldaa #$b0
+2422 43                                         coma
+2423 b7 40 b0                                   staa $40b0
+2426 86 b1                                      ldaa #$b1
+2428 43                                         coma
+2429 b7 40 b1                                   staa $40b1
+242c 86 b2                                      ldaa #$b2
+242e 43                                         coma
+242f b7 40 b2                                   staa $40b2
+2432 86 b3                                      ldaa #$b3
+2434 43                                         coma
+2435 b7 40 b3                                   staa $40b3
+2438 86 b4                                      ldaa #$b4
+243a 43                                         coma
+243b b7 40 b4                                   staa $40b4
+243e 86 b5                                      ldaa #$b5
+2440 43                                         coma
+2441 b7 40 b5                                   staa $40b5
+2444 86 b6                                      ldaa #$b6
+2446 43                                         coma
+2447 b7 40 b6                                   staa $40b6
+244a 86 b7                                      ldaa #$b7
+244c 43                                         coma
+244d b7 40 b7                                   staa $40b7
+2450 86 b8                                      ldaa #$b8
+2452 43                                         coma
+2453 b7 40 b8                                   staa $40b8
+2456 86 b9                                      ldaa #$b9
+2458 43                                         coma
+2459 b7 40 b9                                   staa $40b9
+245c 86 ba                                      ldaa #$ba
+245e 43                                         coma
+245f b7 40 ba                                   staa $40ba
+2462 86 bb                                      ldaa #$bb
+2464 43                                         coma
+2465 b7 40 bb                                   staa $40bb
+2468 86 bc                                      ldaa #$bc
+246a 43                                         coma
+246b b7 40 bc                                   staa $40bc
+246e 86 bd                                      ldaa #$bd
+2470 43                                         coma
+2471 b7 40 bd                                   staa $40bd
+2474 86 be                                      ldaa #$be
+2476 43                                         coma
+2477 b7 40 be                                   staa $40be
+247a 86 bf                                      ldaa #$bf
+247c 43                                         coma
+247d b7 40 bf                                   staa $40bf
+2480 86 c0                                      ldaa #$c0
+2482 43                                         coma
+2483 b7 40 c0                                   staa $40c0
+2486 86 c1                                      ldaa #$c1
+2488 43                                         coma
+2489 b7 40 c1                                   staa $40c1
+248c 86 c2                                      ldaa #$c2
+248e 43                                         coma
+248f b7 40 c2                                   staa $40c2
+2492 86 c3                                      ldaa #$c3
+2494 43                                         coma
+2495 b7 40 c3                                   staa $40c3
+2498 86 c4                                      ldaa #$c4
+249a 43                                         coma
+249b b7 40 c4                                   staa $40c4
+249e 86 c5                                      ldaa #$c5
+24a0 43                                         coma
+24a1 b7 40 c5                                   staa $40c5
+24a4 86 c6                                      ldaa #$c6
+24a6 43                                         coma
+24a7 b7 40 c6                                   staa $40c6
+24aa 86 c7                                      ldaa #$c7
+24ac 43                                         coma
+24ad b7 40 c7                                   staa $40c7
+24b0 86 c8                                      ldaa #$c8
+24b2 43                                         coma
+24b3 b7 40 c8                                   staa $40c8
+24b6 86 c9                                      ldaa #$c9
+24b8 43                                         coma
+24b9 b7 40 c9                                   staa $40c9
+24bc 86 ca                                      ldaa #$ca
+24be 43                                         coma
+24bf b7 40 ca                                   staa $40ca
+24c2 86 cb                                      ldaa #$cb
+24c4 43                                         coma
+24c5 b7 40 cb                                   staa $40cb
+24c8 86 cc                                      ldaa #$cc
+24ca 43                                         coma
+24cb b7 40 cc                                   staa $40cc
+24ce 86 cd                                      ldaa #$cd
+24d0 43                                         coma
+24d1 b7 40 cd                                   staa $40cd
+24d4 86 ce                                      ldaa #$ce
+24d6 43                                         coma
+24d7 b7 40 ce                                   staa $40ce
+24da 86 cf                                      ldaa #$cf
+24dc 43                                         coma
+24dd b7 40 cf                                   staa $40cf
+24e0 86 d0                                      ldaa #$d0
+24e2 43                                         coma
+24e3 b7 40 d0                                   staa $40d0
+24e6 86 d1                                      ldaa #$d1
+24e8 43                                         coma
+24e9 b7 40 d1                                   staa $40d1
+24ec 86 d2                                      ldaa #$d2
+24ee 43                                         coma
+24ef b7 40 d2                                   staa $40d2
+24f2 86 d3                                      ldaa #$d3
+24f4 43                                         coma
+24f5 b7 40 d3                                   staa $40d3
+24f8 86 d4                                      ldaa #$d4
+24fa 43                                         coma
+24fb b7 40 d4                                   staa $40d4
+24fe 86 d5                                      ldaa #$d5
+2500 43                                         coma
+2501 b7 40 d5                                   staa $40d5
+2504 86 d6                                      ldaa #$d6
+2506 43                                         coma
+2507 b7 40 d6                                   staa $40d6
+250a 86 d7                                      ldaa #$d7
+250c 43                                         coma
+250d b7 40 d7                                   staa $40d7
+2510 86 d8                                      ldaa #$d8
+2512 43                                         coma
+2513 b7 40 d8                                   staa $40d8
+2516 86 d9                                      ldaa #$d9
+2518 43                                         coma
+2519 b7 40 d9                                   staa $40d9
+251c 86 da                                      ldaa #$da
+251e 43                                         coma
+251f b7 40 da                                   staa $40da
+2522 86 db                                      ldaa #$db
+2524 43                                         coma
+2525 b7 40 db                                   staa $40db
+2528 86 dc                                      ldaa #$dc
+252a 43                                         coma
+252b b7 40 dc                                   staa $40dc
+252e 86 dd                                      ldaa #$dd
+2530 43                                         coma
+2531 b7 40 dd                                   staa $40dd
+2534 86 de                                      ldaa #$de
+2536 43                                         coma
+2537 b7 40 de                                   staa $40de
+253a 86 df                                      ldaa #$df
+253c 43                                         coma
+253d b7 40 df                                   staa $40df
+2540 86 e0                                      ldaa #$e0
+2542 43                                         coma
+2543 b7 40 e0                                   staa $40e0
+2546 86 e1                                      ldaa #$e1
+2548 43                                         coma
+2549 b7 40 e1                                   staa $40e1
+254c 86 e2                                      ldaa #$e2
+254e 43                                         coma
+254f b7 40 e2                                   staa $40e2
+2552 86 e3                                      ldaa #$e3
+2554 43                                         coma
+2555 b7 40 e3                                   staa $40e3
+2558 86 e4                                      ldaa #$e4
+255a 43                                         coma
+255b b7 40 e4                                   staa $40e4
+255e 86 e5                                      ldaa #$e5
+2560 43                                         coma
+2561 b7 40 e5                                   staa $40e5
+2564 86 e6                                      ldaa #$e6
+2566 43                                         coma
+2567 b7 40 e6                                   staa $40e6
+256a 86 e7                                      ldaa #$e7
+256c 43                                         coma
+256d b7 40 e7                                   staa $40e7
+2570 86 e8                                      ldaa #$e8
+2572 43                                         coma
+2573 b7 40 e8                                   staa $40e8
+2576 86 e9                                      ldaa #$e9
+2578 43                                         coma
+2579 b7 40 e9                                   staa $40e9
+257c 86 ea                                      ldaa #$ea
+257e 43                                         coma
+257f b7 40 ea                                   staa $40ea
+2582 86 eb                                      ldaa #$eb
+2584 43                                         coma
+2585 b7 40 eb                                   staa $40eb
+2588 86 ec                                      ldaa #$ec
+258a 43                                         coma
+258b b7 40 ec                                   staa $40ec
+258e 86 ed                                      ldaa #$ed
+2590 43                                         coma
+2591 b7 40 ed                                   staa $40ed
+2594 86 ee                                      ldaa #$ee
+2596 43                                         coma
+2597 b7 40 ee                                   staa $40ee
+259a 86 ef                                      ldaa #$ef
+259c 43                                         coma
+259d b7 40 ef                                   staa $40ef
+25a0 86 f0                                      ldaa #$f0
+25a2 43                                         coma
+25a3 b7 40 f0                                   staa $40f0
+25a6 86 f1                                      ldaa #$f1
+25a8 43                                         coma
+25a9 b7 40 f1                                   staa $40f1
+25ac 86 f2                                      ldaa #$f2
+25ae 43                                         coma
+25af b7 40 f2                                   staa $40f2
+25b2 86 f3                                      ldaa #$f3
+25b4 43                                         coma
+25b5 b7 40 f3                                   staa $40f3
+25b8 86 f4                                      ldaa #$f4
+25ba 43                                         coma
+25bb b7 40 f4                                   staa $40f4
+25be 86 f5                                      ldaa #$f5
+25c0 43                                         coma
+25c1 b7 40 f5                                   staa $40f5
+25c4 86 f6                                      ldaa #$f6
+25c6 43                                         coma
+25c7 b7 40 f6                                   staa $40f6
+25ca 86 f7                                      ldaa #$f7
+25cc 43                                         coma
+25cd b7 40 f7                                   staa $40f7
+25d0 86 f8                                      ldaa #$f8
+25d2 43                                         coma
+25d3 b7 40 f8                                   staa $40f8
+25d6 86 f9                                      ldaa #$f9
+25d8 43                                         coma
+25d9 b7 40 f9                                   staa $40f9
+25dc 86 fa                                      ldaa #$fa
+25de 43                                         coma
+25df b7 40 fa                                   staa $40fa
+25e2 86 fb                                      ldaa #$fb
+25e4 43                                         coma
+25e5 b7 40 fb                                   staa $40fb
+25e8 86 fc                                      ldaa #$fc
+25ea 43                                         coma
+25eb b7 40 fc                                   staa $40fc
+25ee 86 fd                                      ldaa #$fd
+25f0 43                                         coma
+25f1 b7 40 fd                                   staa $40fd
+25f4 86 fe                                      ldaa #$fe
+25f6 43                                         coma
+25f7 b7 40 fe                                   staa $40fe
+25fa 86 ff                                      ldaa #$ff
+25fc 43                                         coma
+25fd b7 40 ff                                   staa $40ff
+2600 7e 26 00           jump            jmp     jump
+fffe                                            org             $FFFE
+fffe 20 00                                      FDB             PROG_START
+
+Executed: Sat Jan 24 02:18:55 2015
+Total cycles: 2051, Total bytes: 1541
+Total errors: 0, Total warnings: 0

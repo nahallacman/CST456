@@ -1,0 +1,35 @@
+Week 2 Assignments
+	
+	-Read Chapter 2 of “SystemVerilog for Verification”.
+
+	Lab 1 Part 1 (Firmware)
+	----------------------
+	
+	Create a program (lab1.asm) in 68HC11 assembly language to exhaustively test the following instructions:
+		- ldaa
+		- ldab
+		- staa
+		- stab
+		- coma
+		- comb
+	
+	You can write a simple script to populate the assembly program with each of the 256 enumerated values for each instruction.
+	Run "build.bat" to assemble the program and convert the "lab1.s19" file to a format usable by the Verilog simulator (lab1.txt).
+	
+	
+	Lab 1 Part 2 (Hardware)
+	-----------------------
+	
+	Load www.edaplayground.com using your favorite web browser.
+	Copy and paste the contents of "lab1.v" to the "testbench.sv" window of edaplayground.
+	Copy and paste the contents of "hc11core.v" to the "design.sv" window of edaplayground.	
+	Change the value of MAX_INDEX to 256, since you are testing all 256 enumerations of an instruction.	
+	Copy and paste the contents of "lab1.txt" to the int_ram module. Your assembly program now resides in the micocontroller's RAM space.	
+	Expand the checking logic in the hc11_test module to include all six instructions.
+	
+	The microcontroller core works correctly for the six instructions. Your test should not find any hardware errors.
+
+	Copy and paste the contents of "testbench.sv" back to "lab1.v" for submission.
+
+Submit the "lab1.asm" and "lab1.v" files via e-mail to steven.bellock@oit.edu
+Assignment is due by January 24th at 6 PM.
