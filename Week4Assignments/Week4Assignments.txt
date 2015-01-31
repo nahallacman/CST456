@@ -1,0 +1,65 @@
+Week 4 Assignment
+	
+Lab 2
+-----
+	
+                            ALU
+                        ----------
+         data1[31:0] -> |        | -> data[31:0]
+         data2[31:0] -> |   3    | -> response[1:0]
+        command[1:0] -> |        |
+                        ----------
+         data1[31:0] -> |        | -> data[31:0]
+         data2[31:0] -> |   2    | -> response[1:0]
+        command[1:0] -> |        |
+                        ----------
+         data1[31:0] -> |        | -> data[31:0]
+         data2[31:0] -> |   1    | -> response[1:0]
+        command[1:0] -> |        |
+                        ----------
+         data1[31:0] -> |        | -> data[31:0]
+         data2[31:0] -> |   0    | -> response[1:0]
+        command[1:0] -> |        |
+                        ----------
+               clock -> |        |
+               reset -> |        |
+                        ----------
+
+ALU is a four-operation calculator. It can add, multiply, and bitwise AND together two 32-bit input data values to produce a 32-bit output data value. All input and output data is unsigned. The command signal is used to select which of the operations the ALU is to perform. When the operation is complete or an error occurs the response signal is asserted. ALU can accept up to four simultaneous operations at a time.
+
+Command      Value      Description
+-------      -----      -----------
+NOP          2'b00      No operation.
+ADD          2'b01      data = data1 + data2
+MULTIPLY     2'b10      data = data1 · data2
+AND          2'b11      data = bitwise AND of data1 and data2
+
+Response        Value      Description
+--------        -----      -----------
+NO_RESPONSE     2'b00      Either an operation has not been triggered or the current operation is still processing.
+SUCCESS         2'b01      The operation was completed successfully.
+OVERFLOW        2'b10      The operation was completed with an overflow. Only used for the ADD and MULTIPLY operations.
+UNUSED          2'b11      Not used.
+
+The intended use of ALU is as follows. 
+	
+	1) Assert reset = 1 to reset the ALU. The data and response signals should both equal 0.
+	2) Deassert reset.
+	
+	For any port:
+	
+	3) Drive data1 and data2 with the data to be processed, and command with the operation.
+	4) Wait for the response signal to transition from NO_RESPONSE to either SUCCESS or OVERFLOW. The time to complete an operation will be at least three but no more than five clock cycles after the command signal was asserted. The response signal will only be active for one clock cycle.
+	5) The output data can be read if it is valid.
+	6) Repeat steps 3 to 5 as needed.
+
+It is not required that a new command must be sent once an operation is complete. A port may sit idle for any number of clock cycles in between commands. Driving the data or command signals with different values during an operation will not interrupt the operation. The UNUSED response will never be asserted.
+
+----------------
+
+Create a testbench that incorporates random stimuli, a scoreboard, and a checker to test the ALU design. Stimuli that can be randomized include: input data and command, time between operations, driving input data and command during an operation, etc. The scoreboard should hold input data1 and data2, the operation command, output data and response, and number of cycles to complete operation. The checker should check to see that the output data and response are correct given the input data and command, and that the number of cycles to complete an operation is within specification.
+
+Once the testing has completed be sure to wait for any outstanding transactions before finishing. The reset response should be tested at the beginning as well.
+
+Submit your document via e-mail to steven.bellock@oit.edu
+Assignment is due by TBD.
