@@ -1,1285 +1,2053 @@
 PROG_START      EQU             $2000
                         org             PROG_START
-                        ldaa #$00
-                        staa $4000
-                        ldaa #$01
-                        staa $4001
-                        ldaa #$02
-                        staa $4002
-                        ldaa #$03
-                        staa $4003
-                        ldaa #$04
-                        staa $4004
-                        ldaa #$05
-                        staa $4005
-                        ldaa #$06
-                        staa $4006
-                        ldaa #$07
-                        staa $4007
-                        ldaa #$08
-                        staa $4008
-                        ldaa #$09
-                        staa $4009
-                        ldaa #$0a
-                        staa $400a
-                        ldaa #$0b
-                        staa $400b
-                        ldaa #$0c
-                        staa $400c
-                        ldaa #$0d
-                        staa $400d
-                        ldaa #$0e
-                        staa $400e
-                        ldaa #$0f
-                        staa $400f
-                        ldaa #$10
-                        staa $4010
-                        ldaa #$11
-                        staa $4011
-                        ldaa #$12
-                        staa $4012
-                        ldaa #$13
-                        staa $4013
-                        ldaa #$14
-                        staa $4014
-                        ldaa #$15
-                        staa $4015
-                        ldaa #$16
-                        staa $4016
-                        ldaa #$17
-                        staa $4017
-                        ldaa #$18
-                        staa $4018
-                        ldaa #$19
-                        staa $4019
-                        ldaa #$1a
-                        staa $401a
-                        ldaa #$1b
-                        staa $401b
-                        ldaa #$1c
-                        staa $401c
-                        ldaa #$1d
-                        staa $401d
-                        ldaa #$1e
-                        staa $401e
-                        ldaa #$1f
-                        staa $401f
-                        ldaa #$20
-                        staa $4020
-                        ldaa #$21
-                        staa $4021
-                        ldaa #$22
-                        staa $4022
-                        ldaa #$23
-                        staa $4023
-                        ldaa #$24
-                        staa $4024
-                        ldaa #$25
-                        staa $4025
-                        ldaa #$26
-                        staa $4026
-                        ldaa #$27
-                        staa $4027
-                        ldaa #$28
-                        staa $4028
-                        ldaa #$29
-                        staa $4029
-                        ldaa #$2a
-                        staa $402a
-                        ldaa #$2b
-                        staa $402b
-                        ldaa #$2c
-                        staa $402c
-                        ldaa #$2d
-                        staa $402d
-                        ldaa #$2e
-                        staa $402e
-                        ldaa #$2f
-                        staa $402f
-                        ldaa #$30
-                        staa $4030
-                        ldaa #$31
-                        staa $4031
-                        ldaa #$32
-                        staa $4032
-                        ldaa #$33
-                        staa $4033
-                        ldaa #$34
-                        staa $4034
-                        ldaa #$35
-                        staa $4035
-                        ldaa #$36
-                        staa $4036
-                        ldaa #$37
-                        staa $4037
-                        ldaa #$38
-                        staa $4038
-                        ldaa #$39
-                        staa $4039
-                        ldaa #$3a
-                        staa $403a
-                        ldaa #$3b
-                        staa $403b
-                        ldaa #$3c
-                        staa $403c
-                        ldaa #$3d
-                        staa $403d
-                        ldaa #$3e
-                        staa $403e
-                        ldaa #$3f
-                        staa $403f
-                        ldaa #$40
-                        staa $4040
-                        ldaa #$41
-                        staa $4041
-                        ldaa #$42
-                        staa $4042
-                        ldaa #$43
-                        staa $4043
-                        ldaa #$44
-                        staa $4044
-                        ldaa #$45
-                        staa $4045
-                        ldaa #$46
-                        staa $4046
-                        ldaa #$47
-                        staa $4047
-                        ldaa #$48
-                        staa $4048
-                        ldaa #$49
-                        staa $4049
-                        ldaa #$4a
-                        staa $404a
-                        ldaa #$4b
-                        staa $404b
-                        ldaa #$4c
-                        staa $404c
-                        ldaa #$4d
-                        staa $404d
-                        ldaa #$4e
-                        staa $404e
-                        ldaa #$4f
-                        staa $404f
-                        ldaa #$50
-                        staa $4050
-                        ldaa #$51
-                        staa $4051
-                        ldaa #$52
-                        staa $4052
-                        ldaa #$53
-                        staa $4053
-                        ldaa #$54
-                        staa $4054
-                        ldaa #$55
-                        staa $4055
-                        ldaa #$56
-                        staa $4056
-                        ldaa #$57
-                        staa $4057
-                        ldaa #$58
-                        staa $4058
-                        ldaa #$59
-                        staa $4059
-                        ldaa #$5a
-                        staa $405a
-                        ldaa #$5b
-                        staa $405b
-                        ldaa #$5c
-                        staa $405c
-                        ldaa #$5d
-                        staa $405d
-                        ldaa #$5e
-                        staa $405e
-                        ldaa #$5f
-                        staa $405f
-                        ldaa #$60
-                        staa $4060
-                        ldaa #$61
-                        staa $4061
-                        ldaa #$62
-                        staa $4062
-                        ldaa #$63
-                        staa $4063
-                        ldaa #$64
-                        staa $4064
-                        ldaa #$65
-                        staa $4065
-                        ldaa #$66
-                        staa $4066
-                        ldaa #$67
-                        staa $4067
-                        ldaa #$68
-                        staa $4068
-                        ldaa #$69
-                        staa $4069
-                        ldaa #$6a
-                        staa $406a
-                        ldaa #$6b
-                        staa $406b
-                        ldaa #$6c
-                        staa $406c
-                        ldaa #$6d
-                        staa $406d
-                        ldaa #$6e
-                        staa $406e
-                        ldaa #$6f
-                        staa $406f
-                        ldaa #$70
-                        staa $4070
-                        ldaa #$71
-                        staa $4071
-                        ldaa #$72
-                        staa $4072
-                        ldaa #$73
-                        staa $4073
-                        ldaa #$74
-                        staa $4074
-                        ldaa #$75
-                        staa $4075
-                        ldaa #$76
-                        staa $4076
-                        ldaa #$77
-                        staa $4077
-                        ldaa #$78
-                        staa $4078
-                        ldaa #$79
-                        staa $4079
-                        ldaa #$7a
-                        staa $407a
-                        ldaa #$7b
-                        staa $407b
-                        ldaa #$7c
-                        staa $407c
-                        ldaa #$7d
-                        staa $407d
-                        ldaa #$7e
-                        staa $407e
-                        ldaa #$7f
-                        staa $407f
-                        ldaa #$80
-                        staa $4080
-                        ldaa #$81
-                        staa $4081
-                        ldaa #$82
-                        staa $4082
-                        ldaa #$83
-                        staa $4083
-                        ldaa #$84
-                        staa $4084
-                        ldaa #$85
-                        staa $4085
-                        ldaa #$86
-                        staa $4086
-                        ldaa #$87
-                        staa $4087
-                        ldaa #$88
-                        staa $4088
-                        ldaa #$89
-                        staa $4089
-                        ldaa #$8a
-                        staa $408a
-                        ldaa #$8b
-                        staa $408b
-                        ldaa #$8c
-                        staa $408c
-                        ldaa #$8d
-                        staa $408d
-                        ldaa #$8e
-                        staa $408e
-                        ldaa #$8f
-                        staa $408f
-                        ldaa #$90
-                        staa $4090
-                        ldaa #$91
-                        staa $4091
-                        ldaa #$92
-                        staa $4092
-                        ldaa #$93
-                        staa $4093
-                        ldaa #$94
-                        staa $4094
-                        ldaa #$95
-                        staa $4095
-                        ldaa #$96
-                        staa $4096
-                        ldaa #$97
-                        staa $4097
-                        ldaa #$98
-                        staa $4098
-                        ldaa #$99
-                        staa $4099
-                        ldaa #$9a
-                        staa $409a
-                        ldaa #$9b
-                        staa $409b
-                        ldaa #$9c
-                        staa $409c
-                        ldaa #$9d
-                        staa $409d
-                        ldaa #$9e
-                        staa $409e
-                        ldaa #$9f
-                        staa $409f
-                        ldaa #$a0
-                        staa $40a0
-                        ldaa #$a1
-                        staa $40a1
-                        ldaa #$a2
-                        staa $40a2
-                        ldaa #$a3
-                        staa $40a3
-                        ldaa #$a4
-                        staa $40a4
-                        ldaa #$a5
-                        staa $40a5
-                        ldaa #$a6
-                        staa $40a6
-                        ldaa #$a7
-                        staa $40a7
-                        ldaa #$a8
-                        staa $40a8
-                        ldaa #$a9
-                        staa $40a9
-                        ldaa #$aa
-                        staa $40aa
-                        ldaa #$ab
-                        staa $40ab
-                        ldaa #$ac
-                        staa $40ac
-                        ldaa #$ad
-                        staa $40ad
-                        ldaa #$ae
-                        staa $40ae
-                        ldaa #$af
-                        staa $40af
-                        ldaa #$b0
-                        staa $40b0
-                        ldaa #$b1
-                        staa $40b1
-                        ldaa #$b2
-                        staa $40b2
-                        ldaa #$b3
-                        staa $40b3
-                        ldaa #$b4
-                        staa $40b4
-                        ldaa #$b5
-                        staa $40b5
-                        ldaa #$b6
-                        staa $40b6
-                        ldaa #$b7
-                        staa $40b7
-                        ldaa #$b8
-                        staa $40b8
-                        ldaa #$b9
-                        staa $40b9
-                        ldaa #$ba
-                        staa $40ba
-                        ldaa #$bb
-                        staa $40bb
-                        ldaa #$bc
-                        staa $40bc
-                        ldaa #$bd
-                        staa $40bd
-                        ldaa #$be
-                        staa $40be
-                        ldaa #$bf
-                        staa $40bf
-                        ldaa #$c0
-                        staa $40c0
-                        ldaa #$c1
-                        staa $40c1
-                        ldaa #$c2
-                        staa $40c2
-                        ldaa #$c3
-                        staa $40c3
-                        ldaa #$c4
-                        staa $40c4
-                        ldaa #$c5
-                        staa $40c5
-                        ldaa #$c6
-                        staa $40c6
-                        ldaa #$c7
-                        staa $40c7
-                        ldaa #$c8
-                        staa $40c8
-                        ldaa #$c9
-                        staa $40c9
-                        ldaa #$ca
-                        staa $40ca
-                        ldaa #$cb
-                        staa $40cb
-                        ldaa #$cc
-                        staa $40cc
-                        ldaa #$cd
-                        staa $40cd
-                        ldaa #$ce
-                        staa $40ce
-                        ldaa #$cf
-                        staa $40cf
-                        ldaa #$d0
-                        staa $40d0
-                        ldaa #$d1
-                        staa $40d1
-                        ldaa #$d2
-                        staa $40d2
-                        ldaa #$d3
-                        staa $40d3
-                        ldaa #$d4
-                        staa $40d4
-                        ldaa #$d5
-                        staa $40d5
-                        ldaa #$d6
-                        staa $40d6
-                        ldaa #$d7
-                        staa $40d7
-                        ldaa #$d8
-                        staa $40d8
-                        ldaa #$d9
-                        staa $40d9
-                        ldaa #$da
-                        staa $40da
-                        ldaa #$db
-                        staa $40db
-                        ldaa #$dc
-                        staa $40dc
-                        ldaa #$dd
-                        staa $40dd
-                        ldaa #$de
-                        staa $40de
-                        ldaa #$df
-                        staa $40df
-                        ldaa #$e0
-                        staa $40e0
-                        ldaa #$e1
-                        staa $40e1
-                        ldaa #$e2
-                        staa $40e2
-                        ldaa #$e3
-                        staa $40e3
-                        ldaa #$e4
-                        staa $40e4
-                        ldaa #$e5
-                        staa $40e5
-                        ldaa #$e6
-                        staa $40e6
-                        ldaa #$e7
-                        staa $40e7
-                        ldaa #$e8
-                        staa $40e8
-                        ldaa #$e9
-                        staa $40e9
-                        ldaa #$ea
-                        staa $40ea
-                        ldaa #$eb
-                        staa $40eb
-                        ldaa #$ec
-                        staa $40ec
-                        ldaa #$ed
-                        staa $40ed
-                        ldaa #$ee
-                        staa $40ee
-                        ldaa #$ef
-                        staa $40ef
-                        ldaa #$f0
-                        staa $40f0
-                        ldaa #$f1
-                        staa $40f1
-                        ldaa #$f2
-                        staa $40f2
-                        ldaa #$f3
-                        staa $40f3
-                        ldaa #$f4
-                        staa $40f4
-                        ldaa #$f5
-                        staa $40f5
-                        ldaa #$f6
-                        staa $40f6
-                        ldaa #$f7
-                        staa $40f7
-                        ldaa #$f8
-                        staa $40f8
-                        ldaa #$f9
-                        staa $40f9
-                        ldaa #$fa
-                        staa $40fa
-                        ldaa #$fb
-                        staa $40fb
-                        ldaa #$fc
-                        staa $40fc
-                        ldaa #$fd
-                        staa $40fd
-                        ldaa #$fe
-                        staa $40fe
-                        ldaa #$ff
-                        staa $40ff
-                        ldaa #$00
-                        coma
+                        ldab #$00
+                        stab $4000
+                        ldab #$01
+                        stab $4001
+                        ldab #$02
+                        stab $4002
+                        ldab #$03
+                        stab $4003
+                        ldab #$04
+                        stab $4004
+                        ldab #$05
+                        stab $4005
+                        ldab #$06
+                        stab $4006
+                        ldab #$07
+                        stab $4007
+                        ldab #$08
+                        stab $4008
+                        ldab #$09
+                        stab $4009
+                        ldab #$0a
+                        stab $400a
+                        ldab #$0b
+                        stab $400b
+                        ldab #$0c
+                        stab $400c
+                        ldab #$0d
+                        stab $400d
+                        ldab #$0e
+                        stab $400e
+                        ldab #$0f
+                        stab $400f
+                        ldab #$10
+                        stab $4010
+                        ldab #$11
+                        stab $4011
+                        ldab #$12
+                        stab $4012
+                        ldab #$13
+                        stab $4013
+                        ldab #$14
+                        stab $4014
+                        ldab #$15
+                        stab $4015
+                        ldab #$16
+                        stab $4016
+                        ldab #$17
+                        stab $4017
+                        ldab #$18
+                        stab $4018
+                        ldab #$19
+                        stab $4019
+                        ldab #$1a
+                        stab $401a
+                        ldab #$1b
+                        stab $401b
+                        ldab #$1c
+                        stab $401c
+                        ldab #$1d
+                        stab $401d
+                        ldab #$1e
+                        stab $401e
+                        ldab #$1f
+                        stab $401f
+                        ldab #$20
+                        stab $4020
+                        ldab #$21
+                        stab $4021
+                        ldab #$22
+                        stab $4022
+                        ldab #$23
+                        stab $4023
+                        ldab #$24
+                        stab $4024
+                        ldab #$25
+                        stab $4025
+                        ldab #$26
+                        stab $4026
+                        ldab #$27
+                        stab $4027
+                        ldab #$28
+                        stab $4028
+                        ldab #$29
+                        stab $4029
+                        ldab #$2a
+                        stab $402a
+                        ldab #$2b
+                        stab $402b
+                        ldab #$2c
+                        stab $402c
+                        ldab #$2d
+                        stab $402d
+                        ldab #$2e
+                        stab $402e
+                        ldab #$2f
+                        stab $402f
+                        ldab #$30
+                        stab $4030
+                        ldab #$31
+                        stab $4031
+                        ldab #$32
+                        stab $4032
+                        ldab #$33
+                        stab $4033
+                        ldab #$34
+                        stab $4034
+                        ldab #$35
+                        stab $4035
+                        ldab #$36
+                        stab $4036
+                        ldab #$37
+                        stab $4037
+                        ldab #$38
+                        stab $4038
+                        ldab #$39
+                        stab $4039
+                        ldab #$3a
+                        stab $403a
+                        ldab #$3b
+                        stab $403b
+                        ldab #$3c
+                        stab $403c
+                        ldab #$3d
+                        stab $403d
+                        ldab #$3e
+                        stab $403e
+                        ldab #$3f
+                        stab $403f
+                        ldab #$40
+                        stab $4040
+                        ldab #$41
+                        stab $4041
+                        ldab #$42
+                        stab $4042
+                        ldab #$43
+                        stab $4043
+                        ldab #$44
+                        stab $4044
+                        ldab #$45
+                        stab $4045
+                        ldab #$46
+                        stab $4046
+                        ldab #$47
+                        stab $4047
+                        ldab #$48
+                        stab $4048
+                        ldab #$49
+                        stab $4049
+                        ldab #$4a
+                        stab $404a
+                        ldab #$4b
+                        stab $404b
+                        ldab #$4c
+                        stab $404c
+                        ldab #$4d
+                        stab $404d
+                        ldab #$4e
+                        stab $404e
+                        ldab #$4f
+                        stab $404f
+                        ldab #$50
+                        stab $4050
+                        ldab #$51
+                        stab $4051
+                        ldab #$52
+                        stab $4052
+                        ldab #$53
+                        stab $4053
+                        ldab #$54
+                        stab $4054
+                        ldab #$55
+                        stab $4055
+                        ldab #$56
+                        stab $4056
+                        ldab #$57
+                        stab $4057
+                        ldab #$58
+                        stab $4058
+                        ldab #$59
+                        stab $4059
+                        ldab #$5a
+                        stab $405a
+                        ldab #$5b
+                        stab $405b
+                        ldab #$5c
+                        stab $405c
+                        ldab #$5d
+                        stab $405d
+                        ldab #$5e
+                        stab $405e
+                        ldab #$5f
+                        stab $405f
+                        ldab #$60
+                        stab $4060
+                        ldab #$61
+                        stab $4061
+                        ldab #$62
+                        stab $4062
+                        ldab #$63
+                        stab $4063
+                        ldab #$64
+                        stab $4064
+                        ldab #$65
+                        stab $4065
+                        ldab #$66
+                        stab $4066
+                        ldab #$67
+                        stab $4067
+                        ldab #$68
+                        stab $4068
+                        ldab #$69
+                        stab $4069
+                        ldab #$6a
+                        stab $406a
+                        ldab #$6b
+                        stab $406b
+                        ldab #$6c
+                        stab $406c
+                        ldab #$6d
+                        stab $406d
+                        ldab #$6e
+                        stab $406e
+                        ldab #$6f
+                        stab $406f
+                        ldab #$70
+                        stab $4070
+                        ldab #$71
+                        stab $4071
+                        ldab #$72
+                        stab $4072
+                        ldab #$73
+                        stab $4073
+                        ldab #$74
+                        stab $4074
+                        ldab #$75
+                        stab $4075
+                        ldab #$76
+                        stab $4076
+                        ldab #$77
+                        stab $4077
+                        ldab #$78
+                        stab $4078
+                        ldab #$79
+                        stab $4079
+                        ldab #$7a
+                        stab $407a
+                        ldab #$7b
+                        stab $407b
+                        ldab #$7c
+                        stab $407c
+                        ldab #$7d
+                        stab $407d
+                        ldab #$7e
+                        stab $407e
+                        ldab #$7f
+                        stab $407f
+                        ldab #$80
+                        stab $4080
+                        ldab #$81
+                        stab $4081
+                        ldab #$82
+                        stab $4082
+                        ldab #$83
+                        stab $4083
+                        ldab #$84
+                        stab $4084
+                        ldab #$85
+                        stab $4085
+                        ldab #$86
+                        stab $4086
+                        ldab #$87
+                        stab $4087
+                        ldab #$88
+                        stab $4088
+                        ldab #$89
+                        stab $4089
+                        ldab #$8a
+                        stab $408a
+                        ldab #$8b
+                        stab $408b
+                        ldab #$8c
+                        stab $408c
+                        ldab #$8d
+                        stab $408d
+                        ldab #$8e
+                        stab $408e
+                        ldab #$8f
+                        stab $408f
+                        ldab #$90
+                        stab $4090
+                        ldab #$91
+                        stab $4091
+                        ldab #$92
+                        stab $4092
+                        ldab #$93
+                        stab $4093
+                        ldab #$94
+                        stab $4094
+                        ldab #$95
+                        stab $4095
+                        ldab #$96
+                        stab $4096
+                        ldab #$97
+                        stab $4097
+                        ldab #$98
+                        stab $4098
+                        ldab #$99
+                        stab $4099
+                        ldab #$9a
+                        stab $409a
+                        ldab #$9b
+                        stab $409b
+                        ldab #$9c
+                        stab $409c
+                        ldab #$9d
+                        stab $409d
+                        ldab #$9e
+                        stab $409e
+                        ldab #$9f
+                        stab $409f
+                        ldab #$a0
+                        stab $40a0
+                        ldab #$a1
+                        stab $40a1
+                        ldab #$a2
+                        stab $40a2
+                        ldab #$a3
+                        stab $40a3
+                        ldab #$a4
+                        stab $40a4
+                        ldab #$a5
+                        stab $40a5
+                        ldab #$a6
+                        stab $40a6
+                        ldab #$a7
+                        stab $40a7
+                        ldab #$a8
+                        stab $40a8
+                        ldab #$a9
+                        stab $40a9
+                        ldab #$aa
+                        stab $40aa
+                        ldab #$ab
+                        stab $40ab
+                        ldab #$ac
+                        stab $40ac
+                        ldab #$ad
+                        stab $40ad
+                        ldab #$ae
+                        stab $40ae
+                        ldab #$af
+                        stab $40af
+                        ldab #$b0
+                        stab $40b0
+                        ldab #$b1
+                        stab $40b1
+                        ldab #$b2
+                        stab $40b2
+                        ldab #$b3
+                        stab $40b3
+                        ldab #$b4
+                        stab $40b4
+                        ldab #$b5
+                        stab $40b5
+                        ldab #$b6
+                        stab $40b6
+                        ldab #$b7
+                        stab $40b7
+                        ldab #$b8
+                        stab $40b8
+                        ldab #$b9
+                        stab $40b9
+                        ldab #$ba
+                        stab $40ba
+                        ldab #$bb
+                        stab $40bb
+                        ldab #$bc
+                        stab $40bc
+                        ldab #$bd
+                        stab $40bd
+                        ldab #$be
+                        stab $40be
+                        ldab #$bf
+                        stab $40bf
+                        ldab #$c0
+                        stab $40c0
+                        ldab #$c1
+                        stab $40c1
+                        ldab #$c2
+                        stab $40c2
+                        ldab #$c3
+                        stab $40c3
+                        ldab #$c4
+                        stab $40c4
+                        ldab #$c5
+                        stab $40c5
+                        ldab #$c6
+                        stab $40c6
+                        ldab #$c7
+                        stab $40c7
+                        ldab #$c8
+                        stab $40c8
+                        ldab #$c9
+                        stab $40c9
+                        ldab #$ca
+                        stab $40ca
+                        ldab #$cb
+                        stab $40cb
+                        ldab #$cc
+                        stab $40cc
+                        ldab #$cd
+                        stab $40cd
+                        ldab #$ce
+                        stab $40ce
+                        ldab #$cf
+                        stab $40cf
+                        ldab #$d0
+                        stab $40d0
+                        ldab #$d1
+                        stab $40d1
+                        ldab #$d2
+                        stab $40d2
+                        ldab #$d3
+                        stab $40d3
+                        ldab #$d4
+                        stab $40d4
+                        ldab #$d5
+                        stab $40d5
+                        ldab #$d6
+                        stab $40d6
+                        ldab #$d7
+                        stab $40d7
+                        ldab #$d8
+                        stab $40d8
+                        ldab #$d9
+                        stab $40d9
+                        ldab #$da
+                        stab $40da
+                        ldab #$db
+                        stab $40db
+                        ldab #$dc
+                        stab $40dc
+                        ldab #$dd
+                        stab $40dd
+                        ldab #$de
+                        stab $40de
+                        ldab #$df
+                        stab $40df
+                        ldab #$e0
+                        stab $40e0
+                        ldab #$e1
+                        stab $40e1
+                        ldab #$e2
+                        stab $40e2
+                        ldab #$e3
+                        stab $40e3
+                        ldab #$e4
+                        stab $40e4
+                        ldab #$e5
+                        stab $40e5
+                        ldab #$e6
+                        stab $40e6
+                        ldab #$e7
+                        stab $40e7
+                        ldab #$e8
+                        stab $40e8
+                        ldab #$e9
+                        stab $40e9
+                        ldab #$ea
+                        stab $40ea
+                        ldab #$eb
+                        stab $40eb
+                        ldab #$ec
+                        stab $40ec
+                        ldab #$ed
+                        stab $40ed
+                        ldab #$ee
+                        stab $40ee
+                        ldab #$ef
+                        stab $40ef
+                        ldab #$f0
+                        stab $40f0
+                        ldab #$f1
+                        stab $40f1
+                        ldab #$f2
+                        stab $40f2
+                        ldab #$f3
+                        stab $40f3
+                        ldab #$f4
+                        stab $40f4
+                        ldab #$f5
+                        stab $40f5
+                        ldab #$f6
+                        stab $40f6
+                        ldab #$f7
+                        stab $40f7
+                        ldab #$f8
+                        stab $40f8
+                        ldab #$f9
+                        stab $40f9
+                        ldab #$fa
+                        stab $40fa
+                        ldab #$fb
+                        stab $40fb
+                        ldab #$fc
+                        stab $40fc
+                        ldab #$fd
+                        stab $40fd
+                        ldab #$fe
+                        stab $40fe
+                        ldab #$ff
+                        stab $40ff
+                        ldab #$00
+                        TBA
                         staa $4100
-                        ldaa #$01
-                        coma
+                        ldab #$01
+                        TBA
                         staa $4101
-                        ldaa #$02
-                        coma
+                        ldab #$02
+                        TBA
                         staa $4102
-                        ldaa #$03
-                        coma
+                        ldab #$03
+                        TBA
                         staa $4103
-                        ldaa #$04
-                        coma
+                        ldab #$04
+                        TBA
                         staa $4104
-                        ldaa #$05
-                        coma
+                        ldab #$05
+                        TBA
                         staa $4105
-                        ldaa #$06
-                        coma
+                        ldab #$06
+                        TBA
                         staa $4106
-                        ldaa #$07
-                        coma
+                        ldab #$07
+                        TBA
                         staa $4107
-                        ldaa #$08
-                        coma
+                        ldab #$08
+                        TBA
                         staa $4108
-                        ldaa #$09
-                        coma
+                        ldab #$09
+                        TBA
                         staa $4109
-                        ldaa #$0a
-                        coma
+                        ldab #$0a
+                        TBA
                         staa $410a
-                        ldaa #$0b
-                        coma
+                        ldab #$0b
+                        TBA
                         staa $410b
-                        ldaa #$0c
-                        coma
+                        ldab #$0c
+                        TBA
                         staa $410c
-                        ldaa #$0d
-                        coma
+                        ldab #$0d
+                        TBA
                         staa $410d
-                        ldaa #$0e
-                        coma
+                        ldab #$0e
+                        TBA
                         staa $410e
-                        ldaa #$0f
-                        coma
+                        ldab #$0f
+                        TBA
                         staa $410f
-                        ldaa #$10
-                        coma
+                        ldab #$10
+                        TBA
                         staa $4110
-                        ldaa #$11
-                        coma
+                        ldab #$11
+                        TBA
                         staa $4111
-                        ldaa #$12
-                        coma
+                        ldab #$12
+                        TBA
                         staa $4112
-                        ldaa #$13
-                        coma
+                        ldab #$13
+                        TBA
                         staa $4113
-                        ldaa #$14
-                        coma
+                        ldab #$14
+                        TBA
                         staa $4114
-                        ldaa #$15
-                        coma
+                        ldab #$15
+                        TBA
                         staa $4115
-                        ldaa #$16
-                        coma
+                        ldab #$16
+                        TBA
                         staa $4116
-                        ldaa #$17
-                        coma
+                        ldab #$17
+                        TBA
                         staa $4117
-                        ldaa #$18
-                        coma
+                        ldab #$18
+                        TBA
                         staa $4118
-                        ldaa #$19
-                        coma
+                        ldab #$19
+                        TBA
                         staa $4119
-                        ldaa #$1a
-                        coma
+                        ldab #$1a
+                        TBA
                         staa $411a
-                        ldaa #$1b
-                        coma
+                        ldab #$1b
+                        TBA
                         staa $411b
-                        ldaa #$1c
-                        coma
+                        ldab #$1c
+                        TBA
                         staa $411c
-                        ldaa #$1d
-                        coma
+                        ldab #$1d
+                        TBA
                         staa $411d
-                        ldaa #$1e
-                        coma
+                        ldab #$1e
+                        TBA
                         staa $411e
-                        ldaa #$1f
-                        coma
+                        ldab #$1f
+                        TBA
                         staa $411f
-                        ldaa #$20
-                        coma
+                        ldab #$20
+                        TBA
                         staa $4120
-                        ldaa #$21
-                        coma
+                        ldab #$21
+                        TBA
                         staa $4121
-                        ldaa #$22
-                        coma
+                        ldab #$22
+                        TBA
                         staa $4122
-                        ldaa #$23
-                        coma
+                        ldab #$23
+                        TBA
                         staa $4123
-                        ldaa #$24
-                        coma
+                        ldab #$24
+                        TBA
                         staa $4124
-                        ldaa #$25
-                        coma
+                        ldab #$25
+                        TBA
                         staa $4125
-                        ldaa #$26
-                        coma
+                        ldab #$26
+                        TBA
                         staa $4126
-                        ldaa #$27
-                        coma
+                        ldab #$27
+                        TBA
                         staa $4127
-                        ldaa #$28
-                        coma
+                        ldab #$28
+                        TBA
                         staa $4128
-                        ldaa #$29
-                        coma
+                        ldab #$29
+                        TBA
                         staa $4129
-                        ldaa #$2a
-                        coma
+                        ldab #$2a
+                        TBA
                         staa $412a
-                        ldaa #$2b
-                        coma
+                        ldab #$2b
+                        TBA
                         staa $412b
-                        ldaa #$2c
-                        coma
+                        ldab #$2c
+                        TBA
                         staa $412c
-                        ldaa #$2d
-                        coma
+                        ldab #$2d
+                        TBA
                         staa $412d
-                        ldaa #$2e
-                        coma
+                        ldab #$2e
+                        TBA
                         staa $412e
-                        ldaa #$2f
-                        coma
+                        ldab #$2f
+                        TBA
                         staa $412f
-                        ldaa #$30
-                        coma
+                        ldab #$30
+                        TBA
                         staa $4130
-                        ldaa #$31
-                        coma
+                        ldab #$31
+                        TBA
                         staa $4131
-                        ldaa #$32
-                        coma
+                        ldab #$32
+                        TBA
                         staa $4132
-                        ldaa #$33
-                        coma
+                        ldab #$33
+                        TBA
                         staa $4133
-                        ldaa #$34
-                        coma
+                        ldab #$34
+                        TBA
                         staa $4134
-                        ldaa #$35
-                        coma
+                        ldab #$35
+                        TBA
                         staa $4135
-                        ldaa #$36
-                        coma
+                        ldab #$36
+                        TBA
                         staa $4136
-                        ldaa #$37
-                        coma
+                        ldab #$37
+                        TBA
                         staa $4137
-                        ldaa #$38
-                        coma
+                        ldab #$38
+                        TBA
                         staa $4138
-                        ldaa #$39
-                        coma
+                        ldab #$39
+                        TBA
                         staa $4139
-                        ldaa #$3a
-                        coma
+                        ldab #$3a
+                        TBA
                         staa $413a
-                        ldaa #$3b
-                        coma
+                        ldab #$3b
+                        TBA
                         staa $413b
-                        ldaa #$3c
-                        coma
+                        ldab #$3c
+                        TBA
                         staa $413c
-                        ldaa #$3d
-                        coma
+                        ldab #$3d
+                        TBA
                         staa $413d
-                        ldaa #$3e
-                        coma
+                        ldab #$3e
+                        TBA
                         staa $413e
-                        ldaa #$3f
-                        coma
+                        ldab #$3f
+                        TBA
                         staa $413f
-                        ldaa #$40
-                        coma
+                        ldab #$40
+                        TBA
                         staa $4140
-                        ldaa #$41
-                        coma
+                        ldab #$41
+                        TBA
                         staa $4141
-                        ldaa #$42
-                        coma
+                        ldab #$42
+                        TBA
                         staa $4142
-                        ldaa #$43
-                        coma
+                        ldab #$43
+                        TBA
                         staa $4143
-                        ldaa #$44
-                        coma
+                        ldab #$44
+                        TBA
                         staa $4144
-                        ldaa #$45
-                        coma
+                        ldab #$45
+                        TBA
                         staa $4145
-                        ldaa #$46
-                        coma
+                        ldab #$46
+                        TBA
                         staa $4146
-                        ldaa #$47
-                        coma
+                        ldab #$47
+                        TBA
                         staa $4147
-                        ldaa #$48
-                        coma
+                        ldab #$48
+                        TBA
                         staa $4148
-                        ldaa #$49
-                        coma
+                        ldab #$49
+                        TBA
                         staa $4149
-                        ldaa #$4a
-                        coma
+                        ldab #$4a
+                        TBA
                         staa $414a
-                        ldaa #$4b
-                        coma
+                        ldab #$4b
+                        TBA
                         staa $414b
-                        ldaa #$4c
-                        coma
+                        ldab #$4c
+                        TBA
                         staa $414c
-                        ldaa #$4d
-                        coma
+                        ldab #$4d
+                        TBA
                         staa $414d
-                        ldaa #$4e
-                        coma
+                        ldab #$4e
+                        TBA
                         staa $414e
-                        ldaa #$4f
-                        coma
+                        ldab #$4f
+                        TBA
                         staa $414f
-                        ldaa #$50
-                        coma
+                        ldab #$50
+                        TBA
                         staa $4150
-                        ldaa #$51
-                        coma
+                        ldab #$51
+                        TBA
                         staa $4151
-                        ldaa #$52
-                        coma
+                        ldab #$52
+                        TBA
                         staa $4152
-                        ldaa #$53
-                        coma
+                        ldab #$53
+                        TBA
                         staa $4153
-                        ldaa #$54
-                        coma
+                        ldab #$54
+                        TBA
                         staa $4154
-                        ldaa #$55
-                        coma
+                        ldab #$55
+                        TBA
                         staa $4155
-                        ldaa #$56
-                        coma
+                        ldab #$56
+                        TBA
                         staa $4156
-                        ldaa #$57
-                        coma
+                        ldab #$57
+                        TBA
                         staa $4157
-                        ldaa #$58
-                        coma
+                        ldab #$58
+                        TBA
                         staa $4158
-                        ldaa #$59
-                        coma
+                        ldab #$59
+                        TBA
                         staa $4159
-                        ldaa #$5a
-                        coma
+                        ldab #$5a
+                        TBA
                         staa $415a
-                        ldaa #$5b
-                        coma
+                        ldab #$5b
+                        TBA
                         staa $415b
-                        ldaa #$5c
-                        coma
+                        ldab #$5c
+                        TBA
                         staa $415c
-                        ldaa #$5d
-                        coma
+                        ldab #$5d
+                        TBA
                         staa $415d
-                        ldaa #$5e
-                        coma
+                        ldab #$5e
+                        TBA
                         staa $415e
-                        ldaa #$5f
-                        coma
+                        ldab #$5f
+                        TBA
                         staa $415f
-                        ldaa #$60
-                        coma
+                        ldab #$60
+                        TBA
                         staa $4160
-                        ldaa #$61
-                        coma
+                        ldab #$61
+                        TBA
                         staa $4161
-                        ldaa #$62
-                        coma
+                        ldab #$62
+                        TBA
                         staa $4162
-                        ldaa #$63
-                        coma
+                        ldab #$63
+                        TBA
                         staa $4163
-                        ldaa #$64
-                        coma
+                        ldab #$64
+                        TBA
                         staa $4164
-                        ldaa #$65
-                        coma
+                        ldab #$65
+                        TBA
                         staa $4165
-                        ldaa #$66
-                        coma
+                        ldab #$66
+                        TBA
                         staa $4166
-                        ldaa #$67
-                        coma
+                        ldab #$67
+                        TBA
                         staa $4167
-                        ldaa #$68
-                        coma
+                        ldab #$68
+                        TBA
                         staa $4168
-                        ldaa #$69
-                        coma
+                        ldab #$69
+                        TBA
                         staa $4169
-                        ldaa #$6a
-                        coma
+                        ldab #$6a
+                        TBA
                         staa $416a
-                        ldaa #$6b
-                        coma
+                        ldab #$6b
+                        TBA
                         staa $416b
-                        ldaa #$6c
-                        coma
+                        ldab #$6c
+                        TBA
                         staa $416c
-                        ldaa #$6d
-                        coma
+                        ldab #$6d
+                        TBA
                         staa $416d
-                        ldaa #$6e
-                        coma
+                        ldab #$6e
+                        TBA
                         staa $416e
-                        ldaa #$6f
-                        coma
+                        ldab #$6f
+                        TBA
                         staa $416f
-                        ldaa #$70
-                        coma
+                        ldab #$70
+                        TBA
                         staa $4170
-                        ldaa #$71
-                        coma
+                        ldab #$71
+                        TBA
                         staa $4171
-                        ldaa #$72
-                        coma
+                        ldab #$72
+                        TBA
                         staa $4172
-                        ldaa #$73
-                        coma
+                        ldab #$73
+                        TBA
                         staa $4173
-                        ldaa #$74
-                        coma
+                        ldab #$74
+                        TBA
                         staa $4174
-                        ldaa #$75
-                        coma
+                        ldab #$75
+                        TBA
                         staa $4175
-                        ldaa #$76
-                        coma
+                        ldab #$76
+                        TBA
                         staa $4176
-                        ldaa #$77
-                        coma
+                        ldab #$77
+                        TBA
                         staa $4177
-                        ldaa #$78
-                        coma
+                        ldab #$78
+                        TBA
                         staa $4178
-                        ldaa #$79
-                        coma
+                        ldab #$79
+                        TBA
                         staa $4179
-                        ldaa #$7a
-                        coma
+                        ldab #$7a
+                        TBA
                         staa $417a
-                        ldaa #$7b
-                        coma
+                        ldab #$7b
+                        TBA
                         staa $417b
-                        ldaa #$7c
-                        coma
+                        ldab #$7c
+                        TBA
                         staa $417c
-                        ldaa #$7d
-                        coma
+                        ldab #$7d
+                        TBA
                         staa $417d
-                        ldaa #$7e
-                        coma
+                        ldab #$7e
+                        TBA
                         staa $417e
-                        ldaa #$7f
-                        coma
+                        ldab #$7f
+                        TBA
                         staa $417f
-                        ldaa #$80
-                        coma
+                        ldab #$80
+                        TBA
                         staa $4180
-                        ldaa #$81
-                        coma
+                        ldab #$81
+                        TBA
                         staa $4181
-                        ldaa #$82
-                        coma
+                        ldab #$82
+                        TBA
                         staa $4182
-                        ldaa #$83
-                        coma
+                        ldab #$83
+                        TBA
                         staa $4183
-                        ldaa #$84
-                        coma
+                        ldab #$84
+                        TBA
                         staa $4184
-                        ldaa #$85
-                        coma
+                        ldab #$85
+                        TBA
                         staa $4185
-                        ldaa #$86
-                        coma
+                        ldab #$86
+                        TBA
                         staa $4186
-                        ldaa #$87
-                        coma
+                        ldab #$87
+                        TBA
                         staa $4187
-                        ldaa #$88
-                        coma
+                        ldab #$88
+                        TBA
                         staa $4188
-                        ldaa #$89
-                        coma
+                        ldab #$89
+                        TBA
                         staa $4189
-                        ldaa #$8a
-                        coma
+                        ldab #$8a
+                        TBA
                         staa $418a
-                        ldaa #$8b
-                        coma
+                        ldab #$8b
+                        TBA
                         staa $418b
-                        ldaa #$8c
-                        coma
+                        ldab #$8c
+                        TBA
                         staa $418c
-                        ldaa #$8d
-                        coma
+                        ldab #$8d
+                        TBA
                         staa $418d
-                        ldaa #$8e
-                        coma
+                        ldab #$8e
+                        TBA
                         staa $418e
-                        ldaa #$8f
-                        coma
+                        ldab #$8f
+                        TBA
                         staa $418f
-                        ldaa #$90
-                        coma
+                        ldab #$90
+                        TBA
                         staa $4190
-                        ldaa #$91
-                        coma
+                        ldab #$91
+                        TBA
                         staa $4191
-                        ldaa #$92
-                        coma
+                        ldab #$92
+                        TBA
                         staa $4192
-                        ldaa #$93
-                        coma
+                        ldab #$93
+                        TBA
                         staa $4193
-                        ldaa #$94
-                        coma
+                        ldab #$94
+                        TBA
                         staa $4194
-                        ldaa #$95
-                        coma
+                        ldab #$95
+                        TBA
                         staa $4195
-                        ldaa #$96
-                        coma
+                        ldab #$96
+                        TBA
                         staa $4196
-                        ldaa #$97
-                        coma
+                        ldab #$97
+                        TBA
                         staa $4197
-                        ldaa #$98
-                        coma
+                        ldab #$98
+                        TBA
                         staa $4198
-                        ldaa #$99
-                        coma
+                        ldab #$99
+                        TBA
                         staa $4199
-                        ldaa #$9a
-                        coma
+                        ldab #$9a
+                        TBA
                         staa $419a
-                        ldaa #$9b
-                        coma
+                        ldab #$9b
+                        TBA
                         staa $419b
-                        ldaa #$9c
-                        coma
+                        ldab #$9c
+                        TBA
                         staa $419c
-                        ldaa #$9d
-                        coma
+                        ldab #$9d
+                        TBA
                         staa $419d
-                        ldaa #$9e
-                        coma
+                        ldab #$9e
+                        TBA
                         staa $419e
-                        ldaa #$9f
-                        coma
+                        ldab #$9f
+                        TBA
                         staa $419f
-                        ldaa #$a0
-                        coma
+                        ldab #$a0
+                        TBA
                         staa $41a0
-                        ldaa #$a1
-                        coma
+                        ldab #$a1
+                        TBA
                         staa $41a1
-                        ldaa #$a2
-                        coma
+                        ldab #$a2
+                        TBA
                         staa $41a2
-                        ldaa #$a3
-                        coma
+                        ldab #$a3
+                        TBA
                         staa $41a3
-                        ldaa #$a4
-                        coma
+                        ldab #$a4
+                        TBA
                         staa $41a4
-                        ldaa #$a5
-                        coma
+                        ldab #$a5
+                        TBA
                         staa $41a5
-                        ldaa #$a6
-                        coma
+                        ldab #$a6
+                        TBA
                         staa $41a6
-                        ldaa #$a7
-                        coma
+                        ldab #$a7
+                        TBA
                         staa $41a7
-                        ldaa #$a8
-                        coma
+                        ldab #$a8
+                        TBA
                         staa $41a8
-                        ldaa #$a9
-                        coma
+                        ldab #$a9
+                        TBA
                         staa $41a9
-                        ldaa #$aa
-                        coma
+                        ldab #$aa
+                        TBA
                         staa $41aa
-                        ldaa #$ab
-                        coma
+                        ldab #$ab
+                        TBA
                         staa $41ab
-                        ldaa #$ac
-                        coma
+                        ldab #$ac
+                        TBA
                         staa $41ac
-                        ldaa #$ad
-                        coma
+                        ldab #$ad
+                        TBA
                         staa $41ad
-                        ldaa #$ae
-                        coma
+                        ldab #$ae
+                        TBA
                         staa $41ae
-                        ldaa #$af
-                        coma
+                        ldab #$af
+                        TBA
                         staa $41af
-                        ldaa #$b0
-                        coma
+                        ldab #$b0
+                        TBA
                         staa $41b0
-                        ldaa #$b1
-                        coma
+                        ldab #$b1
+                        TBA
                         staa $41b1
-                        ldaa #$b2
-                        coma
+                        ldab #$b2
+                        TBA
                         staa $41b2
-                        ldaa #$b3
-                        coma
+                        ldab #$b3
+                        TBA
                         staa $41b3
-                        ldaa #$b4
-                        coma
+                        ldab #$b4
+                        TBA
                         staa $41b4
-                        ldaa #$b5
-                        coma
+                        ldab #$b5
+                        TBA
                         staa $41b5
-                        ldaa #$b6
-                        coma
+                        ldab #$b6
+                        TBA
                         staa $41b6
-                        ldaa #$b7
-                        coma
+                        ldab #$b7
+                        TBA
                         staa $41b7
-                        ldaa #$b8
-                        coma
+                        ldab #$b8
+                        TBA
                         staa $41b8
-                        ldaa #$b9
-                        coma
+                        ldab #$b9
+                        TBA
                         staa $41b9
-                        ldaa #$ba
-                        coma
+                        ldab #$ba
+                        TBA
                         staa $41ba
-                        ldaa #$bb
-                        coma
+                        ldab #$bb
+                        TBA
                         staa $41bb
-                        ldaa #$bc
-                        coma
+                        ldab #$bc
+                        TBA
                         staa $41bc
-                        ldaa #$bd
-                        coma
+                        ldab #$bd
+                        TBA
                         staa $41bd
-                        ldaa #$be
-                        coma
+                        ldab #$be
+                        TBA
                         staa $41be
-                        ldaa #$bf
-                        coma
+                        ldab #$bf
+                        TBA
                         staa $41bf
-                        ldaa #$c0
-                        coma
+                        ldab #$c0
+                        TBA
                         staa $41c0
-                        ldaa #$c1
-                        coma
+                        ldab #$c1
+                        TBA
                         staa $41c1
-                        ldaa #$c2
-                        coma
+                        ldab #$c2
+                        TBA
                         staa $41c2
-                        ldaa #$c3
-                        coma
+                        ldab #$c3
+                        TBA
                         staa $41c3
-                        ldaa #$c4
-                        coma
+                        ldab #$c4
+                        TBA
                         staa $41c4
-                        ldaa #$c5
-                        coma
+                        ldab #$c5
+                        TBA
                         staa $41c5
-                        ldaa #$c6
-                        coma
+                        ldab #$c6
+                        TBA
                         staa $41c6
-                        ldaa #$c7
-                        coma
+                        ldab #$c7
+                        TBA
                         staa $41c7
-                        ldaa #$c8
-                        coma
+                        ldab #$c8
+                        TBA
                         staa $41c8
-                        ldaa #$c9
-                        coma
+                        ldab #$c9
+                        TBA
                         staa $41c9
-                        ldaa #$ca
-                        coma
+                        ldab #$ca
+                        TBA
                         staa $41ca
-                        ldaa #$cb
-                        coma
+                        ldab #$cb
+                        TBA
                         staa $41cb
-                        ldaa #$cc
-                        coma
+                        ldab #$cc
+                        TBA
                         staa $41cc
-                        ldaa #$cd
-                        coma
+                        ldab #$cd
+                        TBA
                         staa $41cd
-                        ldaa #$ce
-                        coma
+                        ldab #$ce
+                        TBA
                         staa $41ce
-                        ldaa #$cf
-                        coma
+                        ldab #$cf
+                        TBA
                         staa $41cf
-                        ldaa #$d0
-                        coma
+                        ldab #$d0
+                        TBA
                         staa $41d0
-                        ldaa #$d1
-                        coma
+                        ldab #$d1
+                        TBA
                         staa $41d1
-                        ldaa #$d2
-                        coma
+                        ldab #$d2
+                        TBA
                         staa $41d2
-                        ldaa #$d3
-                        coma
+                        ldab #$d3
+                        TBA
                         staa $41d3
-                        ldaa #$d4
-                        coma
+                        ldab #$d4
+                        TBA
                         staa $41d4
-                        ldaa #$d5
-                        coma
+                        ldab #$d5
+                        TBA
                         staa $41d5
-                        ldaa #$d6
-                        coma
+                        ldab #$d6
+                        TBA
                         staa $41d6
-                        ldaa #$d7
-                        coma
+                        ldab #$d7
+                        TBA
                         staa $41d7
-                        ldaa #$d8
-                        coma
+                        ldab #$d8
+                        TBA
                         staa $41d8
-                        ldaa #$d9
-                        coma
+                        ldab #$d9
+                        TBA
                         staa $41d9
-                        ldaa #$da
-                        coma
+                        ldab #$da
+                        TBA
                         staa $41da
-                        ldaa #$db
-                        coma
+                        ldab #$db
+                        TBA
                         staa $41db
-                        ldaa #$dc
-                        coma
+                        ldab #$dc
+                        TBA
                         staa $41dc
-                        ldaa #$dd
-                        coma
+                        ldab #$dd
+                        TBA
                         staa $41dd
-                        ldaa #$de
-                        coma
+                        ldab #$de
+                        TBA
                         staa $41de
-                        ldaa #$df
-                        coma
+                        ldab #$df
+                        TBA
                         staa $41df
-                        ldaa #$e0
-                        coma
+                        ldab #$e0
+                        TBA
                         staa $41e0
-                        ldaa #$e1
-                        coma
+                        ldab #$e1
+                        TBA
                         staa $41e1
-                        ldaa #$e2
-                        coma
+                        ldab #$e2
+                        TBA
                         staa $41e2
-                        ldaa #$e3
-                        coma
+                        ldab #$e3
+                        TBA
                         staa $41e3
-                        ldaa #$e4
-                        coma
+                        ldab #$e4
+                        TBA
                         staa $41e4
-                        ldaa #$e5
-                        coma
+                        ldab #$e5
+                        TBA
                         staa $41e5
-                        ldaa #$e6
-                        coma
+                        ldab #$e6
+                        TBA
                         staa $41e6
-                        ldaa #$e7
-                        coma
+                        ldab #$e7
+                        TBA
                         staa $41e7
-                        ldaa #$e8
-                        coma
+                        ldab #$e8
+                        TBA
                         staa $41e8
-                        ldaa #$e9
-                        coma
+                        ldab #$e9
+                        TBA
                         staa $41e9
-                        ldaa #$ea
-                        coma
+                        ldab #$ea
+                        TBA
                         staa $41ea
-                        ldaa #$eb
-                        coma
+                        ldab #$eb
+                        TBA
                         staa $41eb
-                        ldaa #$ec
-                        coma
+                        ldab #$ec
+                        TBA
                         staa $41ec
-                        ldaa #$ed
-                        coma
+                        ldab #$ed
+                        TBA
                         staa $41ed
-                        ldaa #$ee
-                        coma
+                        ldab #$ee
+                        TBA
                         staa $41ee
-                        ldaa #$ef
-                        coma
+                        ldab #$ef
+                        TBA
                         staa $41ef
-                        ldaa #$f0
-                        coma
+                        ldab #$f0
+                        TBA
                         staa $41f0
-                        ldaa #$f1
-                        coma
+                        ldab #$f1
+                        TBA
                         staa $41f1
-                        ldaa #$f2
-                        coma
+                        ldab #$f2
+                        TBA
                         staa $41f2
-                        ldaa #$f3
-                        coma
+                        ldab #$f3
+                        TBA
                         staa $41f3
-                        ldaa #$f4
-                        coma
+                        ldab #$f4
+                        TBA
                         staa $41f4
-                        ldaa #$f5
-                        coma
+                        ldab #$f5
+                        TBA
                         staa $41f5
-                        ldaa #$f6
-                        coma
+                        ldab #$f6
+                        TBA
                         staa $41f6
-                        ldaa #$f7
-                        coma
+                        ldab #$f7
+                        TBA
                         staa $41f7
-                        ldaa #$f8
-                        coma
+                        ldab #$f8
+                        TBA
                         staa $41f8
-                        ldaa #$f9
-                        coma
+                        ldab #$f9
+                        TBA
                         staa $41f9
-                        ldaa #$fa
-                        coma
+                        ldab #$fa
+                        TBA
                         staa $41fa
-                        ldaa #$fb
-                        coma
+                        ldab #$fb
+                        TBA
                         staa $41fb
-                        ldaa #$fc
-                        coma
+                        ldab #$fc
+                        TBA
                         staa $41fc
-                        ldaa #$fd
-                        coma
+                        ldab #$fd
+                        TBA
                         staa $41fd
-                        ldaa #$fe
-                        coma
+                        ldab #$fe
+                        TBA
                         staa $41fe
-                        ldaa #$ff
-                        coma
+                        ldab #$ff
+                        TBA
                         staa $41ff
+                        ldab #$00
+                        comb
+                        stab $4200
+                        ldab #$01
+                        comb
+                        stab $4201
+                        ldab #$02
+                        comb
+                        stab $4202
+                        ldab #$03
+                        comb
+                        stab $4203
+                        ldab #$04
+                        comb
+                        stab $4204
+                        ldab #$05
+                        comb
+                        stab $4205
+                        ldab #$06
+                        comb
+                        stab $4206
+                        ldab #$07
+                        comb
+                        stab $4207
+                        ldab #$08
+                        comb
+                        stab $4208
+                        ldab #$09
+                        comb
+                        stab $4209
+                        ldab #$0a
+                        comb
+                        stab $420a
+                        ldab #$0b
+                        comb
+                        stab $420b
+                        ldab #$0c
+                        comb
+                        stab $420c
+                        ldab #$0d
+                        comb
+                        stab $420d
+                        ldab #$0e
+                        comb
+                        stab $420e
+                        ldab #$0f
+                        comb
+                        stab $420f
+                        ldab #$10
+                        comb
+                        stab $4210
+                        ldab #$11
+                        comb
+                        stab $4211
+                        ldab #$12
+                        comb
+                        stab $4212
+                        ldab #$13
+                        comb
+                        stab $4213
+                        ldab #$14
+                        comb
+                        stab $4214
+                        ldab #$15
+                        comb
+                        stab $4215
+                        ldab #$16
+                        comb
+                        stab $4216
+                        ldab #$17
+                        comb
+                        stab $4217
+                        ldab #$18
+                        comb
+                        stab $4218
+                        ldab #$19
+                        comb
+                        stab $4219
+                        ldab #$1a
+                        comb
+                        stab $421a
+                        ldab #$1b
+                        comb
+                        stab $421b
+                        ldab #$1c
+                        comb
+                        stab $421c
+                        ldab #$1d
+                        comb
+                        stab $421d
+                        ldab #$1e
+                        comb
+                        stab $421e
+                        ldab #$1f
+                        comb
+                        stab $421f
+                        ldab #$20
+                        comb
+                        stab $4220
+                        ldab #$21
+                        comb
+                        stab $4221
+                        ldab #$22
+                        comb
+                        stab $4222
+                        ldab #$23
+                        comb
+                        stab $4223
+                        ldab #$24
+                        comb
+                        stab $4224
+                        ldab #$25
+                        comb
+                        stab $4225
+                        ldab #$26
+                        comb
+                        stab $4226
+                        ldab #$27
+                        comb
+                        stab $4227
+                        ldab #$28
+                        comb
+                        stab $4228
+                        ldab #$29
+                        comb
+                        stab $4229
+                        ldab #$2a
+                        comb
+                        stab $422a
+                        ldab #$2b
+                        comb
+                        stab $422b
+                        ldab #$2c
+                        comb
+                        stab $422c
+                        ldab #$2d
+                        comb
+                        stab $422d
+                        ldab #$2e
+                        comb
+                        stab $422e
+                        ldab #$2f
+                        comb
+                        stab $422f
+                        ldab #$30
+                        comb
+                        stab $4230
+                        ldab #$31
+                        comb
+                        stab $4231
+                        ldab #$32
+                        comb
+                        stab $4232
+                        ldab #$33
+                        comb
+                        stab $4233
+                        ldab #$34
+                        comb
+                        stab $4234
+                        ldab #$35
+                        comb
+                        stab $4235
+                        ldab #$36
+                        comb
+                        stab $4236
+                        ldab #$37
+                        comb
+                        stab $4237
+                        ldab #$38
+                        comb
+                        stab $4238
+                        ldab #$39
+                        comb
+                        stab $4239
+                        ldab #$3a
+                        comb
+                        stab $423a
+                        ldab #$3b
+                        comb
+                        stab $423b
+                        ldab #$3c
+                        comb
+                        stab $423c
+                        ldab #$3d
+                        comb
+                        stab $423d
+                        ldab #$3e
+                        comb
+                        stab $423e
+                        ldab #$3f
+                        comb
+                        stab $423f
+                        ldab #$40
+                        comb
+                        stab $4240
+                        ldab #$41
+                        comb
+                        stab $4241
+                        ldab #$42
+                        comb
+                        stab $4242
+                        ldab #$43
+                        comb
+                        stab $4243
+                        ldab #$44
+                        comb
+                        stab $4244
+                        ldab #$45
+                        comb
+                        stab $4245
+                        ldab #$46
+                        comb
+                        stab $4246
+                        ldab #$47
+                        comb
+                        stab $4247
+                        ldab #$48
+                        comb
+                        stab $4248
+                        ldab #$49
+                        comb
+                        stab $4249
+                        ldab #$4a
+                        comb
+                        stab $424a
+                        ldab #$4b
+                        comb
+                        stab $424b
+                        ldab #$4c
+                        comb
+                        stab $424c
+                        ldab #$4d
+                        comb
+                        stab $424d
+                        ldab #$4e
+                        comb
+                        stab $424e
+                        ldab #$4f
+                        comb
+                        stab $424f
+                        ldab #$50
+                        comb
+                        stab $4250
+                        ldab #$51
+                        comb
+                        stab $4251
+                        ldab #$52
+                        comb
+                        stab $4252
+                        ldab #$53
+                        comb
+                        stab $4253
+                        ldab #$54
+                        comb
+                        stab $4254
+                        ldab #$55
+                        comb
+                        stab $4255
+                        ldab #$56
+                        comb
+                        stab $4256
+                        ldab #$57
+                        comb
+                        stab $4257
+                        ldab #$58
+                        comb
+                        stab $4258
+                        ldab #$59
+                        comb
+                        stab $4259
+                        ldab #$5a
+                        comb
+                        stab $425a
+                        ldab #$5b
+                        comb
+                        stab $425b
+                        ldab #$5c
+                        comb
+                        stab $425c
+                        ldab #$5d
+                        comb
+                        stab $425d
+                        ldab #$5e
+                        comb
+                        stab $425e
+                        ldab #$5f
+                        comb
+                        stab $425f
+                        ldab #$60
+                        comb
+                        stab $4260
+                        ldab #$61
+                        comb
+                        stab $4261
+                        ldab #$62
+                        comb
+                        stab $4262
+                        ldab #$63
+                        comb
+                        stab $4263
+                        ldab #$64
+                        comb
+                        stab $4264
+                        ldab #$65
+                        comb
+                        stab $4265
+                        ldab #$66
+                        comb
+                        stab $4266
+                        ldab #$67
+                        comb
+                        stab $4267
+                        ldab #$68
+                        comb
+                        stab $4268
+                        ldab #$69
+                        comb
+                        stab $4269
+                        ldab #$6a
+                        comb
+                        stab $426a
+                        ldab #$6b
+                        comb
+                        stab $426b
+                        ldab #$6c
+                        comb
+                        stab $426c
+                        ldab #$6d
+                        comb
+                        stab $426d
+                        ldab #$6e
+                        comb
+                        stab $426e
+                        ldab #$6f
+                        comb
+                        stab $426f
+                        ldab #$70
+                        comb
+                        stab $4270
+                        ldab #$71
+                        comb
+                        stab $4271
+                        ldab #$72
+                        comb
+                        stab $4272
+                        ldab #$73
+                        comb
+                        stab $4273
+                        ldab #$74
+                        comb
+                        stab $4274
+                        ldab #$75
+                        comb
+                        stab $4275
+                        ldab #$76
+                        comb
+                        stab $4276
+                        ldab #$77
+                        comb
+                        stab $4277
+                        ldab #$78
+                        comb
+                        stab $4278
+                        ldab #$79
+                        comb
+                        stab $4279
+                        ldab #$7a
+                        comb
+                        stab $427a
+                        ldab #$7b
+                        comb
+                        stab $427b
+                        ldab #$7c
+                        comb
+                        stab $427c
+                        ldab #$7d
+                        comb
+                        stab $427d
+                        ldab #$7e
+                        comb
+                        stab $427e
+                        ldab #$7f
+                        comb
+                        stab $427f
+                        ldab #$80
+                        comb
+                        stab $4280
+                        ldab #$81
+                        comb
+                        stab $4281
+                        ldab #$82
+                        comb
+                        stab $4282
+                        ldab #$83
+                        comb
+                        stab $4283
+                        ldab #$84
+                        comb
+                        stab $4284
+                        ldab #$85
+                        comb
+                        stab $4285
+                        ldab #$86
+                        comb
+                        stab $4286
+                        ldab #$87
+                        comb
+                        stab $4287
+                        ldab #$88
+                        comb
+                        stab $4288
+                        ldab #$89
+                        comb
+                        stab $4289
+                        ldab #$8a
+                        comb
+                        stab $428a
+                        ldab #$8b
+                        comb
+                        stab $428b
+                        ldab #$8c
+                        comb
+                        stab $428c
+                        ldab #$8d
+                        comb
+                        stab $428d
+                        ldab #$8e
+                        comb
+                        stab $428e
+                        ldab #$8f
+                        comb
+                        stab $428f
+                        ldab #$90
+                        comb
+                        stab $4290
+                        ldab #$91
+                        comb
+                        stab $4291
+                        ldab #$92
+                        comb
+                        stab $4292
+                        ldab #$93
+                        comb
+                        stab $4293
+                        ldab #$94
+                        comb
+                        stab $4294
+                        ldab #$95
+                        comb
+                        stab $4295
+                        ldab #$96
+                        comb
+                        stab $4296
+                        ldab #$97
+                        comb
+                        stab $4297
+                        ldab #$98
+                        comb
+                        stab $4298
+                        ldab #$99
+                        comb
+                        stab $4299
+                        ldab #$9a
+                        comb
+                        stab $429a
+                        ldab #$9b
+                        comb
+                        stab $429b
+                        ldab #$9c
+                        comb
+                        stab $429c
+                        ldab #$9d
+                        comb
+                        stab $429d
+                        ldab #$9e
+                        comb
+                        stab $429e
+                        ldab #$9f
+                        comb
+                        stab $429f
+                        ldab #$a0
+                        comb
+                        stab $42a0
+                        ldab #$a1
+                        comb
+                        stab $42a1
+                        ldab #$a2
+                        comb
+                        stab $42a2
+                        ldab #$a3
+                        comb
+                        stab $42a3
+                        ldab #$a4
+                        comb
+                        stab $42a4
+                        ldab #$a5
+                        comb
+                        stab $42a5
+                        ldab #$a6
+                        comb
+                        stab $42a6
+                        ldab #$a7
+                        comb
+                        stab $42a7
+                        ldab #$a8
+                        comb
+                        stab $42a8
+                        ldab #$a9
+                        comb
+                        stab $42a9
+                        ldab #$aa
+                        comb
+                        stab $42aa
+                        ldab #$ab
+                        comb
+                        stab $42ab
+                        ldab #$ac
+                        comb
+                        stab $42ac
+                        ldab #$ad
+                        comb
+                        stab $42ad
+                        ldab #$ae
+                        comb
+                        stab $42ae
+                        ldab #$af
+                        comb
+                        stab $42af
+                        ldab #$b0
+                        comb
+                        stab $42b0
+                        ldab #$b1
+                        comb
+                        stab $42b1
+                        ldab #$b2
+                        comb
+                        stab $42b2
+                        ldab #$b3
+                        comb
+                        stab $42b3
+                        ldab #$b4
+                        comb
+                        stab $42b4
+                        ldab #$b5
+                        comb
+                        stab $42b5
+                        ldab #$b6
+                        comb
+                        stab $42b6
+                        ldab #$b7
+                        comb
+                        stab $42b7
+                        ldab #$b8
+                        comb
+                        stab $42b8
+                        ldab #$b9
+                        comb
+                        stab $42b9
+                        ldab #$ba
+                        comb
+                        stab $42ba
+                        ldab #$bb
+                        comb
+                        stab $42bb
+                        ldab #$bc
+                        comb
+                        stab $42bc
+                        ldab #$bd
+                        comb
+                        stab $42bd
+                        ldab #$be
+                        comb
+                        stab $42be
+                        ldab #$bf
+                        comb
+                        stab $42bf
+                        ldab #$c0
+                        comb
+                        stab $42c0
+                        ldab #$c1
+                        comb
+                        stab $42c1
+                        ldab #$c2
+                        comb
+                        stab $42c2
+                        ldab #$c3
+                        comb
+                        stab $42c3
+                        ldab #$c4
+                        comb
+                        stab $42c4
+                        ldab #$c5
+                        comb
+                        stab $42c5
+                        ldab #$c6
+                        comb
+                        stab $42c6
+                        ldab #$c7
+                        comb
+                        stab $42c7
+                        ldab #$c8
+                        comb
+                        stab $42c8
+                        ldab #$c9
+                        comb
+                        stab $42c9
+                        ldab #$ca
+                        comb
+                        stab $42ca
+                        ldab #$cb
+                        comb
+                        stab $42cb
+                        ldab #$cc
+                        comb
+                        stab $42cc
+                        ldab #$cd
+                        comb
+                        stab $42cd
+                        ldab #$ce
+                        comb
+                        stab $42ce
+                        ldab #$cf
+                        comb
+                        stab $42cf
+                        ldab #$d0
+                        comb
+                        stab $42d0
+                        ldab #$d1
+                        comb
+                        stab $42d1
+                        ldab #$d2
+                        comb
+                        stab $42d2
+                        ldab #$d3
+                        comb
+                        stab $42d3
+                        ldab #$d4
+                        comb
+                        stab $42d4
+                        ldab #$d5
+                        comb
+                        stab $42d5
+                        ldab #$d6
+                        comb
+                        stab $42d6
+                        ldab #$d7
+                        comb
+                        stab $42d7
+                        ldab #$d8
+                        comb
+                        stab $42d8
+                        ldab #$d9
+                        comb
+                        stab $42d9
+                        ldab #$da
+                        comb
+                        stab $42da
+                        ldab #$db
+                        comb
+                        stab $42db
+                        ldab #$dc
+                        comb
+                        stab $42dc
+                        ldab #$dd
+                        comb
+                        stab $42dd
+                        ldab #$de
+                        comb
+                        stab $42de
+                        ldab #$df
+                        comb
+                        stab $42df
+                        ldab #$e0
+                        comb
+                        stab $42e0
+                        ldab #$e1
+                        comb
+                        stab $42e1
+                        ldab #$e2
+                        comb
+                        stab $42e2
+                        ldab #$e3
+                        comb
+                        stab $42e3
+                        ldab #$e4
+                        comb
+                        stab $42e4
+                        ldab #$e5
+                        comb
+                        stab $42e5
+                        ldab #$e6
+                        comb
+                        stab $42e6
+                        ldab #$e7
+                        comb
+                        stab $42e7
+                        ldab #$e8
+                        comb
+                        stab $42e8
+                        ldab #$e9
+                        comb
+                        stab $42e9
+                        ldab #$ea
+                        comb
+                        stab $42ea
+                        ldab #$eb
+                        comb
+                        stab $42eb
+                        ldab #$ec
+                        comb
+                        stab $42ec
+                        ldab #$ed
+                        comb
+                        stab $42ed
+                        ldab #$ee
+                        comb
+                        stab $42ee
+                        ldab #$ef
+                        comb
+                        stab $42ef
+                        ldab #$f0
+                        comb
+                        stab $42f0
+                        ldab #$f1
+                        comb
+                        stab $42f1
+                        ldab #$f2
+                        comb
+                        stab $42f2
+                        ldab #$f3
+                        comb
+                        stab $42f3
+                        ldab #$f4
+                        comb
+                        stab $42f4
+                        ldab #$f5
+                        comb
+                        stab $42f5
+                        ldab #$f6
+                        comb
+                        stab $42f6
+                        ldab #$f7
+                        comb
+                        stab $42f7
+                        ldab #$f8
+                        comb
+                        stab $42f8
+                        ldab #$f9
+                        comb
+                        stab $42f9
+                        ldab #$fa
+                        comb
+                        stab $42fa
+                        ldab #$fb
+                        comb
+                        stab $42fb
+                        ldab #$fc
+                        comb
+                        stab $42fc
+                        ldab #$fd
+                        comb
+                        stab $42fd
+                        ldab #$fe
+                        comb
+                        stab $42fe
+                        ldab #$ff
+                        comb
+                        stab $42ff
 jump            jmp     jump
                         org             $FFFE
                         FDB             PROG_START

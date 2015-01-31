@@ -3,778 +3,2058 @@ AS11, an absolute assembler for Motorola MCU's, version 1.2h
 
 2000                    PROG_START      EQU             $2000
 2000                                            org             PROG_START
-2000 86 00                                      ldaa #$00
-2002 43                                         coma
-2003 b7 40 00                                   staa $4000
-2006 86 01                                      ldaa #$01
-2008 43                                         coma
-2009 b7 40 01                                   staa $4001
-200c 86 02                                      ldaa #$02
-200e 43                                         coma
-200f b7 40 02                                   staa $4002
-2012 86 03                                      ldaa #$03
-2014 43                                         coma
-2015 b7 40 03                                   staa $4003
-2018 86 04                                      ldaa #$04
-201a 43                                         coma
-201b b7 40 04                                   staa $4004
-201e 86 05                                      ldaa #$05
-2020 43                                         coma
-2021 b7 40 05                                   staa $4005
-2024 86 06                                      ldaa #$06
-2026 43                                         coma
-2027 b7 40 06                                   staa $4006
-202a 86 07                                      ldaa #$07
-202c 43                                         coma
-202d b7 40 07                                   staa $4007
-2030 86 08                                      ldaa #$08
-2032 43                                         coma
-2033 b7 40 08                                   staa $4008
-2036 86 09                                      ldaa #$09
-2038 43                                         coma
-2039 b7 40 09                                   staa $4009
-203c 86 0a                                      ldaa #$0a
-203e 43                                         coma
-203f b7 40 0a                                   staa $400a
-2042 86 0b                                      ldaa #$0b
-2044 43                                         coma
-2045 b7 40 0b                                   staa $400b
-2048 86 0c                                      ldaa #$0c
-204a 43                                         coma
-204b b7 40 0c                                   staa $400c
-204e 86 0d                                      ldaa #$0d
-2050 43                                         coma
-2051 b7 40 0d                                   staa $400d
-2054 86 0e                                      ldaa #$0e
-2056 43                                         coma
-2057 b7 40 0e                                   staa $400e
-205a 86 0f                                      ldaa #$0f
-205c 43                                         coma
-205d b7 40 0f                                   staa $400f
-2060 86 10                                      ldaa #$10
-2062 43                                         coma
-2063 b7 40 10                                   staa $4010
-2066 86 11                                      ldaa #$11
-2068 43                                         coma
-2069 b7 40 11                                   staa $4011
-206c 86 12                                      ldaa #$12
-206e 43                                         coma
-206f b7 40 12                                   staa $4012
-2072 86 13                                      ldaa #$13
-2074 43                                         coma
-2075 b7 40 13                                   staa $4013
-2078 86 14                                      ldaa #$14
-207a 43                                         coma
-207b b7 40 14                                   staa $4014
-207e 86 15                                      ldaa #$15
-2080 43                                         coma
-2081 b7 40 15                                   staa $4015
-2084 86 16                                      ldaa #$16
-2086 43                                         coma
-2087 b7 40 16                                   staa $4016
-208a 86 17                                      ldaa #$17
-208c 43                                         coma
-208d b7 40 17                                   staa $4017
-2090 86 18                                      ldaa #$18
-2092 43                                         coma
-2093 b7 40 18                                   staa $4018
-2096 86 19                                      ldaa #$19
-2098 43                                         coma
-2099 b7 40 19                                   staa $4019
-209c 86 1a                                      ldaa #$1a
-209e 43                                         coma
-209f b7 40 1a                                   staa $401a
-20a2 86 1b                                      ldaa #$1b
-20a4 43                                         coma
-20a5 b7 40 1b                                   staa $401b
-20a8 86 1c                                      ldaa #$1c
-20aa 43                                         coma
-20ab b7 40 1c                                   staa $401c
-20ae 86 1d                                      ldaa #$1d
-20b0 43                                         coma
-20b1 b7 40 1d                                   staa $401d
-20b4 86 1e                                      ldaa #$1e
-20b6 43                                         coma
-20b7 b7 40 1e                                   staa $401e
-20ba 86 1f                                      ldaa #$1f
-20bc 43                                         coma
-20bd b7 40 1f                                   staa $401f
-20c0 86 20                                      ldaa #$20
-20c2 43                                         coma
-20c3 b7 40 20                                   staa $4020
-20c6 86 21                                      ldaa #$21
-20c8 43                                         coma
-20c9 b7 40 21                                   staa $4021
-20cc 86 22                                      ldaa #$22
-20ce 43                                         coma
-20cf b7 40 22                                   staa $4022
-20d2 86 23                                      ldaa #$23
-20d4 43                                         coma
-20d5 b7 40 23                                   staa $4023
-20d8 86 24                                      ldaa #$24
-20da 43                                         coma
-20db b7 40 24                                   staa $4024
-20de 86 25                                      ldaa #$25
-20e0 43                                         coma
-20e1 b7 40 25                                   staa $4025
-20e4 86 26                                      ldaa #$26
-20e6 43                                         coma
-20e7 b7 40 26                                   staa $4026
-20ea 86 27                                      ldaa #$27
-20ec 43                                         coma
-20ed b7 40 27                                   staa $4027
-20f0 86 28                                      ldaa #$28
-20f2 43                                         coma
-20f3 b7 40 28                                   staa $4028
-20f6 86 29                                      ldaa #$29
-20f8 43                                         coma
-20f9 b7 40 29                                   staa $4029
-20fc 86 2a                                      ldaa #$2a
-20fe 43                                         coma
-20ff b7 40 2a                                   staa $402a
-2102 86 2b                                      ldaa #$2b
-2104 43                                         coma
-2105 b7 40 2b                                   staa $402b
-2108 86 2c                                      ldaa #$2c
-210a 43                                         coma
-210b b7 40 2c                                   staa $402c
-210e 86 2d                                      ldaa #$2d
-2110 43                                         coma
-2111 b7 40 2d                                   staa $402d
-2114 86 2e                                      ldaa #$2e
-2116 43                                         coma
-2117 b7 40 2e                                   staa $402e
-211a 86 2f                                      ldaa #$2f
-211c 43                                         coma
-211d b7 40 2f                                   staa $402f
-2120 86 30                                      ldaa #$30
-2122 43                                         coma
-2123 b7 40 30                                   staa $4030
-2126 86 31                                      ldaa #$31
-2128 43                                         coma
-2129 b7 40 31                                   staa $4031
-212c 86 32                                      ldaa #$32
-212e 43                                         coma
-212f b7 40 32                                   staa $4032
-2132 86 33                                      ldaa #$33
-2134 43                                         coma
-2135 b7 40 33                                   staa $4033
-2138 86 34                                      ldaa #$34
-213a 43                                         coma
-213b b7 40 34                                   staa $4034
-213e 86 35                                      ldaa #$35
-2140 43                                         coma
-2141 b7 40 35                                   staa $4035
-2144 86 36                                      ldaa #$36
-2146 43                                         coma
-2147 b7 40 36                                   staa $4036
-214a 86 37                                      ldaa #$37
-214c 43                                         coma
-214d b7 40 37                                   staa $4037
-2150 86 38                                      ldaa #$38
-2152 43                                         coma
-2153 b7 40 38                                   staa $4038
-2156 86 39                                      ldaa #$39
-2158 43                                         coma
-2159 b7 40 39                                   staa $4039
-215c 86 3a                                      ldaa #$3a
-215e 43                                         coma
-215f b7 40 3a                                   staa $403a
-2162 86 3b                                      ldaa #$3b
-2164 43                                         coma
-2165 b7 40 3b                                   staa $403b
-2168 86 3c                                      ldaa #$3c
-216a 43                                         coma
-216b b7 40 3c                                   staa $403c
-216e 86 3d                                      ldaa #$3d
-2170 43                                         coma
-2171 b7 40 3d                                   staa $403d
-2174 86 3e                                      ldaa #$3e
-2176 43                                         coma
-2177 b7 40 3e                                   staa $403e
-217a 86 3f                                      ldaa #$3f
-217c 43                                         coma
-217d b7 40 3f                                   staa $403f
-2180 86 40                                      ldaa #$40
-2182 43                                         coma
-2183 b7 40 40                                   staa $4040
-2186 86 41                                      ldaa #$41
-2188 43                                         coma
-2189 b7 40 41                                   staa $4041
-218c 86 42                                      ldaa #$42
-218e 43                                         coma
-218f b7 40 42                                   staa $4042
-2192 86 43                                      ldaa #$43
-2194 43                                         coma
-2195 b7 40 43                                   staa $4043
-2198 86 44                                      ldaa #$44
-219a 43                                         coma
-219b b7 40 44                                   staa $4044
-219e 86 45                                      ldaa #$45
-21a0 43                                         coma
-21a1 b7 40 45                                   staa $4045
-21a4 86 46                                      ldaa #$46
-21a6 43                                         coma
-21a7 b7 40 46                                   staa $4046
-21aa 86 47                                      ldaa #$47
-21ac 43                                         coma
-21ad b7 40 47                                   staa $4047
-21b0 86 48                                      ldaa #$48
-21b2 43                                         coma
-21b3 b7 40 48                                   staa $4048
-21b6 86 49                                      ldaa #$49
-21b8 43                                         coma
-21b9 b7 40 49                                   staa $4049
-21bc 86 4a                                      ldaa #$4a
-21be 43                                         coma
-21bf b7 40 4a                                   staa $404a
-21c2 86 4b                                      ldaa #$4b
-21c4 43                                         coma
-21c5 b7 40 4b                                   staa $404b
-21c8 86 4c                                      ldaa #$4c
-21ca 43                                         coma
-21cb b7 40 4c                                   staa $404c
-21ce 86 4d                                      ldaa #$4d
-21d0 43                                         coma
-21d1 b7 40 4d                                   staa $404d
-21d4 86 4e                                      ldaa #$4e
-21d6 43                                         coma
-21d7 b7 40 4e                                   staa $404e
-21da 86 4f                                      ldaa #$4f
-21dc 43                                         coma
-21dd b7 40 4f                                   staa $404f
-21e0 86 50                                      ldaa #$50
-21e2 43                                         coma
-21e3 b7 40 50                                   staa $4050
-21e6 86 51                                      ldaa #$51
-21e8 43                                         coma
-21e9 b7 40 51                                   staa $4051
-21ec 86 52                                      ldaa #$52
-21ee 43                                         coma
-21ef b7 40 52                                   staa $4052
-21f2 86 53                                      ldaa #$53
-21f4 43                                         coma
-21f5 b7 40 53                                   staa $4053
-21f8 86 54                                      ldaa #$54
-21fa 43                                         coma
-21fb b7 40 54                                   staa $4054
-21fe 86 55                                      ldaa #$55
-2200 43                                         coma
-2201 b7 40 55                                   staa $4055
-2204 86 56                                      ldaa #$56
-2206 43                                         coma
-2207 b7 40 56                                   staa $4056
-220a 86 57                                      ldaa #$57
-220c 43                                         coma
-220d b7 40 57                                   staa $4057
-2210 86 58                                      ldaa #$58
-2212 43                                         coma
-2213 b7 40 58                                   staa $4058
-2216 86 59                                      ldaa #$59
-2218 43                                         coma
-2219 b7 40 59                                   staa $4059
-221c 86 5a                                      ldaa #$5a
-221e 43                                         coma
-221f b7 40 5a                                   staa $405a
-2222 86 5b                                      ldaa #$5b
-2224 43                                         coma
-2225 b7 40 5b                                   staa $405b
-2228 86 5c                                      ldaa #$5c
-222a 43                                         coma
-222b b7 40 5c                                   staa $405c
-222e 86 5d                                      ldaa #$5d
-2230 43                                         coma
-2231 b7 40 5d                                   staa $405d
-2234 86 5e                                      ldaa #$5e
-2236 43                                         coma
-2237 b7 40 5e                                   staa $405e
-223a 86 5f                                      ldaa #$5f
-223c 43                                         coma
-223d b7 40 5f                                   staa $405f
-2240 86 60                                      ldaa #$60
-2242 43                                         coma
-2243 b7 40 60                                   staa $4060
-2246 86 61                                      ldaa #$61
-2248 43                                         coma
-2249 b7 40 61                                   staa $4061
-224c 86 62                                      ldaa #$62
-224e 43                                         coma
-224f b7 40 62                                   staa $4062
-2252 86 63                                      ldaa #$63
-2254 43                                         coma
-2255 b7 40 63                                   staa $4063
-2258 86 64                                      ldaa #$64
-225a 43                                         coma
-225b b7 40 64                                   staa $4064
-225e 86 65                                      ldaa #$65
-2260 43                                         coma
-2261 b7 40 65                                   staa $4065
-2264 86 66                                      ldaa #$66
-2266 43                                         coma
-2267 b7 40 66                                   staa $4066
-226a 86 67                                      ldaa #$67
-226c 43                                         coma
-226d b7 40 67                                   staa $4067
-2270 86 68                                      ldaa #$68
-2272 43                                         coma
-2273 b7 40 68                                   staa $4068
-2276 86 69                                      ldaa #$69
-2278 43                                         coma
-2279 b7 40 69                                   staa $4069
-227c 86 6a                                      ldaa #$6a
-227e 43                                         coma
-227f b7 40 6a                                   staa $406a
-2282 86 6b                                      ldaa #$6b
-2284 43                                         coma
-2285 b7 40 6b                                   staa $406b
-2288 86 6c                                      ldaa #$6c
-228a 43                                         coma
-228b b7 40 6c                                   staa $406c
-228e 86 6d                                      ldaa #$6d
-2290 43                                         coma
-2291 b7 40 6d                                   staa $406d
-2294 86 6e                                      ldaa #$6e
-2296 43                                         coma
-2297 b7 40 6e                                   staa $406e
-229a 86 6f                                      ldaa #$6f
-229c 43                                         coma
-229d b7 40 6f                                   staa $406f
-22a0 86 70                                      ldaa #$70
-22a2 43                                         coma
-22a3 b7 40 70                                   staa $4070
-22a6 86 71                                      ldaa #$71
-22a8 43                                         coma
-22a9 b7 40 71                                   staa $4071
-22ac 86 72                                      ldaa #$72
-22ae 43                                         coma
-22af b7 40 72                                   staa $4072
-22b2 86 73                                      ldaa #$73
-22b4 43                                         coma
-22b5 b7 40 73                                   staa $4073
-22b8 86 74                                      ldaa #$74
-22ba 43                                         coma
-22bb b7 40 74                                   staa $4074
-22be 86 75                                      ldaa #$75
-22c0 43                                         coma
-22c1 b7 40 75                                   staa $4075
-22c4 86 76                                      ldaa #$76
-22c6 43                                         coma
-22c7 b7 40 76                                   staa $4076
-22ca 86 77                                      ldaa #$77
-22cc 43                                         coma
-22cd b7 40 77                                   staa $4077
-22d0 86 78                                      ldaa #$78
-22d2 43                                         coma
-22d3 b7 40 78                                   staa $4078
-22d6 86 79                                      ldaa #$79
-22d8 43                                         coma
-22d9 b7 40 79                                   staa $4079
-22dc 86 7a                                      ldaa #$7a
-22de 43                                         coma
-22df b7 40 7a                                   staa $407a
-22e2 86 7b                                      ldaa #$7b
-22e4 43                                         coma
-22e5 b7 40 7b                                   staa $407b
-22e8 86 7c                                      ldaa #$7c
-22ea 43                                         coma
-22eb b7 40 7c                                   staa $407c
-22ee 86 7d                                      ldaa #$7d
-22f0 43                                         coma
-22f1 b7 40 7d                                   staa $407d
-22f4 86 7e                                      ldaa #$7e
-22f6 43                                         coma
-22f7 b7 40 7e                                   staa $407e
-22fa 86 7f                                      ldaa #$7f
-22fc 43                                         coma
-22fd b7 40 7f                                   staa $407f
-2300 86 80                                      ldaa #$80
-2302 43                                         coma
-2303 b7 40 80                                   staa $4080
-2306 86 81                                      ldaa #$81
-2308 43                                         coma
-2309 b7 40 81                                   staa $4081
-230c 86 82                                      ldaa #$82
-230e 43                                         coma
-230f b7 40 82                                   staa $4082
-2312 86 83                                      ldaa #$83
-2314 43                                         coma
-2315 b7 40 83                                   staa $4083
-2318 86 84                                      ldaa #$84
-231a 43                                         coma
-231b b7 40 84                                   staa $4084
-231e 86 85                                      ldaa #$85
-2320 43                                         coma
-2321 b7 40 85                                   staa $4085
-2324 86 86                                      ldaa #$86
-2326 43                                         coma
-2327 b7 40 86                                   staa $4086
-232a 86 87                                      ldaa #$87
-232c 43                                         coma
-232d b7 40 87                                   staa $4087
-2330 86 88                                      ldaa #$88
-2332 43                                         coma
-2333 b7 40 88                                   staa $4088
-2336 86 89                                      ldaa #$89
-2338 43                                         coma
-2339 b7 40 89                                   staa $4089
-233c 86 8a                                      ldaa #$8a
-233e 43                                         coma
-233f b7 40 8a                                   staa $408a
-2342 86 8b                                      ldaa #$8b
-2344 43                                         coma
-2345 b7 40 8b                                   staa $408b
-2348 86 8c                                      ldaa #$8c
-234a 43                                         coma
-234b b7 40 8c                                   staa $408c
-234e 86 8d                                      ldaa #$8d
-2350 43                                         coma
-2351 b7 40 8d                                   staa $408d
-2354 86 8e                                      ldaa #$8e
-2356 43                                         coma
-2357 b7 40 8e                                   staa $408e
-235a 86 8f                                      ldaa #$8f
-235c 43                                         coma
-235d b7 40 8f                                   staa $408f
-2360 86 90                                      ldaa #$90
-2362 43                                         coma
-2363 b7 40 90                                   staa $4090
-2366 86 91                                      ldaa #$91
-2368 43                                         coma
-2369 b7 40 91                                   staa $4091
-236c 86 92                                      ldaa #$92
-236e 43                                         coma
-236f b7 40 92                                   staa $4092
-2372 86 93                                      ldaa #$93
-2374 43                                         coma
-2375 b7 40 93                                   staa $4093
-2378 86 94                                      ldaa #$94
-237a 43                                         coma
-237b b7 40 94                                   staa $4094
-237e 86 95                                      ldaa #$95
-2380 43                                         coma
-2381 b7 40 95                                   staa $4095
-2384 86 96                                      ldaa #$96
-2386 43                                         coma
-2387 b7 40 96                                   staa $4096
-238a 86 97                                      ldaa #$97
-238c 43                                         coma
-238d b7 40 97                                   staa $4097
-2390 86 98                                      ldaa #$98
-2392 43                                         coma
-2393 b7 40 98                                   staa $4098
-2396 86 99                                      ldaa #$99
-2398 43                                         coma
-2399 b7 40 99                                   staa $4099
-239c 86 9a                                      ldaa #$9a
-239e 43                                         coma
-239f b7 40 9a                                   staa $409a
-23a2 86 9b                                      ldaa #$9b
-23a4 43                                         coma
-23a5 b7 40 9b                                   staa $409b
-23a8 86 9c                                      ldaa #$9c
-23aa 43                                         coma
-23ab b7 40 9c                                   staa $409c
-23ae 86 9d                                      ldaa #$9d
-23b0 43                                         coma
-23b1 b7 40 9d                                   staa $409d
-23b4 86 9e                                      ldaa #$9e
-23b6 43                                         coma
-23b7 b7 40 9e                                   staa $409e
-23ba 86 9f                                      ldaa #$9f
-23bc 43                                         coma
-23bd b7 40 9f                                   staa $409f
-23c0 86 a0                                      ldaa #$a0
-23c2 43                                         coma
-23c3 b7 40 a0                                   staa $40a0
-23c6 86 a1                                      ldaa #$a1
-23c8 43                                         coma
-23c9 b7 40 a1                                   staa $40a1
-23cc 86 a2                                      ldaa #$a2
-23ce 43                                         coma
-23cf b7 40 a2                                   staa $40a2
-23d2 86 a3                                      ldaa #$a3
-23d4 43                                         coma
-23d5 b7 40 a3                                   staa $40a3
-23d8 86 a4                                      ldaa #$a4
-23da 43                                         coma
-23db b7 40 a4                                   staa $40a4
-23de 86 a5                                      ldaa #$a5
-23e0 43                                         coma
-23e1 b7 40 a5                                   staa $40a5
-23e4 86 a6                                      ldaa #$a6
-23e6 43                                         coma
-23e7 b7 40 a6                                   staa $40a6
-23ea 86 a7                                      ldaa #$a7
-23ec 43                                         coma
-23ed b7 40 a7                                   staa $40a7
-23f0 86 a8                                      ldaa #$a8
-23f2 43                                         coma
-23f3 b7 40 a8                                   staa $40a8
-23f6 86 a9                                      ldaa #$a9
-23f8 43                                         coma
-23f9 b7 40 a9                                   staa $40a9
-23fc 86 aa                                      ldaa #$aa
-23fe 43                                         coma
-23ff b7 40 aa                                   staa $40aa
-2402 86 ab                                      ldaa #$ab
-2404 43                                         coma
-2405 b7 40 ab                                   staa $40ab
-2408 86 ac                                      ldaa #$ac
-240a 43                                         coma
-240b b7 40 ac                                   staa $40ac
-240e 86 ad                                      ldaa #$ad
-2410 43                                         coma
-2411 b7 40 ad                                   staa $40ad
-2414 86 ae                                      ldaa #$ae
-2416 43                                         coma
-2417 b7 40 ae                                   staa $40ae
-241a 86 af                                      ldaa #$af
-241c 43                                         coma
-241d b7 40 af                                   staa $40af
-2420 86 b0                                      ldaa #$b0
-2422 43                                         coma
-2423 b7 40 b0                                   staa $40b0
-2426 86 b1                                      ldaa #$b1
-2428 43                                         coma
-2429 b7 40 b1                                   staa $40b1
-242c 86 b2                                      ldaa #$b2
-242e 43                                         coma
-242f b7 40 b2                                   staa $40b2
-2432 86 b3                                      ldaa #$b3
-2434 43                                         coma
-2435 b7 40 b3                                   staa $40b3
-2438 86 b4                                      ldaa #$b4
-243a 43                                         coma
-243b b7 40 b4                                   staa $40b4
-243e 86 b5                                      ldaa #$b5
-2440 43                                         coma
-2441 b7 40 b5                                   staa $40b5
-2444 86 b6                                      ldaa #$b6
-2446 43                                         coma
-2447 b7 40 b6                                   staa $40b6
-244a 86 b7                                      ldaa #$b7
-244c 43                                         coma
-244d b7 40 b7                                   staa $40b7
-2450 86 b8                                      ldaa #$b8
-2452 43                                         coma
-2453 b7 40 b8                                   staa $40b8
-2456 86 b9                                      ldaa #$b9
-2458 43                                         coma
-2459 b7 40 b9                                   staa $40b9
-245c 86 ba                                      ldaa #$ba
-245e 43                                         coma
-245f b7 40 ba                                   staa $40ba
-2462 86 bb                                      ldaa #$bb
-2464 43                                         coma
-2465 b7 40 bb                                   staa $40bb
-2468 86 bc                                      ldaa #$bc
-246a 43                                         coma
-246b b7 40 bc                                   staa $40bc
-246e 86 bd                                      ldaa #$bd
-2470 43                                         coma
-2471 b7 40 bd                                   staa $40bd
-2474 86 be                                      ldaa #$be
-2476 43                                         coma
-2477 b7 40 be                                   staa $40be
-247a 86 bf                                      ldaa #$bf
-247c 43                                         coma
-247d b7 40 bf                                   staa $40bf
-2480 86 c0                                      ldaa #$c0
-2482 43                                         coma
-2483 b7 40 c0                                   staa $40c0
-2486 86 c1                                      ldaa #$c1
-2488 43                                         coma
-2489 b7 40 c1                                   staa $40c1
-248c 86 c2                                      ldaa #$c2
-248e 43                                         coma
-248f b7 40 c2                                   staa $40c2
-2492 86 c3                                      ldaa #$c3
-2494 43                                         coma
-2495 b7 40 c3                                   staa $40c3
-2498 86 c4                                      ldaa #$c4
-249a 43                                         coma
-249b b7 40 c4                                   staa $40c4
-249e 86 c5                                      ldaa #$c5
-24a0 43                                         coma
-24a1 b7 40 c5                                   staa $40c5
-24a4 86 c6                                      ldaa #$c6
-24a6 43                                         coma
-24a7 b7 40 c6                                   staa $40c6
-24aa 86 c7                                      ldaa #$c7
-24ac 43                                         coma
-24ad b7 40 c7                                   staa $40c7
-24b0 86 c8                                      ldaa #$c8
-24b2 43                                         coma
-24b3 b7 40 c8                                   staa $40c8
-24b6 86 c9                                      ldaa #$c9
-24b8 43                                         coma
-24b9 b7 40 c9                                   staa $40c9
-24bc 86 ca                                      ldaa #$ca
-24be 43                                         coma
-24bf b7 40 ca                                   staa $40ca
-24c2 86 cb                                      ldaa #$cb
-24c4 43                                         coma
-24c5 b7 40 cb                                   staa $40cb
-24c8 86 cc                                      ldaa #$cc
-24ca 43                                         coma
-24cb b7 40 cc                                   staa $40cc
-24ce 86 cd                                      ldaa #$cd
-24d0 43                                         coma
-24d1 b7 40 cd                                   staa $40cd
-24d4 86 ce                                      ldaa #$ce
-24d6 43                                         coma
-24d7 b7 40 ce                                   staa $40ce
-24da 86 cf                                      ldaa #$cf
-24dc 43                                         coma
-24dd b7 40 cf                                   staa $40cf
-24e0 86 d0                                      ldaa #$d0
-24e2 43                                         coma
-24e3 b7 40 d0                                   staa $40d0
-24e6 86 d1                                      ldaa #$d1
-24e8 43                                         coma
-24e9 b7 40 d1                                   staa $40d1
-24ec 86 d2                                      ldaa #$d2
-24ee 43                                         coma
-24ef b7 40 d2                                   staa $40d2
-24f2 86 d3                                      ldaa #$d3
-24f4 43                                         coma
-24f5 b7 40 d3                                   staa $40d3
-24f8 86 d4                                      ldaa #$d4
-24fa 43                                         coma
-24fb b7 40 d4                                   staa $40d4
-24fe 86 d5                                      ldaa #$d5
-2500 43                                         coma
-2501 b7 40 d5                                   staa $40d5
-2504 86 d6                                      ldaa #$d6
-2506 43                                         coma
-2507 b7 40 d6                                   staa $40d6
-250a 86 d7                                      ldaa #$d7
-250c 43                                         coma
-250d b7 40 d7                                   staa $40d7
-2510 86 d8                                      ldaa #$d8
-2512 43                                         coma
-2513 b7 40 d8                                   staa $40d8
-2516 86 d9                                      ldaa #$d9
-2518 43                                         coma
-2519 b7 40 d9                                   staa $40d9
-251c 86 da                                      ldaa #$da
-251e 43                                         coma
-251f b7 40 da                                   staa $40da
-2522 86 db                                      ldaa #$db
-2524 43                                         coma
-2525 b7 40 db                                   staa $40db
-2528 86 dc                                      ldaa #$dc
-252a 43                                         coma
-252b b7 40 dc                                   staa $40dc
-252e 86 dd                                      ldaa #$dd
-2530 43                                         coma
-2531 b7 40 dd                                   staa $40dd
-2534 86 de                                      ldaa #$de
-2536 43                                         coma
-2537 b7 40 de                                   staa $40de
-253a 86 df                                      ldaa #$df
-253c 43                                         coma
-253d b7 40 df                                   staa $40df
-2540 86 e0                                      ldaa #$e0
-2542 43                                         coma
-2543 b7 40 e0                                   staa $40e0
-2546 86 e1                                      ldaa #$e1
-2548 43                                         coma
-2549 b7 40 e1                                   staa $40e1
-254c 86 e2                                      ldaa #$e2
-254e 43                                         coma
-254f b7 40 e2                                   staa $40e2
-2552 86 e3                                      ldaa #$e3
-2554 43                                         coma
-2555 b7 40 e3                                   staa $40e3
-2558 86 e4                                      ldaa #$e4
-255a 43                                         coma
-255b b7 40 e4                                   staa $40e4
-255e 86 e5                                      ldaa #$e5
-2560 43                                         coma
-2561 b7 40 e5                                   staa $40e5
-2564 86 e6                                      ldaa #$e6
-2566 43                                         coma
-2567 b7 40 e6                                   staa $40e6
-256a 86 e7                                      ldaa #$e7
-256c 43                                         coma
-256d b7 40 e7                                   staa $40e7
-2570 86 e8                                      ldaa #$e8
-2572 43                                         coma
-2573 b7 40 e8                                   staa $40e8
-2576 86 e9                                      ldaa #$e9
-2578 43                                         coma
-2579 b7 40 e9                                   staa $40e9
-257c 86 ea                                      ldaa #$ea
-257e 43                                         coma
-257f b7 40 ea                                   staa $40ea
-2582 86 eb                                      ldaa #$eb
-2584 43                                         coma
-2585 b7 40 eb                                   staa $40eb
-2588 86 ec                                      ldaa #$ec
-258a 43                                         coma
-258b b7 40 ec                                   staa $40ec
-258e 86 ed                                      ldaa #$ed
-2590 43                                         coma
-2591 b7 40 ed                                   staa $40ed
-2594 86 ee                                      ldaa #$ee
-2596 43                                         coma
-2597 b7 40 ee                                   staa $40ee
-259a 86 ef                                      ldaa #$ef
-259c 43                                         coma
-259d b7 40 ef                                   staa $40ef
-25a0 86 f0                                      ldaa #$f0
-25a2 43                                         coma
-25a3 b7 40 f0                                   staa $40f0
-25a6 86 f1                                      ldaa #$f1
-25a8 43                                         coma
-25a9 b7 40 f1                                   staa $40f1
-25ac 86 f2                                      ldaa #$f2
-25ae 43                                         coma
-25af b7 40 f2                                   staa $40f2
-25b2 86 f3                                      ldaa #$f3
-25b4 43                                         coma
-25b5 b7 40 f3                                   staa $40f3
-25b8 86 f4                                      ldaa #$f4
-25ba 43                                         coma
-25bb b7 40 f4                                   staa $40f4
-25be 86 f5                                      ldaa #$f5
-25c0 43                                         coma
-25c1 b7 40 f5                                   staa $40f5
-25c4 86 f6                                      ldaa #$f6
-25c6 43                                         coma
-25c7 b7 40 f6                                   staa $40f6
-25ca 86 f7                                      ldaa #$f7
-25cc 43                                         coma
-25cd b7 40 f7                                   staa $40f7
-25d0 86 f8                                      ldaa #$f8
-25d2 43                                         coma
-25d3 b7 40 f8                                   staa $40f8
-25d6 86 f9                                      ldaa #$f9
-25d8 43                                         coma
-25d9 b7 40 f9                                   staa $40f9
-25dc 86 fa                                      ldaa #$fa
-25de 43                                         coma
-25df b7 40 fa                                   staa $40fa
-25e2 86 fb                                      ldaa #$fb
-25e4 43                                         coma
-25e5 b7 40 fb                                   staa $40fb
-25e8 86 fc                                      ldaa #$fc
-25ea 43                                         coma
-25eb b7 40 fc                                   staa $40fc
-25ee 86 fd                                      ldaa #$fd
-25f0 43                                         coma
-25f1 b7 40 fd                                   staa $40fd
-25f4 86 fe                                      ldaa #$fe
-25f6 43                                         coma
-25f7 b7 40 fe                                   staa $40fe
-25fa 86 ff                                      ldaa #$ff
-25fc 43                                         coma
-25fd b7 40 ff                                   staa $40ff
-2600 7e 26 00           jump            jmp     jump
+2000 c6 00                                      ldab #$00
+2002 f7 40 00                                   stab $4000
+2005 c6 01                                      ldab #$01
+2007 f7 40 01                                   stab $4001
+200a c6 02                                      ldab #$02
+200c f7 40 02                                   stab $4002
+200f c6 03                                      ldab #$03
+2011 f7 40 03                                   stab $4003
+2014 c6 04                                      ldab #$04
+2016 f7 40 04                                   stab $4004
+2019 c6 05                                      ldab #$05
+201b f7 40 05                                   stab $4005
+201e c6 06                                      ldab #$06
+2020 f7 40 06                                   stab $4006
+2023 c6 07                                      ldab #$07
+2025 f7 40 07                                   stab $4007
+2028 c6 08                                      ldab #$08
+202a f7 40 08                                   stab $4008
+202d c6 09                                      ldab #$09
+202f f7 40 09                                   stab $4009
+2032 c6 0a                                      ldab #$0a
+2034 f7 40 0a                                   stab $400a
+2037 c6 0b                                      ldab #$0b
+2039 f7 40 0b                                   stab $400b
+203c c6 0c                                      ldab #$0c
+203e f7 40 0c                                   stab $400c
+2041 c6 0d                                      ldab #$0d
+2043 f7 40 0d                                   stab $400d
+2046 c6 0e                                      ldab #$0e
+2048 f7 40 0e                                   stab $400e
+204b c6 0f                                      ldab #$0f
+204d f7 40 0f                                   stab $400f
+2050 c6 10                                      ldab #$10
+2052 f7 40 10                                   stab $4010
+2055 c6 11                                      ldab #$11
+2057 f7 40 11                                   stab $4011
+205a c6 12                                      ldab #$12
+205c f7 40 12                                   stab $4012
+205f c6 13                                      ldab #$13
+2061 f7 40 13                                   stab $4013
+2064 c6 14                                      ldab #$14
+2066 f7 40 14                                   stab $4014
+2069 c6 15                                      ldab #$15
+206b f7 40 15                                   stab $4015
+206e c6 16                                      ldab #$16
+2070 f7 40 16                                   stab $4016
+2073 c6 17                                      ldab #$17
+2075 f7 40 17                                   stab $4017
+2078 c6 18                                      ldab #$18
+207a f7 40 18                                   stab $4018
+207d c6 19                                      ldab #$19
+207f f7 40 19                                   stab $4019
+2082 c6 1a                                      ldab #$1a
+2084 f7 40 1a                                   stab $401a
+2087 c6 1b                                      ldab #$1b
+2089 f7 40 1b                                   stab $401b
+208c c6 1c                                      ldab #$1c
+208e f7 40 1c                                   stab $401c
+2091 c6 1d                                      ldab #$1d
+2093 f7 40 1d                                   stab $401d
+2096 c6 1e                                      ldab #$1e
+2098 f7 40 1e                                   stab $401e
+209b c6 1f                                      ldab #$1f
+209d f7 40 1f                                   stab $401f
+20a0 c6 20                                      ldab #$20
+20a2 f7 40 20                                   stab $4020
+20a5 c6 21                                      ldab #$21
+20a7 f7 40 21                                   stab $4021
+20aa c6 22                                      ldab #$22
+20ac f7 40 22                                   stab $4022
+20af c6 23                                      ldab #$23
+20b1 f7 40 23                                   stab $4023
+20b4 c6 24                                      ldab #$24
+20b6 f7 40 24                                   stab $4024
+20b9 c6 25                                      ldab #$25
+20bb f7 40 25                                   stab $4025
+20be c6 26                                      ldab #$26
+20c0 f7 40 26                                   stab $4026
+20c3 c6 27                                      ldab #$27
+20c5 f7 40 27                                   stab $4027
+20c8 c6 28                                      ldab #$28
+20ca f7 40 28                                   stab $4028
+20cd c6 29                                      ldab #$29
+20cf f7 40 29                                   stab $4029
+20d2 c6 2a                                      ldab #$2a
+20d4 f7 40 2a                                   stab $402a
+20d7 c6 2b                                      ldab #$2b
+20d9 f7 40 2b                                   stab $402b
+20dc c6 2c                                      ldab #$2c
+20de f7 40 2c                                   stab $402c
+20e1 c6 2d                                      ldab #$2d
+20e3 f7 40 2d                                   stab $402d
+20e6 c6 2e                                      ldab #$2e
+20e8 f7 40 2e                                   stab $402e
+20eb c6 2f                                      ldab #$2f
+20ed f7 40 2f                                   stab $402f
+20f0 c6 30                                      ldab #$30
+20f2 f7 40 30                                   stab $4030
+20f5 c6 31                                      ldab #$31
+20f7 f7 40 31                                   stab $4031
+20fa c6 32                                      ldab #$32
+20fc f7 40 32                                   stab $4032
+20ff c6 33                                      ldab #$33
+2101 f7 40 33                                   stab $4033
+2104 c6 34                                      ldab #$34
+2106 f7 40 34                                   stab $4034
+2109 c6 35                                      ldab #$35
+210b f7 40 35                                   stab $4035
+210e c6 36                                      ldab #$36
+2110 f7 40 36                                   stab $4036
+2113 c6 37                                      ldab #$37
+2115 f7 40 37                                   stab $4037
+2118 c6 38                                      ldab #$38
+211a f7 40 38                                   stab $4038
+211d c6 39                                      ldab #$39
+211f f7 40 39                                   stab $4039
+2122 c6 3a                                      ldab #$3a
+2124 f7 40 3a                                   stab $403a
+2127 c6 3b                                      ldab #$3b
+2129 f7 40 3b                                   stab $403b
+212c c6 3c                                      ldab #$3c
+212e f7 40 3c                                   stab $403c
+2131 c6 3d                                      ldab #$3d
+2133 f7 40 3d                                   stab $403d
+2136 c6 3e                                      ldab #$3e
+2138 f7 40 3e                                   stab $403e
+213b c6 3f                                      ldab #$3f
+213d f7 40 3f                                   stab $403f
+2140 c6 40                                      ldab #$40
+2142 f7 40 40                                   stab $4040
+2145 c6 41                                      ldab #$41
+2147 f7 40 41                                   stab $4041
+214a c6 42                                      ldab #$42
+214c f7 40 42                                   stab $4042
+214f c6 43                                      ldab #$43
+2151 f7 40 43                                   stab $4043
+2154 c6 44                                      ldab #$44
+2156 f7 40 44                                   stab $4044
+2159 c6 45                                      ldab #$45
+215b f7 40 45                                   stab $4045
+215e c6 46                                      ldab #$46
+2160 f7 40 46                                   stab $4046
+2163 c6 47                                      ldab #$47
+2165 f7 40 47                                   stab $4047
+2168 c6 48                                      ldab #$48
+216a f7 40 48                                   stab $4048
+216d c6 49                                      ldab #$49
+216f f7 40 49                                   stab $4049
+2172 c6 4a                                      ldab #$4a
+2174 f7 40 4a                                   stab $404a
+2177 c6 4b                                      ldab #$4b
+2179 f7 40 4b                                   stab $404b
+217c c6 4c                                      ldab #$4c
+217e f7 40 4c                                   stab $404c
+2181 c6 4d                                      ldab #$4d
+2183 f7 40 4d                                   stab $404d
+2186 c6 4e                                      ldab #$4e
+2188 f7 40 4e                                   stab $404e
+218b c6 4f                                      ldab #$4f
+218d f7 40 4f                                   stab $404f
+2190 c6 50                                      ldab #$50
+2192 f7 40 50                                   stab $4050
+2195 c6 51                                      ldab #$51
+2197 f7 40 51                                   stab $4051
+219a c6 52                                      ldab #$52
+219c f7 40 52                                   stab $4052
+219f c6 53                                      ldab #$53
+21a1 f7 40 53                                   stab $4053
+21a4 c6 54                                      ldab #$54
+21a6 f7 40 54                                   stab $4054
+21a9 c6 55                                      ldab #$55
+21ab f7 40 55                                   stab $4055
+21ae c6 56                                      ldab #$56
+21b0 f7 40 56                                   stab $4056
+21b3 c6 57                                      ldab #$57
+21b5 f7 40 57                                   stab $4057
+21b8 c6 58                                      ldab #$58
+21ba f7 40 58                                   stab $4058
+21bd c6 59                                      ldab #$59
+21bf f7 40 59                                   stab $4059
+21c2 c6 5a                                      ldab #$5a
+21c4 f7 40 5a                                   stab $405a
+21c7 c6 5b                                      ldab #$5b
+21c9 f7 40 5b                                   stab $405b
+21cc c6 5c                                      ldab #$5c
+21ce f7 40 5c                                   stab $405c
+21d1 c6 5d                                      ldab #$5d
+21d3 f7 40 5d                                   stab $405d
+21d6 c6 5e                                      ldab #$5e
+21d8 f7 40 5e                                   stab $405e
+21db c6 5f                                      ldab #$5f
+21dd f7 40 5f                                   stab $405f
+21e0 c6 60                                      ldab #$60
+21e2 f7 40 60                                   stab $4060
+21e5 c6 61                                      ldab #$61
+21e7 f7 40 61                                   stab $4061
+21ea c6 62                                      ldab #$62
+21ec f7 40 62                                   stab $4062
+21ef c6 63                                      ldab #$63
+21f1 f7 40 63                                   stab $4063
+21f4 c6 64                                      ldab #$64
+21f6 f7 40 64                                   stab $4064
+21f9 c6 65                                      ldab #$65
+21fb f7 40 65                                   stab $4065
+21fe c6 66                                      ldab #$66
+2200 f7 40 66                                   stab $4066
+2203 c6 67                                      ldab #$67
+2205 f7 40 67                                   stab $4067
+2208 c6 68                                      ldab #$68
+220a f7 40 68                                   stab $4068
+220d c6 69                                      ldab #$69
+220f f7 40 69                                   stab $4069
+2212 c6 6a                                      ldab #$6a
+2214 f7 40 6a                                   stab $406a
+2217 c6 6b                                      ldab #$6b
+2219 f7 40 6b                                   stab $406b
+221c c6 6c                                      ldab #$6c
+221e f7 40 6c                                   stab $406c
+2221 c6 6d                                      ldab #$6d
+2223 f7 40 6d                                   stab $406d
+2226 c6 6e                                      ldab #$6e
+2228 f7 40 6e                                   stab $406e
+222b c6 6f                                      ldab #$6f
+222d f7 40 6f                                   stab $406f
+2230 c6 70                                      ldab #$70
+2232 f7 40 70                                   stab $4070
+2235 c6 71                                      ldab #$71
+2237 f7 40 71                                   stab $4071
+223a c6 72                                      ldab #$72
+223c f7 40 72                                   stab $4072
+223f c6 73                                      ldab #$73
+2241 f7 40 73                                   stab $4073
+2244 c6 74                                      ldab #$74
+2246 f7 40 74                                   stab $4074
+2249 c6 75                                      ldab #$75
+224b f7 40 75                                   stab $4075
+224e c6 76                                      ldab #$76
+2250 f7 40 76                                   stab $4076
+2253 c6 77                                      ldab #$77
+2255 f7 40 77                                   stab $4077
+2258 c6 78                                      ldab #$78
+225a f7 40 78                                   stab $4078
+225d c6 79                                      ldab #$79
+225f f7 40 79                                   stab $4079
+2262 c6 7a                                      ldab #$7a
+2264 f7 40 7a                                   stab $407a
+2267 c6 7b                                      ldab #$7b
+2269 f7 40 7b                                   stab $407b
+226c c6 7c                                      ldab #$7c
+226e f7 40 7c                                   stab $407c
+2271 c6 7d                                      ldab #$7d
+2273 f7 40 7d                                   stab $407d
+2276 c6 7e                                      ldab #$7e
+2278 f7 40 7e                                   stab $407e
+227b c6 7f                                      ldab #$7f
+227d f7 40 7f                                   stab $407f
+2280 c6 80                                      ldab #$80
+2282 f7 40 80                                   stab $4080
+2285 c6 81                                      ldab #$81
+2287 f7 40 81                                   stab $4081
+228a c6 82                                      ldab #$82
+228c f7 40 82                                   stab $4082
+228f c6 83                                      ldab #$83
+2291 f7 40 83                                   stab $4083
+2294 c6 84                                      ldab #$84
+2296 f7 40 84                                   stab $4084
+2299 c6 85                                      ldab #$85
+229b f7 40 85                                   stab $4085
+229e c6 86                                      ldab #$86
+22a0 f7 40 86                                   stab $4086
+22a3 c6 87                                      ldab #$87
+22a5 f7 40 87                                   stab $4087
+22a8 c6 88                                      ldab #$88
+22aa f7 40 88                                   stab $4088
+22ad c6 89                                      ldab #$89
+22af f7 40 89                                   stab $4089
+22b2 c6 8a                                      ldab #$8a
+22b4 f7 40 8a                                   stab $408a
+22b7 c6 8b                                      ldab #$8b
+22b9 f7 40 8b                                   stab $408b
+22bc c6 8c                                      ldab #$8c
+22be f7 40 8c                                   stab $408c
+22c1 c6 8d                                      ldab #$8d
+22c3 f7 40 8d                                   stab $408d
+22c6 c6 8e                                      ldab #$8e
+22c8 f7 40 8e                                   stab $408e
+22cb c6 8f                                      ldab #$8f
+22cd f7 40 8f                                   stab $408f
+22d0 c6 90                                      ldab #$90
+22d2 f7 40 90                                   stab $4090
+22d5 c6 91                                      ldab #$91
+22d7 f7 40 91                                   stab $4091
+22da c6 92                                      ldab #$92
+22dc f7 40 92                                   stab $4092
+22df c6 93                                      ldab #$93
+22e1 f7 40 93                                   stab $4093
+22e4 c6 94                                      ldab #$94
+22e6 f7 40 94                                   stab $4094
+22e9 c6 95                                      ldab #$95
+22eb f7 40 95                                   stab $4095
+22ee c6 96                                      ldab #$96
+22f0 f7 40 96                                   stab $4096
+22f3 c6 97                                      ldab #$97
+22f5 f7 40 97                                   stab $4097
+22f8 c6 98                                      ldab #$98
+22fa f7 40 98                                   stab $4098
+22fd c6 99                                      ldab #$99
+22ff f7 40 99                                   stab $4099
+2302 c6 9a                                      ldab #$9a
+2304 f7 40 9a                                   stab $409a
+2307 c6 9b                                      ldab #$9b
+2309 f7 40 9b                                   stab $409b
+230c c6 9c                                      ldab #$9c
+230e f7 40 9c                                   stab $409c
+2311 c6 9d                                      ldab #$9d
+2313 f7 40 9d                                   stab $409d
+2316 c6 9e                                      ldab #$9e
+2318 f7 40 9e                                   stab $409e
+231b c6 9f                                      ldab #$9f
+231d f7 40 9f                                   stab $409f
+2320 c6 a0                                      ldab #$a0
+2322 f7 40 a0                                   stab $40a0
+2325 c6 a1                                      ldab #$a1
+2327 f7 40 a1                                   stab $40a1
+232a c6 a2                                      ldab #$a2
+232c f7 40 a2                                   stab $40a2
+232f c6 a3                                      ldab #$a3
+2331 f7 40 a3                                   stab $40a3
+2334 c6 a4                                      ldab #$a4
+2336 f7 40 a4                                   stab $40a4
+2339 c6 a5                                      ldab #$a5
+233b f7 40 a5                                   stab $40a5
+233e c6 a6                                      ldab #$a6
+2340 f7 40 a6                                   stab $40a6
+2343 c6 a7                                      ldab #$a7
+2345 f7 40 a7                                   stab $40a7
+2348 c6 a8                                      ldab #$a8
+234a f7 40 a8                                   stab $40a8
+234d c6 a9                                      ldab #$a9
+234f f7 40 a9                                   stab $40a9
+2352 c6 aa                                      ldab #$aa
+2354 f7 40 aa                                   stab $40aa
+2357 c6 ab                                      ldab #$ab
+2359 f7 40 ab                                   stab $40ab
+235c c6 ac                                      ldab #$ac
+235e f7 40 ac                                   stab $40ac
+2361 c6 ad                                      ldab #$ad
+2363 f7 40 ad                                   stab $40ad
+2366 c6 ae                                      ldab #$ae
+2368 f7 40 ae                                   stab $40ae
+236b c6 af                                      ldab #$af
+236d f7 40 af                                   stab $40af
+2370 c6 b0                                      ldab #$b0
+2372 f7 40 b0                                   stab $40b0
+2375 c6 b1                                      ldab #$b1
+2377 f7 40 b1                                   stab $40b1
+237a c6 b2                                      ldab #$b2
+237c f7 40 b2                                   stab $40b2
+237f c6 b3                                      ldab #$b3
+2381 f7 40 b3                                   stab $40b3
+2384 c6 b4                                      ldab #$b4
+2386 f7 40 b4                                   stab $40b4
+2389 c6 b5                                      ldab #$b5
+238b f7 40 b5                                   stab $40b5
+238e c6 b6                                      ldab #$b6
+2390 f7 40 b6                                   stab $40b6
+2393 c6 b7                                      ldab #$b7
+2395 f7 40 b7                                   stab $40b7
+2398 c6 b8                                      ldab #$b8
+239a f7 40 b8                                   stab $40b8
+239d c6 b9                                      ldab #$b9
+239f f7 40 b9                                   stab $40b9
+23a2 c6 ba                                      ldab #$ba
+23a4 f7 40 ba                                   stab $40ba
+23a7 c6 bb                                      ldab #$bb
+23a9 f7 40 bb                                   stab $40bb
+23ac c6 bc                                      ldab #$bc
+23ae f7 40 bc                                   stab $40bc
+23b1 c6 bd                                      ldab #$bd
+23b3 f7 40 bd                                   stab $40bd
+23b6 c6 be                                      ldab #$be
+23b8 f7 40 be                                   stab $40be
+23bb c6 bf                                      ldab #$bf
+23bd f7 40 bf                                   stab $40bf
+23c0 c6 c0                                      ldab #$c0
+23c2 f7 40 c0                                   stab $40c0
+23c5 c6 c1                                      ldab #$c1
+23c7 f7 40 c1                                   stab $40c1
+23ca c6 c2                                      ldab #$c2
+23cc f7 40 c2                                   stab $40c2
+23cf c6 c3                                      ldab #$c3
+23d1 f7 40 c3                                   stab $40c3
+23d4 c6 c4                                      ldab #$c4
+23d6 f7 40 c4                                   stab $40c4
+23d9 c6 c5                                      ldab #$c5
+23db f7 40 c5                                   stab $40c5
+23de c6 c6                                      ldab #$c6
+23e0 f7 40 c6                                   stab $40c6
+23e3 c6 c7                                      ldab #$c7
+23e5 f7 40 c7                                   stab $40c7
+23e8 c6 c8                                      ldab #$c8
+23ea f7 40 c8                                   stab $40c8
+23ed c6 c9                                      ldab #$c9
+23ef f7 40 c9                                   stab $40c9
+23f2 c6 ca                                      ldab #$ca
+23f4 f7 40 ca                                   stab $40ca
+23f7 c6 cb                                      ldab #$cb
+23f9 f7 40 cb                                   stab $40cb
+23fc c6 cc                                      ldab #$cc
+23fe f7 40 cc                                   stab $40cc
+2401 c6 cd                                      ldab #$cd
+2403 f7 40 cd                                   stab $40cd
+2406 c6 ce                                      ldab #$ce
+2408 f7 40 ce                                   stab $40ce
+240b c6 cf                                      ldab #$cf
+240d f7 40 cf                                   stab $40cf
+2410 c6 d0                                      ldab #$d0
+2412 f7 40 d0                                   stab $40d0
+2415 c6 d1                                      ldab #$d1
+2417 f7 40 d1                                   stab $40d1
+241a c6 d2                                      ldab #$d2
+241c f7 40 d2                                   stab $40d2
+241f c6 d3                                      ldab #$d3
+2421 f7 40 d3                                   stab $40d3
+2424 c6 d4                                      ldab #$d4
+2426 f7 40 d4                                   stab $40d4
+2429 c6 d5                                      ldab #$d5
+242b f7 40 d5                                   stab $40d5
+242e c6 d6                                      ldab #$d6
+2430 f7 40 d6                                   stab $40d6
+2433 c6 d7                                      ldab #$d7
+2435 f7 40 d7                                   stab $40d7
+2438 c6 d8                                      ldab #$d8
+243a f7 40 d8                                   stab $40d8
+243d c6 d9                                      ldab #$d9
+243f f7 40 d9                                   stab $40d9
+2442 c6 da                                      ldab #$da
+2444 f7 40 da                                   stab $40da
+2447 c6 db                                      ldab #$db
+2449 f7 40 db                                   stab $40db
+244c c6 dc                                      ldab #$dc
+244e f7 40 dc                                   stab $40dc
+2451 c6 dd                                      ldab #$dd
+2453 f7 40 dd                                   stab $40dd
+2456 c6 de                                      ldab #$de
+2458 f7 40 de                                   stab $40de
+245b c6 df                                      ldab #$df
+245d f7 40 df                                   stab $40df
+2460 c6 e0                                      ldab #$e0
+2462 f7 40 e0                                   stab $40e0
+2465 c6 e1                                      ldab #$e1
+2467 f7 40 e1                                   stab $40e1
+246a c6 e2                                      ldab #$e2
+246c f7 40 e2                                   stab $40e2
+246f c6 e3                                      ldab #$e3
+2471 f7 40 e3                                   stab $40e3
+2474 c6 e4                                      ldab #$e4
+2476 f7 40 e4                                   stab $40e4
+2479 c6 e5                                      ldab #$e5
+247b f7 40 e5                                   stab $40e5
+247e c6 e6                                      ldab #$e6
+2480 f7 40 e6                                   stab $40e6
+2483 c6 e7                                      ldab #$e7
+2485 f7 40 e7                                   stab $40e7
+2488 c6 e8                                      ldab #$e8
+248a f7 40 e8                                   stab $40e8
+248d c6 e9                                      ldab #$e9
+248f f7 40 e9                                   stab $40e9
+2492 c6 ea                                      ldab #$ea
+2494 f7 40 ea                                   stab $40ea
+2497 c6 eb                                      ldab #$eb
+2499 f7 40 eb                                   stab $40eb
+249c c6 ec                                      ldab #$ec
+249e f7 40 ec                                   stab $40ec
+24a1 c6 ed                                      ldab #$ed
+24a3 f7 40 ed                                   stab $40ed
+24a6 c6 ee                                      ldab #$ee
+24a8 f7 40 ee                                   stab $40ee
+24ab c6 ef                                      ldab #$ef
+24ad f7 40 ef                                   stab $40ef
+24b0 c6 f0                                      ldab #$f0
+24b2 f7 40 f0                                   stab $40f0
+24b5 c6 f1                                      ldab #$f1
+24b7 f7 40 f1                                   stab $40f1
+24ba c6 f2                                      ldab #$f2
+24bc f7 40 f2                                   stab $40f2
+24bf c6 f3                                      ldab #$f3
+24c1 f7 40 f3                                   stab $40f3
+24c4 c6 f4                                      ldab #$f4
+24c6 f7 40 f4                                   stab $40f4
+24c9 c6 f5                                      ldab #$f5
+24cb f7 40 f5                                   stab $40f5
+24ce c6 f6                                      ldab #$f6
+24d0 f7 40 f6                                   stab $40f6
+24d3 c6 f7                                      ldab #$f7
+24d5 f7 40 f7                                   stab $40f7
+24d8 c6 f8                                      ldab #$f8
+24da f7 40 f8                                   stab $40f8
+24dd c6 f9                                      ldab #$f9
+24df f7 40 f9                                   stab $40f9
+24e2 c6 fa                                      ldab #$fa
+24e4 f7 40 fa                                   stab $40fa
+24e7 c6 fb                                      ldab #$fb
+24e9 f7 40 fb                                   stab $40fb
+24ec c6 fc                                      ldab #$fc
+24ee f7 40 fc                                   stab $40fc
+24f1 c6 fd                                      ldab #$fd
+24f3 f7 40 fd                                   stab $40fd
+24f6 c6 fe                                      ldab #$fe
+24f8 f7 40 fe                                   stab $40fe
+24fb c6 ff                                      ldab #$ff
+24fd f7 40 ff                                   stab $40ff
+2500 c6 00                                      ldab #$00
+2502 17                                         TBA
+2503 b7 41 00                                   staa $4100
+2506 c6 01                                      ldab #$01
+2508 17                                         TBA
+2509 b7 41 01                                   staa $4101
+250c c6 02                                      ldab #$02
+250e 17                                         TBA
+250f b7 41 02                                   staa $4102
+2512 c6 03                                      ldab #$03
+2514 17                                         TBA
+2515 b7 41 03                                   staa $4103
+2518 c6 04                                      ldab #$04
+251a 17                                         TBA
+251b b7 41 04                                   staa $4104
+251e c6 05                                      ldab #$05
+2520 17                                         TBA
+2521 b7 41 05                                   staa $4105
+2524 c6 06                                      ldab #$06
+2526 17                                         TBA
+2527 b7 41 06                                   staa $4106
+252a c6 07                                      ldab #$07
+252c 17                                         TBA
+252d b7 41 07                                   staa $4107
+2530 c6 08                                      ldab #$08
+2532 17                                         TBA
+2533 b7 41 08                                   staa $4108
+2536 c6 09                                      ldab #$09
+2538 17                                         TBA
+2539 b7 41 09                                   staa $4109
+253c c6 0a                                      ldab #$0a
+253e 17                                         TBA
+253f b7 41 0a                                   staa $410a
+2542 c6 0b                                      ldab #$0b
+2544 17                                         TBA
+2545 b7 41 0b                                   staa $410b
+2548 c6 0c                                      ldab #$0c
+254a 17                                         TBA
+254b b7 41 0c                                   staa $410c
+254e c6 0d                                      ldab #$0d
+2550 17                                         TBA
+2551 b7 41 0d                                   staa $410d
+2554 c6 0e                                      ldab #$0e
+2556 17                                         TBA
+2557 b7 41 0e                                   staa $410e
+255a c6 0f                                      ldab #$0f
+255c 17                                         TBA
+255d b7 41 0f                                   staa $410f
+2560 c6 10                                      ldab #$10
+2562 17                                         TBA
+2563 b7 41 10                                   staa $4110
+2566 c6 11                                      ldab #$11
+2568 17                                         TBA
+2569 b7 41 11                                   staa $4111
+256c c6 12                                      ldab #$12
+256e 17                                         TBA
+256f b7 41 12                                   staa $4112
+2572 c6 13                                      ldab #$13
+2574 17                                         TBA
+2575 b7 41 13                                   staa $4113
+2578 c6 14                                      ldab #$14
+257a 17                                         TBA
+257b b7 41 14                                   staa $4114
+257e c6 15                                      ldab #$15
+2580 17                                         TBA
+2581 b7 41 15                                   staa $4115
+2584 c6 16                                      ldab #$16
+2586 17                                         TBA
+2587 b7 41 16                                   staa $4116
+258a c6 17                                      ldab #$17
+258c 17                                         TBA
+258d b7 41 17                                   staa $4117
+2590 c6 18                                      ldab #$18
+2592 17                                         TBA
+2593 b7 41 18                                   staa $4118
+2596 c6 19                                      ldab #$19
+2598 17                                         TBA
+2599 b7 41 19                                   staa $4119
+259c c6 1a                                      ldab #$1a
+259e 17                                         TBA
+259f b7 41 1a                                   staa $411a
+25a2 c6 1b                                      ldab #$1b
+25a4 17                                         TBA
+25a5 b7 41 1b                                   staa $411b
+25a8 c6 1c                                      ldab #$1c
+25aa 17                                         TBA
+25ab b7 41 1c                                   staa $411c
+25ae c6 1d                                      ldab #$1d
+25b0 17                                         TBA
+25b1 b7 41 1d                                   staa $411d
+25b4 c6 1e                                      ldab #$1e
+25b6 17                                         TBA
+25b7 b7 41 1e                                   staa $411e
+25ba c6 1f                                      ldab #$1f
+25bc 17                                         TBA
+25bd b7 41 1f                                   staa $411f
+25c0 c6 20                                      ldab #$20
+25c2 17                                         TBA
+25c3 b7 41 20                                   staa $4120
+25c6 c6 21                                      ldab #$21
+25c8 17                                         TBA
+25c9 b7 41 21                                   staa $4121
+25cc c6 22                                      ldab #$22
+25ce 17                                         TBA
+25cf b7 41 22                                   staa $4122
+25d2 c6 23                                      ldab #$23
+25d4 17                                         TBA
+25d5 b7 41 23                                   staa $4123
+25d8 c6 24                                      ldab #$24
+25da 17                                         TBA
+25db b7 41 24                                   staa $4124
+25de c6 25                                      ldab #$25
+25e0 17                                         TBA
+25e1 b7 41 25                                   staa $4125
+25e4 c6 26                                      ldab #$26
+25e6 17                                         TBA
+25e7 b7 41 26                                   staa $4126
+25ea c6 27                                      ldab #$27
+25ec 17                                         TBA
+25ed b7 41 27                                   staa $4127
+25f0 c6 28                                      ldab #$28
+25f2 17                                         TBA
+25f3 b7 41 28                                   staa $4128
+25f6 c6 29                                      ldab #$29
+25f8 17                                         TBA
+25f9 b7 41 29                                   staa $4129
+25fc c6 2a                                      ldab #$2a
+25fe 17                                         TBA
+25ff b7 41 2a                                   staa $412a
+2602 c6 2b                                      ldab #$2b
+2604 17                                         TBA
+2605 b7 41 2b                                   staa $412b
+2608 c6 2c                                      ldab #$2c
+260a 17                                         TBA
+260b b7 41 2c                                   staa $412c
+260e c6 2d                                      ldab #$2d
+2610 17                                         TBA
+2611 b7 41 2d                                   staa $412d
+2614 c6 2e                                      ldab #$2e
+2616 17                                         TBA
+2617 b7 41 2e                                   staa $412e
+261a c6 2f                                      ldab #$2f
+261c 17                                         TBA
+261d b7 41 2f                                   staa $412f
+2620 c6 30                                      ldab #$30
+2622 17                                         TBA
+2623 b7 41 30                                   staa $4130
+2626 c6 31                                      ldab #$31
+2628 17                                         TBA
+2629 b7 41 31                                   staa $4131
+262c c6 32                                      ldab #$32
+262e 17                                         TBA
+262f b7 41 32                                   staa $4132
+2632 c6 33                                      ldab #$33
+2634 17                                         TBA
+2635 b7 41 33                                   staa $4133
+2638 c6 34                                      ldab #$34
+263a 17                                         TBA
+263b b7 41 34                                   staa $4134
+263e c6 35                                      ldab #$35
+2640 17                                         TBA
+2641 b7 41 35                                   staa $4135
+2644 c6 36                                      ldab #$36
+2646 17                                         TBA
+2647 b7 41 36                                   staa $4136
+264a c6 37                                      ldab #$37
+264c 17                                         TBA
+264d b7 41 37                                   staa $4137
+2650 c6 38                                      ldab #$38
+2652 17                                         TBA
+2653 b7 41 38                                   staa $4138
+2656 c6 39                                      ldab #$39
+2658 17                                         TBA
+2659 b7 41 39                                   staa $4139
+265c c6 3a                                      ldab #$3a
+265e 17                                         TBA
+265f b7 41 3a                                   staa $413a
+2662 c6 3b                                      ldab #$3b
+2664 17                                         TBA
+2665 b7 41 3b                                   staa $413b
+2668 c6 3c                                      ldab #$3c
+266a 17                                         TBA
+266b b7 41 3c                                   staa $413c
+266e c6 3d                                      ldab #$3d
+2670 17                                         TBA
+2671 b7 41 3d                                   staa $413d
+2674 c6 3e                                      ldab #$3e
+2676 17                                         TBA
+2677 b7 41 3e                                   staa $413e
+267a c6 3f                                      ldab #$3f
+267c 17                                         TBA
+267d b7 41 3f                                   staa $413f
+2680 c6 40                                      ldab #$40
+2682 17                                         TBA
+2683 b7 41 40                                   staa $4140
+2686 c6 41                                      ldab #$41
+2688 17                                         TBA
+2689 b7 41 41                                   staa $4141
+268c c6 42                                      ldab #$42
+268e 17                                         TBA
+268f b7 41 42                                   staa $4142
+2692 c6 43                                      ldab #$43
+2694 17                                         TBA
+2695 b7 41 43                                   staa $4143
+2698 c6 44                                      ldab #$44
+269a 17                                         TBA
+269b b7 41 44                                   staa $4144
+269e c6 45                                      ldab #$45
+26a0 17                                         TBA
+26a1 b7 41 45                                   staa $4145
+26a4 c6 46                                      ldab #$46
+26a6 17                                         TBA
+26a7 b7 41 46                                   staa $4146
+26aa c6 47                                      ldab #$47
+26ac 17                                         TBA
+26ad b7 41 47                                   staa $4147
+26b0 c6 48                                      ldab #$48
+26b2 17                                         TBA
+26b3 b7 41 48                                   staa $4148
+26b6 c6 49                                      ldab #$49
+26b8 17                                         TBA
+26b9 b7 41 49                                   staa $4149
+26bc c6 4a                                      ldab #$4a
+26be 17                                         TBA
+26bf b7 41 4a                                   staa $414a
+26c2 c6 4b                                      ldab #$4b
+26c4 17                                         TBA
+26c5 b7 41 4b                                   staa $414b
+26c8 c6 4c                                      ldab #$4c
+26ca 17                                         TBA
+26cb b7 41 4c                                   staa $414c
+26ce c6 4d                                      ldab #$4d
+26d0 17                                         TBA
+26d1 b7 41 4d                                   staa $414d
+26d4 c6 4e                                      ldab #$4e
+26d6 17                                         TBA
+26d7 b7 41 4e                                   staa $414e
+26da c6 4f                                      ldab #$4f
+26dc 17                                         TBA
+26dd b7 41 4f                                   staa $414f
+26e0 c6 50                                      ldab #$50
+26e2 17                                         TBA
+26e3 b7 41 50                                   staa $4150
+26e6 c6 51                                      ldab #$51
+26e8 17                                         TBA
+26e9 b7 41 51                                   staa $4151
+26ec c6 52                                      ldab #$52
+26ee 17                                         TBA
+26ef b7 41 52                                   staa $4152
+26f2 c6 53                                      ldab #$53
+26f4 17                                         TBA
+26f5 b7 41 53                                   staa $4153
+26f8 c6 54                                      ldab #$54
+26fa 17                                         TBA
+26fb b7 41 54                                   staa $4154
+26fe c6 55                                      ldab #$55
+2700 17                                         TBA
+2701 b7 41 55                                   staa $4155
+2704 c6 56                                      ldab #$56
+2706 17                                         TBA
+2707 b7 41 56                                   staa $4156
+270a c6 57                                      ldab #$57
+270c 17                                         TBA
+270d b7 41 57                                   staa $4157
+2710 c6 58                                      ldab #$58
+2712 17                                         TBA
+2713 b7 41 58                                   staa $4158
+2716 c6 59                                      ldab #$59
+2718 17                                         TBA
+2719 b7 41 59                                   staa $4159
+271c c6 5a                                      ldab #$5a
+271e 17                                         TBA
+271f b7 41 5a                                   staa $415a
+2722 c6 5b                                      ldab #$5b
+2724 17                                         TBA
+2725 b7 41 5b                                   staa $415b
+2728 c6 5c                                      ldab #$5c
+272a 17                                         TBA
+272b b7 41 5c                                   staa $415c
+272e c6 5d                                      ldab #$5d
+2730 17                                         TBA
+2731 b7 41 5d                                   staa $415d
+2734 c6 5e                                      ldab #$5e
+2736 17                                         TBA
+2737 b7 41 5e                                   staa $415e
+273a c6 5f                                      ldab #$5f
+273c 17                                         TBA
+273d b7 41 5f                                   staa $415f
+2740 c6 60                                      ldab #$60
+2742 17                                         TBA
+2743 b7 41 60                                   staa $4160
+2746 c6 61                                      ldab #$61
+2748 17                                         TBA
+2749 b7 41 61                                   staa $4161
+274c c6 62                                      ldab #$62
+274e 17                                         TBA
+274f b7 41 62                                   staa $4162
+2752 c6 63                                      ldab #$63
+2754 17                                         TBA
+2755 b7 41 63                                   staa $4163
+2758 c6 64                                      ldab #$64
+275a 17                                         TBA
+275b b7 41 64                                   staa $4164
+275e c6 65                                      ldab #$65
+2760 17                                         TBA
+2761 b7 41 65                                   staa $4165
+2764 c6 66                                      ldab #$66
+2766 17                                         TBA
+2767 b7 41 66                                   staa $4166
+276a c6 67                                      ldab #$67
+276c 17                                         TBA
+276d b7 41 67                                   staa $4167
+2770 c6 68                                      ldab #$68
+2772 17                                         TBA
+2773 b7 41 68                                   staa $4168
+2776 c6 69                                      ldab #$69
+2778 17                                         TBA
+2779 b7 41 69                                   staa $4169
+277c c6 6a                                      ldab #$6a
+277e 17                                         TBA
+277f b7 41 6a                                   staa $416a
+2782 c6 6b                                      ldab #$6b
+2784 17                                         TBA
+2785 b7 41 6b                                   staa $416b
+2788 c6 6c                                      ldab #$6c
+278a 17                                         TBA
+278b b7 41 6c                                   staa $416c
+278e c6 6d                                      ldab #$6d
+2790 17                                         TBA
+2791 b7 41 6d                                   staa $416d
+2794 c6 6e                                      ldab #$6e
+2796 17                                         TBA
+2797 b7 41 6e                                   staa $416e
+279a c6 6f                                      ldab #$6f
+279c 17                                         TBA
+279d b7 41 6f                                   staa $416f
+27a0 c6 70                                      ldab #$70
+27a2 17                                         TBA
+27a3 b7 41 70                                   staa $4170
+27a6 c6 71                                      ldab #$71
+27a8 17                                         TBA
+27a9 b7 41 71                                   staa $4171
+27ac c6 72                                      ldab #$72
+27ae 17                                         TBA
+27af b7 41 72                                   staa $4172
+27b2 c6 73                                      ldab #$73
+27b4 17                                         TBA
+27b5 b7 41 73                                   staa $4173
+27b8 c6 74                                      ldab #$74
+27ba 17                                         TBA
+27bb b7 41 74                                   staa $4174
+27be c6 75                                      ldab #$75
+27c0 17                                         TBA
+27c1 b7 41 75                                   staa $4175
+27c4 c6 76                                      ldab #$76
+27c6 17                                         TBA
+27c7 b7 41 76                                   staa $4176
+27ca c6 77                                      ldab #$77
+27cc 17                                         TBA
+27cd b7 41 77                                   staa $4177
+27d0 c6 78                                      ldab #$78
+27d2 17                                         TBA
+27d3 b7 41 78                                   staa $4178
+27d6 c6 79                                      ldab #$79
+27d8 17                                         TBA
+27d9 b7 41 79                                   staa $4179
+27dc c6 7a                                      ldab #$7a
+27de 17                                         TBA
+27df b7 41 7a                                   staa $417a
+27e2 c6 7b                                      ldab #$7b
+27e4 17                                         TBA
+27e5 b7 41 7b                                   staa $417b
+27e8 c6 7c                                      ldab #$7c
+27ea 17                                         TBA
+27eb b7 41 7c                                   staa $417c
+27ee c6 7d                                      ldab #$7d
+27f0 17                                         TBA
+27f1 b7 41 7d                                   staa $417d
+27f4 c6 7e                                      ldab #$7e
+27f6 17                                         TBA
+27f7 b7 41 7e                                   staa $417e
+27fa c6 7f                                      ldab #$7f
+27fc 17                                         TBA
+27fd b7 41 7f                                   staa $417f
+2800 c6 80                                      ldab #$80
+2802 17                                         TBA
+2803 b7 41 80                                   staa $4180
+2806 c6 81                                      ldab #$81
+2808 17                                         TBA
+2809 b7 41 81                                   staa $4181
+280c c6 82                                      ldab #$82
+280e 17                                         TBA
+280f b7 41 82                                   staa $4182
+2812 c6 83                                      ldab #$83
+2814 17                                         TBA
+2815 b7 41 83                                   staa $4183
+2818 c6 84                                      ldab #$84
+281a 17                                         TBA
+281b b7 41 84                                   staa $4184
+281e c6 85                                      ldab #$85
+2820 17                                         TBA
+2821 b7 41 85                                   staa $4185
+2824 c6 86                                      ldab #$86
+2826 17                                         TBA
+2827 b7 41 86                                   staa $4186
+282a c6 87                                      ldab #$87
+282c 17                                         TBA
+282d b7 41 87                                   staa $4187
+2830 c6 88                                      ldab #$88
+2832 17                                         TBA
+2833 b7 41 88                                   staa $4188
+2836 c6 89                                      ldab #$89
+2838 17                                         TBA
+2839 b7 41 89                                   staa $4189
+283c c6 8a                                      ldab #$8a
+283e 17                                         TBA
+283f b7 41 8a                                   staa $418a
+2842 c6 8b                                      ldab #$8b
+2844 17                                         TBA
+2845 b7 41 8b                                   staa $418b
+2848 c6 8c                                      ldab #$8c
+284a 17                                         TBA
+284b b7 41 8c                                   staa $418c
+284e c6 8d                                      ldab #$8d
+2850 17                                         TBA
+2851 b7 41 8d                                   staa $418d
+2854 c6 8e                                      ldab #$8e
+2856 17                                         TBA
+2857 b7 41 8e                                   staa $418e
+285a c6 8f                                      ldab #$8f
+285c 17                                         TBA
+285d b7 41 8f                                   staa $418f
+2860 c6 90                                      ldab #$90
+2862 17                                         TBA
+2863 b7 41 90                                   staa $4190
+2866 c6 91                                      ldab #$91
+2868 17                                         TBA
+2869 b7 41 91                                   staa $4191
+286c c6 92                                      ldab #$92
+286e 17                                         TBA
+286f b7 41 92                                   staa $4192
+2872 c6 93                                      ldab #$93
+2874 17                                         TBA
+2875 b7 41 93                                   staa $4193
+2878 c6 94                                      ldab #$94
+287a 17                                         TBA
+287b b7 41 94                                   staa $4194
+287e c6 95                                      ldab #$95
+2880 17                                         TBA
+2881 b7 41 95                                   staa $4195
+2884 c6 96                                      ldab #$96
+2886 17                                         TBA
+2887 b7 41 96                                   staa $4196
+288a c6 97                                      ldab #$97
+288c 17                                         TBA
+288d b7 41 97                                   staa $4197
+2890 c6 98                                      ldab #$98
+2892 17                                         TBA
+2893 b7 41 98                                   staa $4198
+2896 c6 99                                      ldab #$99
+2898 17                                         TBA
+2899 b7 41 99                                   staa $4199
+289c c6 9a                                      ldab #$9a
+289e 17                                         TBA
+289f b7 41 9a                                   staa $419a
+28a2 c6 9b                                      ldab #$9b
+28a4 17                                         TBA
+28a5 b7 41 9b                                   staa $419b
+28a8 c6 9c                                      ldab #$9c
+28aa 17                                         TBA
+28ab b7 41 9c                                   staa $419c
+28ae c6 9d                                      ldab #$9d
+28b0 17                                         TBA
+28b1 b7 41 9d                                   staa $419d
+28b4 c6 9e                                      ldab #$9e
+28b6 17                                         TBA
+28b7 b7 41 9e                                   staa $419e
+28ba c6 9f                                      ldab #$9f
+28bc 17                                         TBA
+28bd b7 41 9f                                   staa $419f
+28c0 c6 a0                                      ldab #$a0
+28c2 17                                         TBA
+28c3 b7 41 a0                                   staa $41a0
+28c6 c6 a1                                      ldab #$a1
+28c8 17                                         TBA
+28c9 b7 41 a1                                   staa $41a1
+28cc c6 a2                                      ldab #$a2
+28ce 17                                         TBA
+28cf b7 41 a2                                   staa $41a2
+28d2 c6 a3                                      ldab #$a3
+28d4 17                                         TBA
+28d5 b7 41 a3                                   staa $41a3
+28d8 c6 a4                                      ldab #$a4
+28da 17                                         TBA
+28db b7 41 a4                                   staa $41a4
+28de c6 a5                                      ldab #$a5
+28e0 17                                         TBA
+28e1 b7 41 a5                                   staa $41a5
+28e4 c6 a6                                      ldab #$a6
+28e6 17                                         TBA
+28e7 b7 41 a6                                   staa $41a6
+28ea c6 a7                                      ldab #$a7
+28ec 17                                         TBA
+28ed b7 41 a7                                   staa $41a7
+28f0 c6 a8                                      ldab #$a8
+28f2 17                                         TBA
+28f3 b7 41 a8                                   staa $41a8
+28f6 c6 a9                                      ldab #$a9
+28f8 17                                         TBA
+28f9 b7 41 a9                                   staa $41a9
+28fc c6 aa                                      ldab #$aa
+28fe 17                                         TBA
+28ff b7 41 aa                                   staa $41aa
+2902 c6 ab                                      ldab #$ab
+2904 17                                         TBA
+2905 b7 41 ab                                   staa $41ab
+2908 c6 ac                                      ldab #$ac
+290a 17                                         TBA
+290b b7 41 ac                                   staa $41ac
+290e c6 ad                                      ldab #$ad
+2910 17                                         TBA
+2911 b7 41 ad                                   staa $41ad
+2914 c6 ae                                      ldab #$ae
+2916 17                                         TBA
+2917 b7 41 ae                                   staa $41ae
+291a c6 af                                      ldab #$af
+291c 17                                         TBA
+291d b7 41 af                                   staa $41af
+2920 c6 b0                                      ldab #$b0
+2922 17                                         TBA
+2923 b7 41 b0                                   staa $41b0
+2926 c6 b1                                      ldab #$b1
+2928 17                                         TBA
+2929 b7 41 b1                                   staa $41b1
+292c c6 b2                                      ldab #$b2
+292e 17                                         TBA
+292f b7 41 b2                                   staa $41b2
+2932 c6 b3                                      ldab #$b3
+2934 17                                         TBA
+2935 b7 41 b3                                   staa $41b3
+2938 c6 b4                                      ldab #$b4
+293a 17                                         TBA
+293b b7 41 b4                                   staa $41b4
+293e c6 b5                                      ldab #$b5
+2940 17                                         TBA
+2941 b7 41 b5                                   staa $41b5
+2944 c6 b6                                      ldab #$b6
+2946 17                                         TBA
+2947 b7 41 b6                                   staa $41b6
+294a c6 b7                                      ldab #$b7
+294c 17                                         TBA
+294d b7 41 b7                                   staa $41b7
+2950 c6 b8                                      ldab #$b8
+2952 17                                         TBA
+2953 b7 41 b8                                   staa $41b8
+2956 c6 b9                                      ldab #$b9
+2958 17                                         TBA
+2959 b7 41 b9                                   staa $41b9
+295c c6 ba                                      ldab #$ba
+295e 17                                         TBA
+295f b7 41 ba                                   staa $41ba
+2962 c6 bb                                      ldab #$bb
+2964 17                                         TBA
+2965 b7 41 bb                                   staa $41bb
+2968 c6 bc                                      ldab #$bc
+296a 17                                         TBA
+296b b7 41 bc                                   staa $41bc
+296e c6 bd                                      ldab #$bd
+2970 17                                         TBA
+2971 b7 41 bd                                   staa $41bd
+2974 c6 be                                      ldab #$be
+2976 17                                         TBA
+2977 b7 41 be                                   staa $41be
+297a c6 bf                                      ldab #$bf
+297c 17                                         TBA
+297d b7 41 bf                                   staa $41bf
+2980 c6 c0                                      ldab #$c0
+2982 17                                         TBA
+2983 b7 41 c0                                   staa $41c0
+2986 c6 c1                                      ldab #$c1
+2988 17                                         TBA
+2989 b7 41 c1                                   staa $41c1
+298c c6 c2                                      ldab #$c2
+298e 17                                         TBA
+298f b7 41 c2                                   staa $41c2
+2992 c6 c3                                      ldab #$c3
+2994 17                                         TBA
+2995 b7 41 c3                                   staa $41c3
+2998 c6 c4                                      ldab #$c4
+299a 17                                         TBA
+299b b7 41 c4                                   staa $41c4
+299e c6 c5                                      ldab #$c5
+29a0 17                                         TBA
+29a1 b7 41 c5                                   staa $41c5
+29a4 c6 c6                                      ldab #$c6
+29a6 17                                         TBA
+29a7 b7 41 c6                                   staa $41c6
+29aa c6 c7                                      ldab #$c7
+29ac 17                                         TBA
+29ad b7 41 c7                                   staa $41c7
+29b0 c6 c8                                      ldab #$c8
+29b2 17                                         TBA
+29b3 b7 41 c8                                   staa $41c8
+29b6 c6 c9                                      ldab #$c9
+29b8 17                                         TBA
+29b9 b7 41 c9                                   staa $41c9
+29bc c6 ca                                      ldab #$ca
+29be 17                                         TBA
+29bf b7 41 ca                                   staa $41ca
+29c2 c6 cb                                      ldab #$cb
+29c4 17                                         TBA
+29c5 b7 41 cb                                   staa $41cb
+29c8 c6 cc                                      ldab #$cc
+29ca 17                                         TBA
+29cb b7 41 cc                                   staa $41cc
+29ce c6 cd                                      ldab #$cd
+29d0 17                                         TBA
+29d1 b7 41 cd                                   staa $41cd
+29d4 c6 ce                                      ldab #$ce
+29d6 17                                         TBA
+29d7 b7 41 ce                                   staa $41ce
+29da c6 cf                                      ldab #$cf
+29dc 17                                         TBA
+29dd b7 41 cf                                   staa $41cf
+29e0 c6 d0                                      ldab #$d0
+29e2 17                                         TBA
+29e3 b7 41 d0                                   staa $41d0
+29e6 c6 d1                                      ldab #$d1
+29e8 17                                         TBA
+29e9 b7 41 d1                                   staa $41d1
+29ec c6 d2                                      ldab #$d2
+29ee 17                                         TBA
+29ef b7 41 d2                                   staa $41d2
+29f2 c6 d3                                      ldab #$d3
+29f4 17                                         TBA
+29f5 b7 41 d3                                   staa $41d3
+29f8 c6 d4                                      ldab #$d4
+29fa 17                                         TBA
+29fb b7 41 d4                                   staa $41d4
+29fe c6 d5                                      ldab #$d5
+2a00 17                                         TBA
+2a01 b7 41 d5                                   staa $41d5
+2a04 c6 d6                                      ldab #$d6
+2a06 17                                         TBA
+2a07 b7 41 d6                                   staa $41d6
+2a0a c6 d7                                      ldab #$d7
+2a0c 17                                         TBA
+2a0d b7 41 d7                                   staa $41d7
+2a10 c6 d8                                      ldab #$d8
+2a12 17                                         TBA
+2a13 b7 41 d8                                   staa $41d8
+2a16 c6 d9                                      ldab #$d9
+2a18 17                                         TBA
+2a19 b7 41 d9                                   staa $41d9
+2a1c c6 da                                      ldab #$da
+2a1e 17                                         TBA
+2a1f b7 41 da                                   staa $41da
+2a22 c6 db                                      ldab #$db
+2a24 17                                         TBA
+2a25 b7 41 db                                   staa $41db
+2a28 c6 dc                                      ldab #$dc
+2a2a 17                                         TBA
+2a2b b7 41 dc                                   staa $41dc
+2a2e c6 dd                                      ldab #$dd
+2a30 17                                         TBA
+2a31 b7 41 dd                                   staa $41dd
+2a34 c6 de                                      ldab #$de
+2a36 17                                         TBA
+2a37 b7 41 de                                   staa $41de
+2a3a c6 df                                      ldab #$df
+2a3c 17                                         TBA
+2a3d b7 41 df                                   staa $41df
+2a40 c6 e0                                      ldab #$e0
+2a42 17                                         TBA
+2a43 b7 41 e0                                   staa $41e0
+2a46 c6 e1                                      ldab #$e1
+2a48 17                                         TBA
+2a49 b7 41 e1                                   staa $41e1
+2a4c c6 e2                                      ldab #$e2
+2a4e 17                                         TBA
+2a4f b7 41 e2                                   staa $41e2
+2a52 c6 e3                                      ldab #$e3
+2a54 17                                         TBA
+2a55 b7 41 e3                                   staa $41e3
+2a58 c6 e4                                      ldab #$e4
+2a5a 17                                         TBA
+2a5b b7 41 e4                                   staa $41e4
+2a5e c6 e5                                      ldab #$e5
+2a60 17                                         TBA
+2a61 b7 41 e5                                   staa $41e5
+2a64 c6 e6                                      ldab #$e6
+2a66 17                                         TBA
+2a67 b7 41 e6                                   staa $41e6
+2a6a c6 e7                                      ldab #$e7
+2a6c 17                                         TBA
+2a6d b7 41 e7                                   staa $41e7
+2a70 c6 e8                                      ldab #$e8
+2a72 17                                         TBA
+2a73 b7 41 e8                                   staa $41e8
+2a76 c6 e9                                      ldab #$e9
+2a78 17                                         TBA
+2a79 b7 41 e9                                   staa $41e9
+2a7c c6 ea                                      ldab #$ea
+2a7e 17                                         TBA
+2a7f b7 41 ea                                   staa $41ea
+2a82 c6 eb                                      ldab #$eb
+2a84 17                                         TBA
+2a85 b7 41 eb                                   staa $41eb
+2a88 c6 ec                                      ldab #$ec
+2a8a 17                                         TBA
+2a8b b7 41 ec                                   staa $41ec
+2a8e c6 ed                                      ldab #$ed
+2a90 17                                         TBA
+2a91 b7 41 ed                                   staa $41ed
+2a94 c6 ee                                      ldab #$ee
+2a96 17                                         TBA
+2a97 b7 41 ee                                   staa $41ee
+2a9a c6 ef                                      ldab #$ef
+2a9c 17                                         TBA
+2a9d b7 41 ef                                   staa $41ef
+2aa0 c6 f0                                      ldab #$f0
+2aa2 17                                         TBA
+2aa3 b7 41 f0                                   staa $41f0
+2aa6 c6 f1                                      ldab #$f1
+2aa8 17                                         TBA
+2aa9 b7 41 f1                                   staa $41f1
+2aac c6 f2                                      ldab #$f2
+2aae 17                                         TBA
+2aaf b7 41 f2                                   staa $41f2
+2ab2 c6 f3                                      ldab #$f3
+2ab4 17                                         TBA
+2ab5 b7 41 f3                                   staa $41f3
+2ab8 c6 f4                                      ldab #$f4
+2aba 17                                         TBA
+2abb b7 41 f4                                   staa $41f4
+2abe c6 f5                                      ldab #$f5
+2ac0 17                                         TBA
+2ac1 b7 41 f5                                   staa $41f5
+2ac4 c6 f6                                      ldab #$f6
+2ac6 17                                         TBA
+2ac7 b7 41 f6                                   staa $41f6
+2aca c6 f7                                      ldab #$f7
+2acc 17                                         TBA
+2acd b7 41 f7                                   staa $41f7
+2ad0 c6 f8                                      ldab #$f8
+2ad2 17                                         TBA
+2ad3 b7 41 f8                                   staa $41f8
+2ad6 c6 f9                                      ldab #$f9
+2ad8 17                                         TBA
+2ad9 b7 41 f9                                   staa $41f9
+2adc c6 fa                                      ldab #$fa
+2ade 17                                         TBA
+2adf b7 41 fa                                   staa $41fa
+2ae2 c6 fb                                      ldab #$fb
+2ae4 17                                         TBA
+2ae5 b7 41 fb                                   staa $41fb
+2ae8 c6 fc                                      ldab #$fc
+2aea 17                                         TBA
+2aeb b7 41 fc                                   staa $41fc
+2aee c6 fd                                      ldab #$fd
+2af0 17                                         TBA
+2af1 b7 41 fd                                   staa $41fd
+2af4 c6 fe                                      ldab #$fe
+2af6 17                                         TBA
+2af7 b7 41 fe                                   staa $41fe
+2afa c6 ff                                      ldab #$ff
+2afc 17                                         TBA
+2afd b7 41 ff                                   staa $41ff
+2b00 c6 00                                      ldab #$00
+2b02 53                                         comb
+2b03 f7 42 00                                   stab $4200
+2b06 c6 01                                      ldab #$01
+2b08 53                                         comb
+2b09 f7 42 01                                   stab $4201
+2b0c c6 02                                      ldab #$02
+2b0e 53                                         comb
+2b0f f7 42 02                                   stab $4202
+2b12 c6 03                                      ldab #$03
+2b14 53                                         comb
+2b15 f7 42 03                                   stab $4203
+2b18 c6 04                                      ldab #$04
+2b1a 53                                         comb
+2b1b f7 42 04                                   stab $4204
+2b1e c6 05                                      ldab #$05
+2b20 53                                         comb
+2b21 f7 42 05                                   stab $4205
+2b24 c6 06                                      ldab #$06
+2b26 53                                         comb
+2b27 f7 42 06                                   stab $4206
+2b2a c6 07                                      ldab #$07
+2b2c 53                                         comb
+2b2d f7 42 07                                   stab $4207
+2b30 c6 08                                      ldab #$08
+2b32 53                                         comb
+2b33 f7 42 08                                   stab $4208
+2b36 c6 09                                      ldab #$09
+2b38 53                                         comb
+2b39 f7 42 09                                   stab $4209
+2b3c c6 0a                                      ldab #$0a
+2b3e 53                                         comb
+2b3f f7 42 0a                                   stab $420a
+2b42 c6 0b                                      ldab #$0b
+2b44 53                                         comb
+2b45 f7 42 0b                                   stab $420b
+2b48 c6 0c                                      ldab #$0c
+2b4a 53                                         comb
+2b4b f7 42 0c                                   stab $420c
+2b4e c6 0d                                      ldab #$0d
+2b50 53                                         comb
+2b51 f7 42 0d                                   stab $420d
+2b54 c6 0e                                      ldab #$0e
+2b56 53                                         comb
+2b57 f7 42 0e                                   stab $420e
+2b5a c6 0f                                      ldab #$0f
+2b5c 53                                         comb
+2b5d f7 42 0f                                   stab $420f
+2b60 c6 10                                      ldab #$10
+2b62 53                                         comb
+2b63 f7 42 10                                   stab $4210
+2b66 c6 11                                      ldab #$11
+2b68 53                                         comb
+2b69 f7 42 11                                   stab $4211
+2b6c c6 12                                      ldab #$12
+2b6e 53                                         comb
+2b6f f7 42 12                                   stab $4212
+2b72 c6 13                                      ldab #$13
+2b74 53                                         comb
+2b75 f7 42 13                                   stab $4213
+2b78 c6 14                                      ldab #$14
+2b7a 53                                         comb
+2b7b f7 42 14                                   stab $4214
+2b7e c6 15                                      ldab #$15
+2b80 53                                         comb
+2b81 f7 42 15                                   stab $4215
+2b84 c6 16                                      ldab #$16
+2b86 53                                         comb
+2b87 f7 42 16                                   stab $4216
+2b8a c6 17                                      ldab #$17
+2b8c 53                                         comb
+2b8d f7 42 17                                   stab $4217
+2b90 c6 18                                      ldab #$18
+2b92 53                                         comb
+2b93 f7 42 18                                   stab $4218
+2b96 c6 19                                      ldab #$19
+2b98 53                                         comb
+2b99 f7 42 19                                   stab $4219
+2b9c c6 1a                                      ldab #$1a
+2b9e 53                                         comb
+2b9f f7 42 1a                                   stab $421a
+2ba2 c6 1b                                      ldab #$1b
+2ba4 53                                         comb
+2ba5 f7 42 1b                                   stab $421b
+2ba8 c6 1c                                      ldab #$1c
+2baa 53                                         comb
+2bab f7 42 1c                                   stab $421c
+2bae c6 1d                                      ldab #$1d
+2bb0 53                                         comb
+2bb1 f7 42 1d                                   stab $421d
+2bb4 c6 1e                                      ldab #$1e
+2bb6 53                                         comb
+2bb7 f7 42 1e                                   stab $421e
+2bba c6 1f                                      ldab #$1f
+2bbc 53                                         comb
+2bbd f7 42 1f                                   stab $421f
+2bc0 c6 20                                      ldab #$20
+2bc2 53                                         comb
+2bc3 f7 42 20                                   stab $4220
+2bc6 c6 21                                      ldab #$21
+2bc8 53                                         comb
+2bc9 f7 42 21                                   stab $4221
+2bcc c6 22                                      ldab #$22
+2bce 53                                         comb
+2bcf f7 42 22                                   stab $4222
+2bd2 c6 23                                      ldab #$23
+2bd4 53                                         comb
+2bd5 f7 42 23                                   stab $4223
+2bd8 c6 24                                      ldab #$24
+2bda 53                                         comb
+2bdb f7 42 24                                   stab $4224
+2bde c6 25                                      ldab #$25
+2be0 53                                         comb
+2be1 f7 42 25                                   stab $4225
+2be4 c6 26                                      ldab #$26
+2be6 53                                         comb
+2be7 f7 42 26                                   stab $4226
+2bea c6 27                                      ldab #$27
+2bec 53                                         comb
+2bed f7 42 27                                   stab $4227
+2bf0 c6 28                                      ldab #$28
+2bf2 53                                         comb
+2bf3 f7 42 28                                   stab $4228
+2bf6 c6 29                                      ldab #$29
+2bf8 53                                         comb
+2bf9 f7 42 29                                   stab $4229
+2bfc c6 2a                                      ldab #$2a
+2bfe 53                                         comb
+2bff f7 42 2a                                   stab $422a
+2c02 c6 2b                                      ldab #$2b
+2c04 53                                         comb
+2c05 f7 42 2b                                   stab $422b
+2c08 c6 2c                                      ldab #$2c
+2c0a 53                                         comb
+2c0b f7 42 2c                                   stab $422c
+2c0e c6 2d                                      ldab #$2d
+2c10 53                                         comb
+2c11 f7 42 2d                                   stab $422d
+2c14 c6 2e                                      ldab #$2e
+2c16 53                                         comb
+2c17 f7 42 2e                                   stab $422e
+2c1a c6 2f                                      ldab #$2f
+2c1c 53                                         comb
+2c1d f7 42 2f                                   stab $422f
+2c20 c6 30                                      ldab #$30
+2c22 53                                         comb
+2c23 f7 42 30                                   stab $4230
+2c26 c6 31                                      ldab #$31
+2c28 53                                         comb
+2c29 f7 42 31                                   stab $4231
+2c2c c6 32                                      ldab #$32
+2c2e 53                                         comb
+2c2f f7 42 32                                   stab $4232
+2c32 c6 33                                      ldab #$33
+2c34 53                                         comb
+2c35 f7 42 33                                   stab $4233
+2c38 c6 34                                      ldab #$34
+2c3a 53                                         comb
+2c3b f7 42 34                                   stab $4234
+2c3e c6 35                                      ldab #$35
+2c40 53                                         comb
+2c41 f7 42 35                                   stab $4235
+2c44 c6 36                                      ldab #$36
+2c46 53                                         comb
+2c47 f7 42 36                                   stab $4236
+2c4a c6 37                                      ldab #$37
+2c4c 53                                         comb
+2c4d f7 42 37                                   stab $4237
+2c50 c6 38                                      ldab #$38
+2c52 53                                         comb
+2c53 f7 42 38                                   stab $4238
+2c56 c6 39                                      ldab #$39
+2c58 53                                         comb
+2c59 f7 42 39                                   stab $4239
+2c5c c6 3a                                      ldab #$3a
+2c5e 53                                         comb
+2c5f f7 42 3a                                   stab $423a
+2c62 c6 3b                                      ldab #$3b
+2c64 53                                         comb
+2c65 f7 42 3b                                   stab $423b
+2c68 c6 3c                                      ldab #$3c
+2c6a 53                                         comb
+2c6b f7 42 3c                                   stab $423c
+2c6e c6 3d                                      ldab #$3d
+2c70 53                                         comb
+2c71 f7 42 3d                                   stab $423d
+2c74 c6 3e                                      ldab #$3e
+2c76 53                                         comb
+2c77 f7 42 3e                                   stab $423e
+2c7a c6 3f                                      ldab #$3f
+2c7c 53                                         comb
+2c7d f7 42 3f                                   stab $423f
+2c80 c6 40                                      ldab #$40
+2c82 53                                         comb
+2c83 f7 42 40                                   stab $4240
+2c86 c6 41                                      ldab #$41
+2c88 53                                         comb
+2c89 f7 42 41                                   stab $4241
+2c8c c6 42                                      ldab #$42
+2c8e 53                                         comb
+2c8f f7 42 42                                   stab $4242
+2c92 c6 43                                      ldab #$43
+2c94 53                                         comb
+2c95 f7 42 43                                   stab $4243
+2c98 c6 44                                      ldab #$44
+2c9a 53                                         comb
+2c9b f7 42 44                                   stab $4244
+2c9e c6 45                                      ldab #$45
+2ca0 53                                         comb
+2ca1 f7 42 45                                   stab $4245
+2ca4 c6 46                                      ldab #$46
+2ca6 53                                         comb
+2ca7 f7 42 46                                   stab $4246
+2caa c6 47                                      ldab #$47
+2cac 53                                         comb
+2cad f7 42 47                                   stab $4247
+2cb0 c6 48                                      ldab #$48
+2cb2 53                                         comb
+2cb3 f7 42 48                                   stab $4248
+2cb6 c6 49                                      ldab #$49
+2cb8 53                                         comb
+2cb9 f7 42 49                                   stab $4249
+2cbc c6 4a                                      ldab #$4a
+2cbe 53                                         comb
+2cbf f7 42 4a                                   stab $424a
+2cc2 c6 4b                                      ldab #$4b
+2cc4 53                                         comb
+2cc5 f7 42 4b                                   stab $424b
+2cc8 c6 4c                                      ldab #$4c
+2cca 53                                         comb
+2ccb f7 42 4c                                   stab $424c
+2cce c6 4d                                      ldab #$4d
+2cd0 53                                         comb
+2cd1 f7 42 4d                                   stab $424d
+2cd4 c6 4e                                      ldab #$4e
+2cd6 53                                         comb
+2cd7 f7 42 4e                                   stab $424e
+2cda c6 4f                                      ldab #$4f
+2cdc 53                                         comb
+2cdd f7 42 4f                                   stab $424f
+2ce0 c6 50                                      ldab #$50
+2ce2 53                                         comb
+2ce3 f7 42 50                                   stab $4250
+2ce6 c6 51                                      ldab #$51
+2ce8 53                                         comb
+2ce9 f7 42 51                                   stab $4251
+2cec c6 52                                      ldab #$52
+2cee 53                                         comb
+2cef f7 42 52                                   stab $4252
+2cf2 c6 53                                      ldab #$53
+2cf4 53                                         comb
+2cf5 f7 42 53                                   stab $4253
+2cf8 c6 54                                      ldab #$54
+2cfa 53                                         comb
+2cfb f7 42 54                                   stab $4254
+2cfe c6 55                                      ldab #$55
+2d00 53                                         comb
+2d01 f7 42 55                                   stab $4255
+2d04 c6 56                                      ldab #$56
+2d06 53                                         comb
+2d07 f7 42 56                                   stab $4256
+2d0a c6 57                                      ldab #$57
+2d0c 53                                         comb
+2d0d f7 42 57                                   stab $4257
+2d10 c6 58                                      ldab #$58
+2d12 53                                         comb
+2d13 f7 42 58                                   stab $4258
+2d16 c6 59                                      ldab #$59
+2d18 53                                         comb
+2d19 f7 42 59                                   stab $4259
+2d1c c6 5a                                      ldab #$5a
+2d1e 53                                         comb
+2d1f f7 42 5a                                   stab $425a
+2d22 c6 5b                                      ldab #$5b
+2d24 53                                         comb
+2d25 f7 42 5b                                   stab $425b
+2d28 c6 5c                                      ldab #$5c
+2d2a 53                                         comb
+2d2b f7 42 5c                                   stab $425c
+2d2e c6 5d                                      ldab #$5d
+2d30 53                                         comb
+2d31 f7 42 5d                                   stab $425d
+2d34 c6 5e                                      ldab #$5e
+2d36 53                                         comb
+2d37 f7 42 5e                                   stab $425e
+2d3a c6 5f                                      ldab #$5f
+2d3c 53                                         comb
+2d3d f7 42 5f                                   stab $425f
+2d40 c6 60                                      ldab #$60
+2d42 53                                         comb
+2d43 f7 42 60                                   stab $4260
+2d46 c6 61                                      ldab #$61
+2d48 53                                         comb
+2d49 f7 42 61                                   stab $4261
+2d4c c6 62                                      ldab #$62
+2d4e 53                                         comb
+2d4f f7 42 62                                   stab $4262
+2d52 c6 63                                      ldab #$63
+2d54 53                                         comb
+2d55 f7 42 63                                   stab $4263
+2d58 c6 64                                      ldab #$64
+2d5a 53                                         comb
+2d5b f7 42 64                                   stab $4264
+2d5e c6 65                                      ldab #$65
+2d60 53                                         comb
+2d61 f7 42 65                                   stab $4265
+2d64 c6 66                                      ldab #$66
+2d66 53                                         comb
+2d67 f7 42 66                                   stab $4266
+2d6a c6 67                                      ldab #$67
+2d6c 53                                         comb
+2d6d f7 42 67                                   stab $4267
+2d70 c6 68                                      ldab #$68
+2d72 53                                         comb
+2d73 f7 42 68                                   stab $4268
+2d76 c6 69                                      ldab #$69
+2d78 53                                         comb
+2d79 f7 42 69                                   stab $4269
+2d7c c6 6a                                      ldab #$6a
+2d7e 53                                         comb
+2d7f f7 42 6a                                   stab $426a
+2d82 c6 6b                                      ldab #$6b
+2d84 53                                         comb
+2d85 f7 42 6b                                   stab $426b
+2d88 c6 6c                                      ldab #$6c
+2d8a 53                                         comb
+2d8b f7 42 6c                                   stab $426c
+2d8e c6 6d                                      ldab #$6d
+2d90 53                                         comb
+2d91 f7 42 6d                                   stab $426d
+2d94 c6 6e                                      ldab #$6e
+2d96 53                                         comb
+2d97 f7 42 6e                                   stab $426e
+2d9a c6 6f                                      ldab #$6f
+2d9c 53                                         comb
+2d9d f7 42 6f                                   stab $426f
+2da0 c6 70                                      ldab #$70
+2da2 53                                         comb
+2da3 f7 42 70                                   stab $4270
+2da6 c6 71                                      ldab #$71
+2da8 53                                         comb
+2da9 f7 42 71                                   stab $4271
+2dac c6 72                                      ldab #$72
+2dae 53                                         comb
+2daf f7 42 72                                   stab $4272
+2db2 c6 73                                      ldab #$73
+2db4 53                                         comb
+2db5 f7 42 73                                   stab $4273
+2db8 c6 74                                      ldab #$74
+2dba 53                                         comb
+2dbb f7 42 74                                   stab $4274
+2dbe c6 75                                      ldab #$75
+2dc0 53                                         comb
+2dc1 f7 42 75                                   stab $4275
+2dc4 c6 76                                      ldab #$76
+2dc6 53                                         comb
+2dc7 f7 42 76                                   stab $4276
+2dca c6 77                                      ldab #$77
+2dcc 53                                         comb
+2dcd f7 42 77                                   stab $4277
+2dd0 c6 78                                      ldab #$78
+2dd2 53                                         comb
+2dd3 f7 42 78                                   stab $4278
+2dd6 c6 79                                      ldab #$79
+2dd8 53                                         comb
+2dd9 f7 42 79                                   stab $4279
+2ddc c6 7a                                      ldab #$7a
+2dde 53                                         comb
+2ddf f7 42 7a                                   stab $427a
+2de2 c6 7b                                      ldab #$7b
+2de4 53                                         comb
+2de5 f7 42 7b                                   stab $427b
+2de8 c6 7c                                      ldab #$7c
+2dea 53                                         comb
+2deb f7 42 7c                                   stab $427c
+2dee c6 7d                                      ldab #$7d
+2df0 53                                         comb
+2df1 f7 42 7d                                   stab $427d
+2df4 c6 7e                                      ldab #$7e
+2df6 53                                         comb
+2df7 f7 42 7e                                   stab $427e
+2dfa c6 7f                                      ldab #$7f
+2dfc 53                                         comb
+2dfd f7 42 7f                                   stab $427f
+2e00 c6 80                                      ldab #$80
+2e02 53                                         comb
+2e03 f7 42 80                                   stab $4280
+2e06 c6 81                                      ldab #$81
+2e08 53                                         comb
+2e09 f7 42 81                                   stab $4281
+2e0c c6 82                                      ldab #$82
+2e0e 53                                         comb
+2e0f f7 42 82                                   stab $4282
+2e12 c6 83                                      ldab #$83
+2e14 53                                         comb
+2e15 f7 42 83                                   stab $4283
+2e18 c6 84                                      ldab #$84
+2e1a 53                                         comb
+2e1b f7 42 84                                   stab $4284
+2e1e c6 85                                      ldab #$85
+2e20 53                                         comb
+2e21 f7 42 85                                   stab $4285
+2e24 c6 86                                      ldab #$86
+2e26 53                                         comb
+2e27 f7 42 86                                   stab $4286
+2e2a c6 87                                      ldab #$87
+2e2c 53                                         comb
+2e2d f7 42 87                                   stab $4287
+2e30 c6 88                                      ldab #$88
+2e32 53                                         comb
+2e33 f7 42 88                                   stab $4288
+2e36 c6 89                                      ldab #$89
+2e38 53                                         comb
+2e39 f7 42 89                                   stab $4289
+2e3c c6 8a                                      ldab #$8a
+2e3e 53                                         comb
+2e3f f7 42 8a                                   stab $428a
+2e42 c6 8b                                      ldab #$8b
+2e44 53                                         comb
+2e45 f7 42 8b                                   stab $428b
+2e48 c6 8c                                      ldab #$8c
+2e4a 53                                         comb
+2e4b f7 42 8c                                   stab $428c
+2e4e c6 8d                                      ldab #$8d
+2e50 53                                         comb
+2e51 f7 42 8d                                   stab $428d
+2e54 c6 8e                                      ldab #$8e
+2e56 53                                         comb
+2e57 f7 42 8e                                   stab $428e
+2e5a c6 8f                                      ldab #$8f
+2e5c 53                                         comb
+2e5d f7 42 8f                                   stab $428f
+2e60 c6 90                                      ldab #$90
+2e62 53                                         comb
+2e63 f7 42 90                                   stab $4290
+2e66 c6 91                                      ldab #$91
+2e68 53                                         comb
+2e69 f7 42 91                                   stab $4291
+2e6c c6 92                                      ldab #$92
+2e6e 53                                         comb
+2e6f f7 42 92                                   stab $4292
+2e72 c6 93                                      ldab #$93
+2e74 53                                         comb
+2e75 f7 42 93                                   stab $4293
+2e78 c6 94                                      ldab #$94
+2e7a 53                                         comb
+2e7b f7 42 94                                   stab $4294
+2e7e c6 95                                      ldab #$95
+2e80 53                                         comb
+2e81 f7 42 95                                   stab $4295
+2e84 c6 96                                      ldab #$96
+2e86 53                                         comb
+2e87 f7 42 96                                   stab $4296
+2e8a c6 97                                      ldab #$97
+2e8c 53                                         comb
+2e8d f7 42 97                                   stab $4297
+2e90 c6 98                                      ldab #$98
+2e92 53                                         comb
+2e93 f7 42 98                                   stab $4298
+2e96 c6 99                                      ldab #$99
+2e98 53                                         comb
+2e99 f7 42 99                                   stab $4299
+2e9c c6 9a                                      ldab #$9a
+2e9e 53                                         comb
+2e9f f7 42 9a                                   stab $429a
+2ea2 c6 9b                                      ldab #$9b
+2ea4 53                                         comb
+2ea5 f7 42 9b                                   stab $429b
+2ea8 c6 9c                                      ldab #$9c
+2eaa 53                                         comb
+2eab f7 42 9c                                   stab $429c
+2eae c6 9d                                      ldab #$9d
+2eb0 53                                         comb
+2eb1 f7 42 9d                                   stab $429d
+2eb4 c6 9e                                      ldab #$9e
+2eb6 53                                         comb
+2eb7 f7 42 9e                                   stab $429e
+2eba c6 9f                                      ldab #$9f
+2ebc 53                                         comb
+2ebd f7 42 9f                                   stab $429f
+2ec0 c6 a0                                      ldab #$a0
+2ec2 53                                         comb
+2ec3 f7 42 a0                                   stab $42a0
+2ec6 c6 a1                                      ldab #$a1
+2ec8 53                                         comb
+2ec9 f7 42 a1                                   stab $42a1
+2ecc c6 a2                                      ldab #$a2
+2ece 53                                         comb
+2ecf f7 42 a2                                   stab $42a2
+2ed2 c6 a3                                      ldab #$a3
+2ed4 53                                         comb
+2ed5 f7 42 a3                                   stab $42a3
+2ed8 c6 a4                                      ldab #$a4
+2eda 53                                         comb
+2edb f7 42 a4                                   stab $42a4
+2ede c6 a5                                      ldab #$a5
+2ee0 53                                         comb
+2ee1 f7 42 a5                                   stab $42a5
+2ee4 c6 a6                                      ldab #$a6
+2ee6 53                                         comb
+2ee7 f7 42 a6                                   stab $42a6
+2eea c6 a7                                      ldab #$a7
+2eec 53                                         comb
+2eed f7 42 a7                                   stab $42a7
+2ef0 c6 a8                                      ldab #$a8
+2ef2 53                                         comb
+2ef3 f7 42 a8                                   stab $42a8
+2ef6 c6 a9                                      ldab #$a9
+2ef8 53                                         comb
+2ef9 f7 42 a9                                   stab $42a9
+2efc c6 aa                                      ldab #$aa
+2efe 53                                         comb
+2eff f7 42 aa                                   stab $42aa
+2f02 c6 ab                                      ldab #$ab
+2f04 53                                         comb
+2f05 f7 42 ab                                   stab $42ab
+2f08 c6 ac                                      ldab #$ac
+2f0a 53                                         comb
+2f0b f7 42 ac                                   stab $42ac
+2f0e c6 ad                                      ldab #$ad
+2f10 53                                         comb
+2f11 f7 42 ad                                   stab $42ad
+2f14 c6 ae                                      ldab #$ae
+2f16 53                                         comb
+2f17 f7 42 ae                                   stab $42ae
+2f1a c6 af                                      ldab #$af
+2f1c 53                                         comb
+2f1d f7 42 af                                   stab $42af
+2f20 c6 b0                                      ldab #$b0
+2f22 53                                         comb
+2f23 f7 42 b0                                   stab $42b0
+2f26 c6 b1                                      ldab #$b1
+2f28 53                                         comb
+2f29 f7 42 b1                                   stab $42b1
+2f2c c6 b2                                      ldab #$b2
+2f2e 53                                         comb
+2f2f f7 42 b2                                   stab $42b2
+2f32 c6 b3                                      ldab #$b3
+2f34 53                                         comb
+2f35 f7 42 b3                                   stab $42b3
+2f38 c6 b4                                      ldab #$b4
+2f3a 53                                         comb
+2f3b f7 42 b4                                   stab $42b4
+2f3e c6 b5                                      ldab #$b5
+2f40 53                                         comb
+2f41 f7 42 b5                                   stab $42b5
+2f44 c6 b6                                      ldab #$b6
+2f46 53                                         comb
+2f47 f7 42 b6                                   stab $42b6
+2f4a c6 b7                                      ldab #$b7
+2f4c 53                                         comb
+2f4d f7 42 b7                                   stab $42b7
+2f50 c6 b8                                      ldab #$b8
+2f52 53                                         comb
+2f53 f7 42 b8                                   stab $42b8
+2f56 c6 b9                                      ldab #$b9
+2f58 53                                         comb
+2f59 f7 42 b9                                   stab $42b9
+2f5c c6 ba                                      ldab #$ba
+2f5e 53                                         comb
+2f5f f7 42 ba                                   stab $42ba
+2f62 c6 bb                                      ldab #$bb
+2f64 53                                         comb
+2f65 f7 42 bb                                   stab $42bb
+2f68 c6 bc                                      ldab #$bc
+2f6a 53                                         comb
+2f6b f7 42 bc                                   stab $42bc
+2f6e c6 bd                                      ldab #$bd
+2f70 53                                         comb
+2f71 f7 42 bd                                   stab $42bd
+2f74 c6 be                                      ldab #$be
+2f76 53                                         comb
+2f77 f7 42 be                                   stab $42be
+2f7a c6 bf                                      ldab #$bf
+2f7c 53                                         comb
+2f7d f7 42 bf                                   stab $42bf
+2f80 c6 c0                                      ldab #$c0
+2f82 53                                         comb
+2f83 f7 42 c0                                   stab $42c0
+2f86 c6 c1                                      ldab #$c1
+2f88 53                                         comb
+2f89 f7 42 c1                                   stab $42c1
+2f8c c6 c2                                      ldab #$c2
+2f8e 53                                         comb
+2f8f f7 42 c2                                   stab $42c2
+2f92 c6 c3                                      ldab #$c3
+2f94 53                                         comb
+2f95 f7 42 c3                                   stab $42c3
+2f98 c6 c4                                      ldab #$c4
+2f9a 53                                         comb
+2f9b f7 42 c4                                   stab $42c4
+2f9e c6 c5                                      ldab #$c5
+2fa0 53                                         comb
+2fa1 f7 42 c5                                   stab $42c5
+2fa4 c6 c6                                      ldab #$c6
+2fa6 53                                         comb
+2fa7 f7 42 c6                                   stab $42c6
+2faa c6 c7                                      ldab #$c7
+2fac 53                                         comb
+2fad f7 42 c7                                   stab $42c7
+2fb0 c6 c8                                      ldab #$c8
+2fb2 53                                         comb
+2fb3 f7 42 c8                                   stab $42c8
+2fb6 c6 c9                                      ldab #$c9
+2fb8 53                                         comb
+2fb9 f7 42 c9                                   stab $42c9
+2fbc c6 ca                                      ldab #$ca
+2fbe 53                                         comb
+2fbf f7 42 ca                                   stab $42ca
+2fc2 c6 cb                                      ldab #$cb
+2fc4 53                                         comb
+2fc5 f7 42 cb                                   stab $42cb
+2fc8 c6 cc                                      ldab #$cc
+2fca 53                                         comb
+2fcb f7 42 cc                                   stab $42cc
+2fce c6 cd                                      ldab #$cd
+2fd0 53                                         comb
+2fd1 f7 42 cd                                   stab $42cd
+2fd4 c6 ce                                      ldab #$ce
+2fd6 53                                         comb
+2fd7 f7 42 ce                                   stab $42ce
+2fda c6 cf                                      ldab #$cf
+2fdc 53                                         comb
+2fdd f7 42 cf                                   stab $42cf
+2fe0 c6 d0                                      ldab #$d0
+2fe2 53                                         comb
+2fe3 f7 42 d0                                   stab $42d0
+2fe6 c6 d1                                      ldab #$d1
+2fe8 53                                         comb
+2fe9 f7 42 d1                                   stab $42d1
+2fec c6 d2                                      ldab #$d2
+2fee 53                                         comb
+2fef f7 42 d2                                   stab $42d2
+2ff2 c6 d3                                      ldab #$d3
+2ff4 53                                         comb
+2ff5 f7 42 d3                                   stab $42d3
+2ff8 c6 d4                                      ldab #$d4
+2ffa 53                                         comb
+2ffb f7 42 d4                                   stab $42d4
+2ffe c6 d5                                      ldab #$d5
+3000 53                                         comb
+3001 f7 42 d5                                   stab $42d5
+3004 c6 d6                                      ldab #$d6
+3006 53                                         comb
+3007 f7 42 d6                                   stab $42d6
+300a c6 d7                                      ldab #$d7
+300c 53                                         comb
+300d f7 42 d7                                   stab $42d7
+3010 c6 d8                                      ldab #$d8
+3012 53                                         comb
+3013 f7 42 d8                                   stab $42d8
+3016 c6 d9                                      ldab #$d9
+3018 53                                         comb
+3019 f7 42 d9                                   stab $42d9
+301c c6 da                                      ldab #$da
+301e 53                                         comb
+301f f7 42 da                                   stab $42da
+3022 c6 db                                      ldab #$db
+3024 53                                         comb
+3025 f7 42 db                                   stab $42db
+3028 c6 dc                                      ldab #$dc
+302a 53                                         comb
+302b f7 42 dc                                   stab $42dc
+302e c6 dd                                      ldab #$dd
+3030 53                                         comb
+3031 f7 42 dd                                   stab $42dd
+3034 c6 de                                      ldab #$de
+3036 53                                         comb
+3037 f7 42 de                                   stab $42de
+303a c6 df                                      ldab #$df
+303c 53                                         comb
+303d f7 42 df                                   stab $42df
+3040 c6 e0                                      ldab #$e0
+3042 53                                         comb
+3043 f7 42 e0                                   stab $42e0
+3046 c6 e1                                      ldab #$e1
+3048 53                                         comb
+3049 f7 42 e1                                   stab $42e1
+304c c6 e2                                      ldab #$e2
+304e 53                                         comb
+304f f7 42 e2                                   stab $42e2
+3052 c6 e3                                      ldab #$e3
+3054 53                                         comb
+3055 f7 42 e3                                   stab $42e3
+3058 c6 e4                                      ldab #$e4
+305a 53                                         comb
+305b f7 42 e4                                   stab $42e4
+305e c6 e5                                      ldab #$e5
+3060 53                                         comb
+3061 f7 42 e5                                   stab $42e5
+3064 c6 e6                                      ldab #$e6
+3066 53                                         comb
+3067 f7 42 e6                                   stab $42e6
+306a c6 e7                                      ldab #$e7
+306c 53                                         comb
+306d f7 42 e7                                   stab $42e7
+3070 c6 e8                                      ldab #$e8
+3072 53                                         comb
+3073 f7 42 e8                                   stab $42e8
+3076 c6 e9                                      ldab #$e9
+3078 53                                         comb
+3079 f7 42 e9                                   stab $42e9
+307c c6 ea                                      ldab #$ea
+307e 53                                         comb
+307f f7 42 ea                                   stab $42ea
+3082 c6 eb                                      ldab #$eb
+3084 53                                         comb
+3085 f7 42 eb                                   stab $42eb
+3088 c6 ec                                      ldab #$ec
+308a 53                                         comb
+308b f7 42 ec                                   stab $42ec
+308e c6 ed                                      ldab #$ed
+3090 53                                         comb
+3091 f7 42 ed                                   stab $42ed
+3094 c6 ee                                      ldab #$ee
+3096 53                                         comb
+3097 f7 42 ee                                   stab $42ee
+309a c6 ef                                      ldab #$ef
+309c 53                                         comb
+309d f7 42 ef                                   stab $42ef
+30a0 c6 f0                                      ldab #$f0
+30a2 53                                         comb
+30a3 f7 42 f0                                   stab $42f0
+30a6 c6 f1                                      ldab #$f1
+30a8 53                                         comb
+30a9 f7 42 f1                                   stab $42f1
+30ac c6 f2                                      ldab #$f2
+30ae 53                                         comb
+30af f7 42 f2                                   stab $42f2
+30b2 c6 f3                                      ldab #$f3
+30b4 53                                         comb
+30b5 f7 42 f3                                   stab $42f3
+30b8 c6 f4                                      ldab #$f4
+30ba 53                                         comb
+30bb f7 42 f4                                   stab $42f4
+30be c6 f5                                      ldab #$f5
+30c0 53                                         comb
+30c1 f7 42 f5                                   stab $42f5
+30c4 c6 f6                                      ldab #$f6
+30c6 53                                         comb
+30c7 f7 42 f6                                   stab $42f6
+30ca c6 f7                                      ldab #$f7
+30cc 53                                         comb
+30cd f7 42 f7                                   stab $42f7
+30d0 c6 f8                                      ldab #$f8
+30d2 53                                         comb
+30d3 f7 42 f8                                   stab $42f8
+30d6 c6 f9                                      ldab #$f9
+30d8 53                                         comb
+30d9 f7 42 f9                                   stab $42f9
+30dc c6 fa                                      ldab #$fa
+30de 53                                         comb
+30df f7 42 fa                                   stab $42fa
+30e2 c6 fb                                      ldab #$fb
+30e4 53                                         comb
+30e5 f7 42 fb                                   stab $42fb
+30e8 c6 fc                                      ldab #$fc
+30ea 53                                         comb
+30eb f7 42 fc                                   stab $42fc
+30ee c6 fd                                      ldab #$fd
+30f0 53                                         comb
+30f1 f7 42 fd                                   stab $42fd
+30f4 c6 fe                                      ldab #$fe
+30f6 53                                         comb
+30f7 f7 42 fe                                   stab $42fe
+30fa c6 ff                                      ldab #$ff
+30fc 53                                         comb
+30fd f7 42 ff                                   stab $42ff
+3100 7e 31 00           jump            jmp     jump
 fffe                                            org             $FFFE
 fffe 20 00                                      FDB             PROG_START
 
-Executed: Sat Jan 24 02:18:55 2015
-Total cycles: 2051, Total bytes: 1541
+Executed: Fri Jan 30 22:51:36 2015
+Total cycles: 5635, Total bytes: 4357
 Total errors: 0, Total warnings: 0

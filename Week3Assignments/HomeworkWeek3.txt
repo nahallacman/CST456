@@ -1,0 +1,17 @@
+It appears that the instruction staa is broken by having a stuck bit in position 3 ( 8'b 0000 1000 ) that always stays at 0.
+This makes part of the tests for LDAA, STAA fail, LDAA, COMA, STAA fail, and LDAB, TBA, STAA fail.
+
+With LDAA, STAA failing, and LDAA, TAB, STAB working, we know the issue is in the STAA command. 
+
+
+When looking in the hc11core_bug.v file pasted into edaplayground.com, there is a section of code that reads:
+
+ // ********** You found it! Yeah! **************
+ STAA:
+ begin 
+ alu_alu_out = alu_in1;
+ alu_alu_out[3] = ~alu_alu_out[3]; 
+ end
+ // *********************************************
+ 
+ on lines 3169 to 3175.

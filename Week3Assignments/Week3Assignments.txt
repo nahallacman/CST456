@@ -1,0 +1,18 @@
+Week 3 Assignment
+	
+	Lab 1 Part 3
+	------------
+	
+	The file "hc11core_bug.v" contains a 68HC11 cpu core with exactly one design flaw. Run your test program on the design to see what instructions are affected by the flaw.
+	Then isolate the flaw to either a specific instruction (LDAA, LDAB, STAA, STAB, COMA, COMB) or register (ACCA, ACCB). To help you do this you can use the TAB (transfer
+	contents of ACCA to ACCB) or TBA (transfer contents of ACCB to ACCA) instructions and assume they are working correctly.
+	
+	Create a document answering the following questions:
+	
+		1) What instructions or registers in your test are affected by the design flaw?
+		2) What specific instruction or register contains the design flaw?
+		3) What is the signature / nature of the design flaw? (stuck bit, inverted bit, etc)
+		4) Where in "hc11core_bug.v" is the design flaw located? (This is straight forward to do once you know which instruction or register contains the flaw.)
+
+Submit your document via e-mail to steven.bellock@oit.edu
+Assignment is due by January 31st at 6 PM.
