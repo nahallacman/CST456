@@ -1,0 +1,11 @@
+3 bugs to find
+1)
+reset on alu bank 2 goes to all (hex) F's instead of 0's
+2)
+first operation on the alu appears to incorrectly return x's instead of numbers but gives a success indication:
+# KERNEL: Scoreboard test: .data1 = 4e0eadaa, .data2 = 93c52a16, .command = AND, .Odata = xxxxxxxx, .response = SUCCESS, .operation_begin =           5, .operation_end=          9
+
+
+other times it takes too long:
+# KERNEL: Scoreboard test: .data1 = 26b925ef, .data2 = 475b079d, .command = AND, .Odata = 0619058d, .response = SUCCESS, .operation_begin =           2, .operation_end=          9
+3)??
