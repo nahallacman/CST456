@@ -34,7 +34,10 @@ module TestBench;
 	const int n = 0;
   
   	int clock_count = 0;
-
+  
+  logic [7:0] delay = 0;
+	int delay_mod = 0;
+  
 	ALU ALU (.clock, .reset, .input_packet, .output_packet);
 
 	always
@@ -52,14 +55,52 @@ module TestBench;
       case(state[n])
         FORCE_WAIT: begin
           // delay ammount using 8 bit number
+          if(delay < 256)
+            begin
+              delay++;
+            end
+          else
+            begin
+              $finish;
+            end
+          
+          @(posedge clock)
+          begin
+            $display("clock value = %b, clock count = %d", clock, clock_count);
+          end
+          
+          /*
+          delay_mod = delay * 10;
+          @(negedge clock)
+          begin
+          #delay_mod;
+          end
+          */
+          /*repeat (delay)
+			begin
+              for(int i = 0; i < delay; i++)
+              begin
+                @(posedge clock);
+              end
+			end
+          */
+          $display("delay amount = %d", delay);
           state[n] = ASSERT_COMMAND;
         end
           
         ASSERT_COMMAND: begin 
           	// set up random values
           	// Since command is an enum the dynamic $cast is needed to assign it a random bit value.
-			assert(std::randomize(rand_command));
-			$cast(input_packet[n].command, rand_command);
+			
+          //make sure the random value isnt a NOP!
+          do
+          begin
+            assert(std::randomize(rand_command));
+            $cast(input_packet[n].command, rand_command);
+          end
+          while (rand_command == 0);
+          
+			
           		
 			assert(std::randomize(rand_data));
 			input_packet[n].data1 = rand_data;
@@ -83,9 +124,11 @@ module TestBench;
           //if(last_output_packet[i].data == output_packet[i].data)
             //or should I check for when the output response goes from 0-> non-0 response?
           
-          last_output_packet[i]= output_packet[i];
+          //last_output_packet[i]= output_packet[i];
+          
           if(output_packet[i].response == NO_RESPONSE)
               begin
+                last_output_packet[i]= output_packet[i];
                 //$display("No change in output data detected");
               end
       		else
@@ -95,10 +138,11 @@ module TestBench;
                 test_scoreboard.Odata = output_packet[i].data;
           		test_scoreboard.response = output_packet[i].response;
                 //$display("Change detected in output on ALU bank %d, old data = %h, new data = %h", i, last_output_packet[i].data, output_packet[i].data);
-                $display("Change detected in output on ALU bank %d, old response = %s, new response = %s", i, last_output_packet[i].response.name, output_packet[i].response.name);
+                //$display("Change detected in output on ALU bank %d, old response = %s, new response = %s", i, last_output_packet[i].response.name, output_packet[i].response.name);
                 
                 $display("Scoreboard test: .data1 = %h, .data2 = %h, .command = %s, .Odata = %h, .response = %s, .operation_begin = %d, .operation_end=%d",  test_scoreboard.data1, test_scoreboard.data2, test_scoreboard.command.name, test_scoreboard.Odata, test_scoreboard.response.name, test_scoreboard.operation_begin, test_scoreboard.operation_end);
 
+                last_output_packet[i]= output_packet[i];
                 state[n] = FORCE_WAIT;
               end
         end
@@ -129,12 +173,11 @@ module TestBench;
           end
           
       //delay number of negative clock edges
-		repeat (20)
+      repeat (2000)
 		begin
 			@(negedge clock);
-	
 		end
-	
+      
 		$finish;
 	end
 endmodule : TestBench
