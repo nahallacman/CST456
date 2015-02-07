@@ -38,6 +38,11 @@ module TestBench;
   logic [7:0] delay = 0;
 	int delay_mod = 0;
   
+  int count = 0;
+  
+  	logic delay_begin = 0;
+  	logic delay_end = 0;
+  
 	ALU ALU (.clock, .reset, .input_packet, .output_packet);
 
 	always
@@ -55,20 +60,37 @@ module TestBench;
       case(state[n])
         FORCE_WAIT: begin
           // delay ammount using 8 bit number
-          if(delay < 256)
+          
+          
+          
+
+        
+
+		//@(posedge clock)
+          
+            $display("clock value = %b, clock count = %d", clock, clock_count);
+          
+          if(delay_end == 0)
             begin
-              delay++;
+              //do nothing
+              delay_begin = 1;
             end
           else
             begin
-              $finish;
+              delay_begin = 0;
+              //move on to next state after delay is done
+              state[n] = ASSERT_COMMAND;
+              //increase the delay for testing
+             if(delay < 256)
+            	begin
+              		delay++;
+            	end
+              else
+           		begin
+              		$finish;
+            	end
             end
-          
-          @(posedge clock)
-          begin
-            $display("clock value = %b, clock count = %d", clock, clock_count);
-          end
-          
+            
           /*
           delay_mod = delay * 10;
           @(negedge clock)
@@ -85,7 +107,7 @@ module TestBench;
 			end
           */
           $display("delay amount = %d", delay);
-          state[n] = ASSERT_COMMAND;
+
         end
           
         ASSERT_COMMAND: begin 
@@ -174,10 +196,24 @@ module TestBench;
           
       //delay number of negative clock edges
       repeat (2000)
-		begin
-			@(negedge clock);
-		end
-      
+        @(negedge clock)
+          
+          begin
+          	if(delay_begin == 1)
+              begin
+                //if( count == delay)
+                 // begin
+                //    delay_end = 0;
+                    count++;
+                //  end
+               // else
+                 // begin
+                    delay_end = 1;
+                //    count = 0
+               //   end
+              end
+          end
+          
 		$finish;
 	end
 endmodule : TestBench
