@@ -43,7 +43,7 @@ module TestBench;
 	always @(posedge clock)
 	begin
       int i = 0;
-      $display("State = %s, Bank = %h", state[n].name, n);
+      //$display("State = %s, Bank = %h", state[n].name, n);
       clock_count++;
       
 		// Use the .name method to show the name of the command or the response instead of its bit value.
@@ -51,14 +51,21 @@ module TestBench;
       
       case(state[n])
         FORCE_WAIT: begin
-          //delay ammount using 8 bit number
+          // delay ammount using 8 bit number
           state[n] = ASSERT_COMMAND;
         end
           
         ASSERT_COMMAND: begin 
+          	// set up random values
           	// Since command is an enum the dynamic $cast is needed to assign it a random bit value.
 			assert(std::randomize(rand_command));
 			$cast(input_packet[n].command, rand_command);
+          		
+			assert(std::randomize(rand_data));
+			input_packet[n].data1 = rand_data;
+			
+			assert(std::randomize(rand_data));
+			input_packet[n].data2 = rand_data;		
           
           	//set up scoreboard values
             test_scoreboard.data1 = input_packet[i].data1;
@@ -73,8 +80,11 @@ module TestBench;
         WAIT_FOR_RESPONSE:begin
           	//check for changes in the output data
           //should I do this check?
-          if(last_output_packet[i].data == output_packet[i].data)
+          //if(last_output_packet[i].data == output_packet[i].data)
             //or should I check for when the output response goes from 0-> non-0 response?
+          
+          last_output_packet[i]= output_packet[i];
+          if(output_packet[i].response == NO_RESPONSE)
               begin
                 //$display("No change in output data detected");
               end
@@ -84,10 +94,11 @@ module TestBench;
                 test_scoreboard.operation_end = clock_count;
                 test_scoreboard.Odata = output_packet[i].data;
           		test_scoreboard.response = output_packet[i].response;
-                $display("Change detected in output on ALU bank %d, old data = %h, new data = %h", i, last_output_packet[i].data, output_packet[i].data);
-                $display("Scoreboard test: .data1 = %h, .data2 = %h, .command = %s, .Odata = %h, .response = %s",  test_scoreboard.data1, test_scoreboard.data2, test_scoreboard.command.name, test_scoreboard.Odata, test_scoreboard.response.name);
+                //$display("Change detected in output on ALU bank %d, old data = %h, new data = %h", i, last_output_packet[i].data, output_packet[i].data);
+                $display("Change detected in output on ALU bank %d, old response = %s, new response = %s", i, last_output_packet[i].response.name, output_packet[i].response.name);
+                
+                $display("Scoreboard test: .data1 = %h, .data2 = %h, .command = %s, .Odata = %h, .response = %s, .operation_begin = %d, .operation_end=%d",  test_scoreboard.data1, test_scoreboard.data2, test_scoreboard.command.name, test_scoreboard.Odata, test_scoreboard.response.name, test_scoreboard.operation_begin, test_scoreboard.operation_end);
 
-                last_output_packet[i]= output_packet[i];
                 state[n] = FORCE_WAIT;
               end
         end
@@ -117,15 +128,11 @@ module TestBench;
         	end
           end
           
+      //delay number of negative clock edges
 		repeat (20)
 		begin
 			@(negedge clock);
-			
-			assert(std::randomize(rand_data));
-			input_packet[n].data1 = rand_data;
-			
-			assert(std::randomize(rand_data));
-			input_packet[n].data2 = rand_data;			
+	
 		end
 	
 		$finish;
