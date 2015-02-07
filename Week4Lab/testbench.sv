@@ -38,7 +38,7 @@ module TestBench;
   logic [7:0] delay = 0;
 	int delay_mod = 0;
   
-  int count = 0;
+ logic [7:0] count = 0;
   
   	logic delay_begin = 0;
   	logic delay_end = 0;
