@@ -1,0 +1,8 @@
+Week 5 Assignments
+	
+	-Read Chapter 9 of “SystemVerilog for Verification”.
+
+	-Complete the lab 2 assignment and create a document that details the three bugs in the ALU design.
+
+Submit your document and lab 2 testbench via e-mail to steven.bellock@oit.edu
+Assignment is due by Saturday, February 14th at 6 PM.
