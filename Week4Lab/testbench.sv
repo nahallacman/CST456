@@ -67,8 +67,11 @@ module TestBench;
             end
           else
             begin
-            delay++;
-            count = 0;
+              delay++;
+              //randomize the delay
+              $display("delay ammount = %d", delay);
+              assert(std::randomize(delay));
+              count = 0;
             state = ASSERT_COMMAND;
             end
 
@@ -132,6 +135,14 @@ module TestBench;
                 //$display("Change detected in output on ALU bank %d, old response = %s, new response = %s", i, last_output_packet[i].response.name, output_packet[i].response.name);
                 
                 $display("Scoreboard test: .data1 = %h, .data2 = %h, .command = %s, .Odata = %h, .response = %s, .operation_begin = %d, .operation_end=%d",  test_scoreboard.data1, test_scoreboard.data2, test_scoreboard.command.name, test_scoreboard.Odata, test_scoreboard.response.name, test_scoreboard.operation_begin, test_scoreboard.operation_end);
+                if( ( test_scoreboard.operation_end - test_scoreboard.operation_begin ) <= 5 & (test_scoreboard.operation_end - test_scoreboard.operation_begin ) >= 3 )
+                  begin
+                    $display("Operation time check passed, time = %d", ( test_scoreboard.operation_end - test_scoreboard.operation_begin ));
+                  end
+                else
+                  begin
+                    $display("!! Operation time check failed !!, time = %d", (test_scoreboard.operation_end - test_scoreboard.operation_begin ));
+                  end
 
                 last_output_packet[i]= output_packet[i];
                 state[n] = FORCE_WAIT;
@@ -164,7 +175,7 @@ module TestBench;
           end
           
       //delay number of negative clock edges
-      repeat (2000)
+      repeat (50000)
       begin
         @(negedge clock);
       end
