@@ -10,7 +10,7 @@ module TestBench;
     int operation_end;
   } scoreboard_t;
   
-  scoreboard_t test_scoreboard;
+  scoreboard_t [3:0] test_scoreboard;
   
   typedef enum logic [1:0]
   {
@@ -31,14 +31,22 @@ module TestBench;
   	input_packet_t[3:0] last_input_packet;
   	output_packet_t [3:0] last_output_packet;
   
-	const int n = 0;
+	//const int n = 0;
   
   	int clock_count = 0;
   
-  logic [7:0] delay = 0;
-	int delay_mod = 0;
+  typedef struct packed
+  {
+    logic [7:0] number;
+  } count_8bit_t;
   
- logic [7:0] count = 0;
+  count_8bit_t [3:0] delay = 0;
+  //count_8bit_t delay = 0;
+	//int delay_mod = 0;
+  
+ //logic [7:0] count = 0;
+  count_8bit_t [3:0] count = 0;
+
   
   	logic delay_begin = 0;
   	logic delay_end = 0;
@@ -50,6 +58,8 @@ module TestBench;
 
 	always @(posedge clock)
 	begin
+      for(int n = 0; n < 4; n++)
+      begin
       int i = 0;
       //$display("State = %s, Bank = %h", state[n].name, n);
       clock_count++;
@@ -61,17 +71,19 @@ module TestBench;
         FORCE_WAIT: begin
           // delay ammount using 8 bit number
           
-          if(count < delay)
+          if(count[n] < delay[n].number)
             begin
-              count++;
+              count[n]++;
             end
           else
             begin
-              delay++;
+              logic [7:0] rand_count = 0;
+              delay[n].number++;
               //randomize the delay
-              $display("delay ammount = %d", delay);
-              assert(std::randomize(delay));
-              count = 0;
+              $display("delay ammount = %d, bank = %d", delay[n].number, n);
+              assert(std::randomize(rand_count));
+              $cast(delay[n].number, rand_count);
+              count[n] = 0;
             state = ASSERT_COMMAND;
             end
 
@@ -103,10 +115,10 @@ module TestBench;
 			input_packet[n].data2 = rand_data;		
           
           	//set up scoreboard values
-            test_scoreboard.data1 = input_packet[i].data1;
-          	test_scoreboard.data2 = input_packet[i].data2;
-          	test_scoreboard.command = input_packet[i].command;
-          	test_scoreboard.operation_begin = clock_count;
+          test_scoreboard[n].data1 = input_packet[n].data1;
+          test_scoreboard[n].data2 = input_packet[n].data2;
+          test_scoreboard[n].command = input_packet[n].command;
+          test_scoreboard[n].operation_begin = clock_count;
           
           	//move to next state
         	state[n] = WAIT_FOR_RESPONSE;
@@ -120,37 +132,37 @@ module TestBench;
           
           //last_output_packet[i]= output_packet[i];
           
-          if(output_packet[i].response == NO_RESPONSE)
+          if(output_packet[n].response == NO_RESPONSE)
               begin
-                last_output_packet[i]= output_packet[i];
+                //last_output_packet[i]= output_packet[i];
                 //$display("No change in output data detected");
               end
       		else
               begin
                 //write values to scoreboard to be checked
-                test_scoreboard.operation_end = clock_count;
-                test_scoreboard.Odata = output_packet[i].data;
-          		test_scoreboard.response = output_packet[i].response;
+                test_scoreboard[n].operation_end = clock_count;
+                test_scoreboard[n].Odata = output_packet[n].data;
+                test_scoreboard[n].response = output_packet[n].response;
                 //$display("Change detected in output on ALU bank %d, old data = %h, new data = %h", i, last_output_packet[i].data, output_packet[i].data);
                 //$display("Change detected in output on ALU bank %d, old response = %s, new response = %s", i, last_output_packet[i].response.name, output_packet[i].response.name);
                 
-                $display("Scoreboard test: .data1 = %h, .data2 = %h, .command = %s, .Odata = %h, .response = %s, .operation_begin = %d, .operation_end=%d",  test_scoreboard.data1, test_scoreboard.data2, test_scoreboard.command.name, test_scoreboard.Odata, test_scoreboard.response.name, test_scoreboard.operation_begin, test_scoreboard.operation_end);
-                if( ( test_scoreboard.operation_end - test_scoreboard.operation_begin ) <= 5 & (test_scoreboard.operation_end - test_scoreboard.operation_begin ) >= 3 )
+                $display("Scoreboard test: bank = %d, .data1 = %h, .data2 = %h, .command = %s, .Odata = %h, .response = %s, .operation_begin = %d, .operation_end=%d", n, test_scoreboard[n].data1, test_scoreboard[n].data2, test_scoreboard[n].command.name, test_scoreboard[n].Odata, test_scoreboard[n].response.name, test_scoreboard[n].operation_begin, test_scoreboard[n].operation_end);
+                if( ( test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) <= 5 & (test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) >= 3 )
                   begin
-                    $display("Operation time check passed, time = %d", ( test_scoreboard.operation_end - test_scoreboard.operation_begin ));
+                    $display("Operation time check passed, time = %d, bank = %d", ( test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ), n);
                   end
                 else
                   begin
-                    $display("!! Operation time check failed !!, time = %d", (test_scoreboard.operation_end - test_scoreboard.operation_begin ));
+                    $display("!! Operation time check failed !!, time = %d, bank = %d", (test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) , n);
                   end
 
-                last_output_packet[i]= output_packet[i];
+                //last_output_packet[i]= output_packet[i];
                 state[n] = FORCE_WAIT;
               end
         end
       endcase
     
-
+      end
     end
 	// Read output data at the positive edge of the clock.
 	// Drive input data at the negative edge of the clock.
@@ -175,7 +187,7 @@ module TestBench;
           end
           
       //delay number of negative clock edges
-      repeat (50000)
+      repeat (500)
       begin
         @(negedge clock);
       end
