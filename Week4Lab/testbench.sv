@@ -61,52 +61,21 @@ module TestBench;
         FORCE_WAIT: begin
           // delay ammount using 8 bit number
           
-          
-          
-
-        
-
-		//@(posedge clock)
-          
-            $display("clock value = %b, clock count = %d", clock, clock_count);
-          
-          if(delay_end == 0)
+          if(count < delay)
             begin
-              //do nothing
-              delay_begin = 1;
+              count++;
             end
           else
             begin
-              delay_begin = 0;
-              //move on to next state after delay is done
-              state[n] = ASSERT_COMMAND;
-              //increase the delay for testing
-             if(delay < 256)
-            	begin
-              		delay++;
-            	end
-              else
-           		begin
-              		$finish;
-            	end
+            delay++;
+            count = 0;
+            state = ASSERT_COMMAND;
             end
-            
-          /*
-          delay_mod = delay * 10;
-          @(negedge clock)
-          begin
-          #delay_mod;
-          end
-          */
-          /*repeat (delay)
-			begin
-              for(int i = 0; i < delay; i++)
-              begin
-                @(posedge clock);
-              end
-			end
-          */
-          $display("delay amount = %d", delay);
+
+  
+            //$display("clock value = %b, clock count = %d", clock, clock_count);
+  
+          //$display("delay amount = %d", delay);
 
         end
           
@@ -196,24 +165,10 @@ module TestBench;
           
       //delay number of negative clock edges
       repeat (2000)
-        @(negedge clock)
-          
-          begin
-          	if(delay_begin == 1)
-              begin
-                //if( count == delay)
-                 // begin
-                //    delay_end = 0;
-                    count++;
-                //  end
-               // else
-                 // begin
-                    delay_end = 1;
-                //    count = 0
-               //   end
-              end
-          end
-          
-		$finish;
-	end
+      begin
+        @(negedge clock);
+      end
+        $finish;
+       
+    end
 endmodule : TestBench
