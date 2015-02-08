@@ -31,7 +31,7 @@ module TestBench;
   	input_packet_t[3:0] last_input_packet;
   	output_packet_t [3:0] last_output_packet;
   
-	//const int n = 0;
+	const int n = 1;
   
   	int clock_count = 0;
   
@@ -59,7 +59,8 @@ module TestBench;
 	always @(posedge clock)
 	begin
       for(int n = 0; n < 4; n++)
-      begin
+        begin
+      
       int i = 0;
       //$display("State = %s, Bank = %h", state[n].name, n);
       clock_count++;
@@ -84,7 +85,7 @@ module TestBench;
               assert(std::randomize(rand_count));
               $cast(delay[n].number, rand_count);
               count[n] = 0;
-            state = ASSERT_COMMAND;
+              state[n] = ASSERT_COMMAND;
             end
 
   
@@ -126,12 +127,7 @@ module TestBench;
         
         WAIT_FOR_RESPONSE:begin
           	//check for changes in the output data
-          //should I do this check?
-          //if(last_output_packet[i].data == output_packet[i].data)
-            //or should I check for when the output response goes from 0-> non-0 response?
-          
-          //last_output_packet[i]= output_packet[i];
-          
+            //check for when the output response goes from 0-> non-0 response
           if(output_packet[n].response == NO_RESPONSE)
               begin
                 //last_output_packet[i]= output_packet[i];
@@ -143,8 +139,6 @@ module TestBench;
                 test_scoreboard[n].operation_end = clock_count;
                 test_scoreboard[n].Odata = output_packet[n].data;
                 test_scoreboard[n].response = output_packet[n].response;
-                //$display("Change detected in output on ALU bank %d, old data = %h, new data = %h", i, last_output_packet[i].data, output_packet[i].data);
-                //$display("Change detected in output on ALU bank %d, old response = %s, new response = %s", i, last_output_packet[i].response.name, output_packet[i].response.name);
                 
                 $display("Scoreboard test: bank = %d, .data1 = %h, .data2 = %h, .command = %s, .Odata = %h, .response = %s, .operation_begin = %d, .operation_end=%d", n, test_scoreboard[n].data1, test_scoreboard[n].data2, test_scoreboard[n].command.name, test_scoreboard[n].Odata, test_scoreboard[n].response.name, test_scoreboard[n].operation_begin, test_scoreboard[n].operation_end);
                 if( ( test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) <= 5 & (test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) >= 3 )
@@ -156,13 +150,12 @@ module TestBench;
                     $display("!! Operation time check failed !!, time = %d, bank = %d", (test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) , n);
                   end
 
-                //last_output_packet[i]= output_packet[i];
                 state[n] = FORCE_WAIT;
               end
         end
       endcase
-    
-      end
+        end
+      
     end
 	// Read output data at the positive edge of the clock.
 	// Drive input data at the negative edge of the clock.
