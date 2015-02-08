@@ -14,7 +14,7 @@ module TestBench;
   
   typedef enum logic [1:0]
   {
-    FORCE_WAIT, ASSERT_COMMAND, WAIT_FOR_RESPONSE
+    RESET_DELAY, FORCE_WAIT, ASSERT_COMMAND, WAIT_FOR_RESPONSE
   } state_names_t;
   
   state_names_t [3:0] state = 0;
@@ -55,23 +55,36 @@ module TestBench;
 
 	always
 		#5 clock = ~clock;
-
+  
+  /*
+   @(negedge reset)
+            begin
+              $display("Reset check over at %d", clock_count);
+              state[n] = FORCE_WAIT;
+            end
+*/
+  
 	always @(posedge clock)
 	begin
+      clock_count++;
+      //$display("posedge clock");
       for(int n = 0; n < 4; n++)
         begin
-      
-      int i = 0;
-      //$display("State = %s, Bank = %h", state[n].name, n);
-      clock_count++;
-      
-		// Use the .name method to show the name of the command or the response instead of its bit value.
-		//for(int i = 0; i < 4; i++)
-      
       case(state[n])
+        
+        //this state keeps the machine from trying to do anything before reset is over
+        RESET_DELAY: begin
+          //if(reset == 0)
+          //@(negedge reset)
+            
+          //$display("Reset delay state at %d", clock_count);
+              //state[n] = FORCE_WAIT;
+            
+        end
+        
         FORCE_WAIT: begin
           // delay ammount using 8 bit number
-          
+          //$display("begin force_wait");
           if(count[n] < delay[n].number)
             begin
               count[n]++;
@@ -81,7 +94,7 @@ module TestBench;
               logic [7:0] rand_count = 0;
               delay[n].number++;
               //randomize the delay
-              $display("delay ammount = %d, bank = %d", delay[n].number, n);
+              //$display("delay ammount = %d, bank = %d", delay[n].number, n);
               assert(std::randomize(rand_count));
               $cast(delay[n].number, rand_count);
               count[n] = 0;
@@ -140,6 +153,7 @@ module TestBench;
                 test_scoreboard[n].Odata = output_packet[n].data;
                 test_scoreboard[n].response = output_packet[n].response;
                 
+                // Use the .name method to show the name of the command or the response instead of its bit value.
                 $display("Scoreboard test: bank = %d, .data1 = %h, .data2 = %h, .command = %s, .Odata = %h, .response = %s, .operation_begin = %d, .operation_end=%d", n, test_scoreboard[n].data1, test_scoreboard[n].data2, test_scoreboard[n].command.name, test_scoreboard[n].Odata, test_scoreboard[n].response.name, test_scoreboard[n].operation_begin, test_scoreboard[n].operation_end);
                 if( ( test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) <= 5 & (test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) >= 3 )
                   begin
@@ -165,17 +179,24 @@ module TestBench;
       @(negedge clock); reset = 1; //test reset
 		@(negedge clock); reset = 0;
       
+      //once reset is over, start the state machine.
+      $display("Reset check over at time = %d", clock_count);
+      for(int i = 0; i < 4; i++)
+        begin
+          state[i] = FORCE_WAIT;
+        end
+      
 
           //check reset
       for(int i = 0; i < 4; i++)
           begin
             if(output_packet[i].data == 0)
           begin
-            $display ("Reset test passed. alu_output_bank[%d]'s data = %h, reset = %b", i, output_packet[i].data, reset);
+            $display ("Reset test passed. alu_output_bank[%d]'s data = %h, reset = %b, time = %d", i, output_packet[i].data, reset, clock_count);
           end
         else
           begin
-            $display ("!! Reset test failed !! alu_output_bank[%d]'s data = %h, reset = %b", i, output_packet[i].data,  reset);
+            $display ("!! Reset test failed !! alu_output_bank[%d]'s data = %h, reset = %b, time = %d", i, output_packet[i].data,  reset, clock_count);
         	end
           end
           
