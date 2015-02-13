@@ -1,6 +1,6 @@
 module TestBench;
 
-logic debug = 1;
+logic debug = 0; // debug flag. Enables more descriptive outputs when set to 1
   
   typedef struct packed{
     logic [31:0] data1;
@@ -181,7 +181,7 @@ logic debug = 1;
                   end
                 else
                   begin
-                    $display("!! Operation time check failed !!, time = %d, bank = %d", (test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) , n);
+                    $display("!! Operation %s time check failed !!, time = %d, bank = %d", test_scoreboard[n].command.name, (test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) , n);
                   end
                 
                 //check if the operation passed
@@ -192,24 +192,33 @@ logic debug = 1;
                     $display("!!! Program Error, a NOP was tried to be processed !!!");
                   end
                   ADD:begin
-                    $display("Adding %d and %d = %d, on bank %d", test_scoreboard[n].data1, test_scoreboard[n].data2, test_scoreboard[n].Odata, n);
-                    test_output[n].data = test_scoreboard[n].data1 + test_scoreboard[n].data2;
-                    $display("Actual added value should be: %d", test_output[n].data);
+					test_output[n].data = test_scoreboard[n].data1 + test_scoreboard[n].data2;
+				  
+					if(debug == 1) begin
+						$display("Adding %d and %d = %d, on bank %d", test_scoreboard[n].data1, test_scoreboard[n].data2, test_scoreboard[n].Odata, n);
+						$display("Actual added value should be: %d", test_output[n].data);
+					end
                     case(test_scoreboard[n].response)
                      NO_RESPONSE: begin
                        $display("!!! Program Error, a NO_RESPONSE response was tried to be processed in Add on bank = %d !!!", n);
                      end
                       SUCCESS: begin
-                        if(test_output[n].data == test_scoreboard[n].Odata)
-                          $display("SUCCESS properly detected in Add on bank = %d", n);
+                        if(test_output[n].data == test_scoreboard[n].Odata) begin
+							if(debug == 1) begin
+							$display("SUCCESS properly detected in Add on bank = %d", n);
+							end
+						end
                         else
                           $display("!! SUCCESS improperly detected in Add on bank = %d !!", n);
                       end
                      OVERFLOW:  begin
                        if(test_output[n].data == test_scoreboard[n].Odata)
-                          $display("!! OVERFLOW improperly detected in Add on bank = %d !!", n);
-                        else
-                          $display("OVERFLOW properly detected in Add on bank = %d", n);
+							$display("!! OVERFLOW improperly detected in Add on bank = %d !!", n);
+                        else begin
+							if(debug == 1) begin
+								$display("OVERFLOW properly detected in Add on bank = %d", n);
+							end
+						end
                       end
                       default: begin
                         $display("!!! Program Error, an improper value was entered in the response field in Add on bank = %d !!!", n);
@@ -217,24 +226,33 @@ logic debug = 1;
                     endcase
                   end
                   MULTIPLY: begin
-                    $display("Multiplying %d and %d = %d, on bank %d", test_scoreboard[n].data1, test_scoreboard[n].data2, test_scoreboard[n].Odata, n);
-                    test_output[n].data = test_scoreboard[n].data1 * test_scoreboard[n].data2;
-                    $display("Actual multiplied value should be: %d", test_output[n].data);
+					test_output[n].data = test_scoreboard[n].data1 * test_scoreboard[n].data2;
+					
+					if(debug == 1) begin
+						$display("Multiplying %d and %d = %d, on bank %d", test_scoreboard[n].data1, test_scoreboard[n].data2, test_scoreboard[n].Odata, n);
+						$display("Actual multiplied value should be: %d", test_output[n].data);
+					end
                     case(test_scoreboard[n].response)
                      NO_RESPONSE: begin
                        $display("!!! Program Error, a NO_RESPONSE response was tried to be processed in Multiply on bank = %d !!!" , n);
                      end
                       SUCCESS: begin
-                        if(test_output[n].data == test_scoreboard[n].Odata)
-                          $display("SUCCESS properly detected in Multiply on bank = %d", n);
+                        if(test_output[n].data == test_scoreboard[n].Odata) begin
+							if(debug == 1) begin
+								$display("SUCCESS properly detected in Multiply on bank = %d", n);
+							end
+						end
                         else
                           $display("!! SUCCESS improperly detected in Multiply on bank = %d !!", n);
                       end
                      OVERFLOW:  begin
                        if(test_output[n].data == test_scoreboard[n].Odata)
                           $display("!! OVERFLOW improperly detected in Multiply on bank = %d !!", n);
-                        else
-                          $display("OVERFLOW properly detected in Multiply on bank = %d", n);
+                        else begin
+							if(debug == 1) begin
+								$display("OVERFLOW properly detected in Multiply on bank = %d", n);
+							end
+						end
                       end
                       default: begin
                         $display("!!! Program Error, an improper value was entered in the response field in Multiply on bank = %d  !!!", n);
@@ -242,24 +260,33 @@ logic debug = 1;
                     endcase
                   end
                   AND:begin
-                    $display("ANDing %h and %h = %h, on bank %d", test_scoreboard[n].data1, test_scoreboard[n].data2, test_scoreboard[n].Odata, n);
-					test_output[n].data = test_scoreboard[n].data1 & test_scoreboard[n].data2;
-                    $display("Actual ANDed value should be: %h", test_output[n].data);
+				    test_output[n].data = test_scoreboard[n].data1 & test_scoreboard[n].data2;
+					
+					if(debug == 1) begin
+						$display("ANDing %h and %h = %h, on bank %d", test_scoreboard[n].data1, test_scoreboard[n].data2, test_scoreboard[n].Odata, n);
+						$display("Actual ANDed value should be: %h", test_output[n].data);
+					end
                     case(test_scoreboard[n].response)
                      NO_RESPONSE: begin
                        $display("!!! Program Error, a NO_RESPONSE response was tried to be processed in AND on bank = %d !!!" , n);
                      end
                       SUCCESS: begin
-                        if(test_output[n].data == test_scoreboard[n].Odata)
-                          $display("SUCCESS properly detected in AND on bank = %d", n);
+                        if(test_output[n].data == test_scoreboard[n].Odata) begin
+							if(debug == 1) begin
+								$display("SUCCESS properly detected in AND on bank = %d", n);
+							end
+						end
                         else
                           $display("!! SUCCESS improperly detected in AND on bank = %d !!", n);
                       end
                      OVERFLOW:  begin
                        if(test_output[n].data == test_scoreboard[n].Odata)
                           $display("!! OVERFLOW improperly detected in AND on bank = %d !!", n);
-                        else
-                          $display("OVERFLOW properly detected in AND on bank = %d", n);
+                        else begin
+							if(debug == 1) begin
+								$display("OVERFLOW properly detected in AND on bank = %d", n);
+							end
+						end
                       end
                       default: begin
                         $display("!!! Program Error, an improper value was entered in the response field in AND on bank = %d  !!!", n);
@@ -309,7 +336,7 @@ logic debug = 1;
           end
           
       //delay number of negative clock edges
-      repeat (500)
+      repeat (5000)
       begin
         @(negedge clock);
       end
