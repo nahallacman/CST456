@@ -179,8 +179,56 @@ logic debug = 1; // debug flag. Enables more descriptive outputs when set to 1
 				check_task_time;
 
                 //check if the operation passed
-
+				check_task_passed;
                 
+
+                  
+
+                state[n] = FORCE_WAIT;
+              end
+        end
+      endcase
+        end
+      
+    end
+	// Read output data at the positive edge of the clock.
+	// Drive input data at the negative edge of the clock.
+	initial
+	begin
+		@(negedge clock); reset = 0;
+      @(negedge clock); reset = 1; //test reset
+		@(negedge clock); reset = 0;
+      
+      //once reset is over, start the state machine.
+      $display("Reset check over at time = %d", clock_count);
+      for(int i = 0; i < 4; i++)
+        begin
+          state[i] = FORCE_WAIT;
+        end
+      
+
+          //check reset
+      for(int i = 0; i < 4; i++)
+          begin
+            if(output_packet[i].data == 0) begin
+            $display ("Reset test passed. alu_output_bank[%d]'s data = %h, reset = %b, time = %d", i, output_packet[i].data, reset, clock_count);
+          end
+        else begin
+            $display ("!! Reset test failed !! alu_output_bank[%d]'s data = %h, reset = %b, time = %d", i, output_packet[i].data,  reset, clock_count);
+        	end
+          end
+          
+      //delay number of negative clock edges
+      repeat (500)
+      begin
+        @(negedge clock);
+      end
+        $finish;
+       
+    end
+
+task check_task_passed;
+begin
                 case( test_scoreboard[n].command )
                   NOP: begin
                     $display("!!! Program Error, a NOP was tried to be processed !!!");
@@ -291,52 +339,8 @@ logic debug = 1; // debug flag. Enables more descriptive outputs when set to 1
                   $display("!!! Program Error, an unknown command was tried to be processed !!!");
                 end
                 endcase
-                  
-
-                state[n] = FORCE_WAIT;
-              end
-        end
-      endcase
-        end
-      
-    end
-	// Read output data at the positive edge of the clock.
-	// Drive input data at the negative edge of the clock.
-	initial
-	begin
-		@(negedge clock); reset = 0;
-      @(negedge clock); reset = 1; //test reset
-		@(negedge clock); reset = 0;
-      
-      //once reset is over, start the state machine.
-      $display("Reset check over at time = %d", clock_count);
-      for(int i = 0; i < 4; i++)
-        begin
-          state[i] = FORCE_WAIT;
-        end
-      
-
-          //check reset
-      for(int i = 0; i < 4; i++)
-          begin
-            if(output_packet[i].data == 0) begin
-            $display ("Reset test passed. alu_output_bank[%d]'s data = %h, reset = %b, time = %d", i, output_packet[i].data, reset, clock_count);
-          end
-        else begin
-            $display ("!! Reset test failed !! alu_output_bank[%d]'s data = %h, reset = %b, time = %d", i, output_packet[i].data,  reset, clock_count);
-        	end
-          end
-          
-      //delay number of negative clock edges
-      repeat (500)
-      begin
-        @(negedge clock);
-      end
-        $finish;
-       
-    end
-
-
+end
+endtask
 
 task check_task_time;
 begin
