@@ -1,6 +1,6 @@
 module TestBench;
 
-logic debug = 0; // debug flag. Enables more descriptive outputs when set to 1
+logic debug = 1; // debug flag. Enables more descriptive outputs when set to 1
   
   typedef struct packed{
     logic [31:0] data1;
@@ -24,7 +24,15 @@ logic debug = 0; // debug flag. Enables more descriptive outputs when set to 1
 	logic clock = 1'b0;
 	logic reset = 1'b0;
 
-	logic [1:0] rand_command;
+  /*typedef struct packed
+  {
+    	logic [1:0] command;
+  } rand_command_t;
+  
+  rand_command_t [3:0] rand_command;
+  */
+  logic [1:0] rand_command;
+
 	logic [31:0] rand_data;
 	
 	input_packet_t [3:0] input_packet;
@@ -106,7 +114,9 @@ logic debug = 0; // debug flag. Enables more descriptive outputs when set to 1
               logic [7:0] rand_count = 0;
               delay[n].number++;
               //randomize the delay
-              //$display("delay ammount = %d, bank = %d", delay[n].number, n);
+              if(debug == 1) begin
+              $display("delay ammount = %d, bank = %d", delay[n].number, n);
+              end
               assert(std::randomize(rand_count));
               $cast(delay[n].number, rand_count);
               count[n] = 0;
@@ -125,14 +135,8 @@ logic debug = 0; // debug flag. Enables more descriptive outputs when set to 1
           	// Since command is an enum the dynamic $cast is needed to assign it a random bit value.
 			
           //make sure the random value isnt a NOP!
-          do
-          begin
-            assert(std::randomize(rand_command));
-            $cast(input_packet[n].command, rand_command);
-          end
-          while (rand_command == 0);
-          
-			
+          assert(std::randomize(rand_command) with { rand_command > 0; rand_command < 4; } );
+            $cast(input_packet[n].command, rand_command);			
           		
 			assert(std::randomize(rand_data));
 			input_packet[n].data1 = rand_data;
@@ -156,7 +160,7 @@ logic debug = 0; // debug flag. Enables more descriptive outputs when set to 1
           if(output_packet[n].response == NO_RESPONSE)
               begin
                 //last_output_packet[i]= output_packet[i];
-                //$display("No change in output data detected");
+                $display("No change in output data detected");
               end
       		else
               begin
@@ -172,18 +176,8 @@ logic debug = 0; // debug flag. Enables more descriptive outputs when set to 1
                 end
 				
                 //check operation time
-                if( ( test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) <= 5 & (test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) >= 3 )
-                  begin
-				  if(debug == 1)
-					begin
-                    $display("Operation time check passed, time = %d, bank = %d", ( test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ), n);
-					end
-                  end
-                else
-                  begin
-                    $display("!! Operation %s time check failed !!, time = %d, bank = %d", test_scoreboard[n].command.name, (test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) , n);
-                  end
-                
+				check_task_time;
+
                 //check if the operation passed
 
                 
@@ -325,22 +319,39 @@ logic debug = 0; // debug flag. Enables more descriptive outputs when set to 1
           //check reset
       for(int i = 0; i < 4; i++)
           begin
-            if(output_packet[i].data == 0)
-          begin
+            if(output_packet[i].data == 0) begin
             $display ("Reset test passed. alu_output_bank[%d]'s data = %h, reset = %b, time = %d", i, output_packet[i].data, reset, clock_count);
           end
-        else
-          begin
+        else begin
             $display ("!! Reset test failed !! alu_output_bank[%d]'s data = %h, reset = %b, time = %d", i, output_packet[i].data,  reset, clock_count);
         	end
           end
           
       //delay number of negative clock edges
-      repeat (5000)
+      repeat (500)
       begin
         @(negedge clock);
       end
         $finish;
        
     end
-endmodule : TestBench
+
+
+
+task check_task_time;
+begin
+if( ( test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) <= 5 && (test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) >= 3 )
+  begin
+  if(debug == 1)
+	begin
+	$display("Operation time check passed, time = %d, bank = %d", ( test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ), n);
+	end
+  end
+else
+  begin
+	$display("!! Operation %s time check failed !!, time = %d, bank = %d", test_scoreboard[n].command.name, (test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) , n);
+  end
+  end
+ endtask
+  
+ endmodule : TestBench 
