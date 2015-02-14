@@ -51,7 +51,7 @@ logic debug = 0; // debug flag. Enables more descriptive outputs when set to 1
   
   output_test_packet_t [3:0] test_output;
   
-	const int n = 1;
+	//const int n = 1;
   
   	int clock_count = 0;
   
@@ -122,17 +122,18 @@ logic debug = 0; // debug flag. Enables more descriptive outputs when set to 1
           end
           
       //delay number of negative clock edges
-      repeat (500)
-      begin
-        @(negedge clock)
-        begin
-          clock_count++;
+      repeat (5000) begin
+        @(negedge clock) begin
           for(int n = 0; n < 4; n++)
         	begin
               drive_inputs(n);
               //drive_inputs;
+              //display_scoreboard(n);
         	end
-          //display_scoreboard;
+          
+          
+          
+          clock_count++;
         end
       end
       
@@ -141,7 +142,7 @@ logic debug = 0; // debug flag. Enables more descriptive outputs when set to 1
        
     end
 
-  task display_scoreboard(input n);
+  task display_scoreboard(input [1:0] n);
 begin
   //for(int n = 0; n < 4; n++)
     //begin
@@ -152,7 +153,7 @@ begin
 end
 endtask
 	
-  task drive_inputs(input n);
+  task drive_inputs(input [1:0] n);
   //task drive_inputs;
 begin
 	//for(int n = 0; n < 4; n++)
@@ -261,7 +262,7 @@ begin
 end	
 endtask
 	
-  task check_task_passed(input n);
+  task check_task_passed(input [1:0] n);
 begin
 	case( test_scoreboard[n].command )
 	  NOP: begin
@@ -378,18 +379,18 @@ begin
 end
 endtask
 
-  task check_task_time(input n);
+  task check_task_time(input [1:0] n);
 begin
-if( ( test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) <= 5 && (test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) >= 3 )
+  if( ( test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin - 1  ) <= 5 && (test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin - 1  ) >= 3 )
   begin
   if(debug == 1)
 	begin
-	$display("Operation time check passed, time = %d, bank = %d", ( test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ), n);
+	$display("Operation time check passed, time = %d, bank = %d", ( test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin - 1 ), n);
 	end
   end
 else
   begin
-	$display("!! Operation %s time check failed !!, time = %d, bank = %d", test_scoreboard[n].command.name, (test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin ) , n);
+	$display("!! Operation %s time check failed !!, time = %d, bank = %d", test_scoreboard[n].command.name, (test_scoreboard[n].operation_end - test_scoreboard[n].operation_begin - 1 ) , n);
     display_scoreboard(n);
   end
   end

@@ -1,7 +1,9 @@
 3 bugs to find
 1)
 reset on alu bank 2 goes to all (hex) F's instead of 0's
-2,3,4,5?)
-time violations on ADD, MULTIPLY, and AND
-
-improper successes in ADD, MULTIPLY, and AND
+2)
+operation time violation, 6 operations to do a multiply on bank 3
+2.5)
+operation timer violation, 6 operations to do an AND on bank 3
+3)
+improper success on ADD bank 1 when there should be an overflow
