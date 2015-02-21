@@ -1,0 +1,10 @@
+Week 7 Assignments
+	
+	-Read Chapter 2 of “Test Driven Development for Embedded C”.
+	
+	-Familiarize yourself with the Unity test harness. In \FWHomework1\test\tests\Testfoo.c you will find a skeleton test harness to try out the different assertions that Unity offers.
+	-Unity documentation can be found in the \FWHomework1\docs directory.
+	-To run Unity, go to the \FWHomework1\test directory and execute "rake unit" from the command line.
+
+Submit Testfoo.c via e-mail to steven.bellock@oit.edu
+Assignment is due by Saturday, February 28th at 6 PM.
