@@ -65,13 +65,21 @@ void testTEST_ASSERT_EQUAL_HEX8 (void)
 // Create one passing and one failing assertion using TEST_ASSERT_UINT_WITHIN.
 void testTEST_ASSERT_UINT_WITHIN (void)
 {
-
+	uint8_t a;
+	a = 12;
+	//a = randc();
+	TEST_ASSERT_UINT_WITHIN(128, 128, a);
+	TEST_ASSERT_UINT_WITHIN(2, 0, 1);
+	//tests if 0 is within 2 of 1
 }
 
 // Create one passing and one failing assertion using TEST_ASSERT_BITS.
 void testTEST_ASSERT_BITS (void)
 {
-
+	TEST_ASSERT_BITS(0x01, 1, 0x01);
+	TEST_ASSERT_BITS(0xFF, -1, 0xFF);
+	TEST_ASSERT_BITS(0x08, 8, 0x08);
+	//TEST_ASSERT_BITS(0xFF, -1, 0x01);
 }
 
 // Create one passing and one failing assertion using TEST_ASSERT_BITS_HIGH.
@@ -97,6 +105,8 @@ void testsquareNumber (void)
 	{
 		returnval = squareNumber( testval );
 		TEST_ASSERT_EQUAL(returnval, testval * testval);
+		TEST_ASSERT_EQUAL(count, testval);
+		TEST_ASSERT_EQUAL(testval * testval, squareNumber(testval) );
 		// assert_equal(returnval, testval * testval);
 	}
 }
