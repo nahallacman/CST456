@@ -16,6 +16,7 @@ void initAlertStatus (void)
 	alertStatus = NO_ALERT;
 }
 
+/*
 void updateAlertStatus (uint8_t heartRate, uint8_t temperature)
 {
 	concernLevel_t heartRateConcern, temperatureConcern;
@@ -25,7 +26,7 @@ void updateAlertStatus (uint8_t heartRate, uint8_t temperature)
 	
 	// If assesment is SERIOUS then alert doctor immediately.
 	if ((heartRateConcern == SERIOUS) || (temperatureConcern == SERIOUS))
-	{
+	{	
 		alertStatus = ALERT_DOCTOR;
 	}
 	// If assesment is ALERT_USER then alert user after two consecutive calls.
@@ -43,6 +44,52 @@ void updateAlertStatus (uint8_t heartRate, uint8_t temperature)
 		}
 	}
 	// If assesment is NO_ALERT then turn off alerts after three consecutive calls.
+	else
+	{
+		stateCounter[0]++;
+		stateCounter[1] = 0;
+		
+		if (alertStatus != NO_ALERT)
+		{
+			if (stateCounter[0] == 3)
+			{
+				alertStatus = NO_ALERT;
+			}
+		}
+	}	
+}
+*/
+
+void updateAlertStatus (uint8_t heartRate, uint8_t temperature)
+{
+	concernLevel_t heartRateConcern, temperatureConcern;
+		
+	heartRateConcern = returnHeartRateConcern (heartRate);
+	temperatureConcern = returnTemperatureConcern (temperature);
+	
+	// If assessment is SERIOUS then alert doctor immediately.
+	if ((heartRateConcern == SERIOUS) || (temperatureConcern == SERIOUS))
+	{	
+		stateCounter[0] = 0;
+		stateCounter[1] = 0;
+		
+		alertStatus = ALERT_DOCTOR;
+	}
+	// If assessment is ALERT_USER then alert user after two consecutive calls.
+	else if ((heartRateConcern == FAIR) && (temperatureConcern == FAIR))
+	{
+		stateCounter[0] = 0;
+		stateCounter[1]++;
+		
+		if (alertStatus != ALERT_USER)
+		{
+			if (stateCounter[1] == 2)
+			{
+				alertStatus = ALERT_USER;
+			}
+		}
+	}
+	// If assessment is NO_ALERT then turn off alerts after three consecutive calls.
 	else
 	{
 		stateCounter[0]++;

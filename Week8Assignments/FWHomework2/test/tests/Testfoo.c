@@ -96,6 +96,34 @@ void testTemperatureConcern (void)
 // Test updateAlertStatus function. alertStatus is a global variable.
 void testAlertStatus (void)
 {
+	// --- TEST 01 ---
+	initAlertStatus ();
+	updateAlertStatus (60, 37);	
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);
+	updateAlertStatus (60, 37);
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);
+	updateAlertStatus (60, 37);	
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);
+	updateAlertStatus (60, 37);
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);
+	
+	// --- TEST 02 ---
+	initAlertStatus ();
+	
+	// Verify the alert status is at NO_ALERT.
+	updateAlertStatus (60, 37);	
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);
+	updateAlertStatus (60, 37);
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);
+	
+	// Transition alert status to ALERT_USER.
+	// takes 2 consecutive alerts before transition
+	updateAlertStatus (42, 35);
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);	
+	updateAlertStatus (42, 35);
+	TEST_ASSERT_EQUAL_INT (ALERT_USER, alertStatus);
+	
+	// --- TEST 03 ----
 	initAlertStatus ();
 	
 	// Verify the alert status is at NO_ALERT.
@@ -118,6 +146,132 @@ void testAlertStatus (void)
 	updateAlertStatus (60, 36);
 	TEST_ASSERT_EQUAL_INT (ALERT_USER, alertStatus);	
 	updateAlertStatus (60, 36);
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);
+
+	// --- TEST 04 ----
+	initAlertStatus ();
+	
+	// Verify the alert status is at NO_ALERT.
+	updateAlertStatus (60, 37);	
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);
+	updateAlertStatus (60, 37);
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);
+	
+	// Transition alert status to ALERT_USER.
+	// takes 2 consecutive alerts before transition
+	updateAlertStatus (42, 35);
 	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);	
+	updateAlertStatus (42, 35);
+	TEST_ASSERT_EQUAL_INT (ALERT_USER, alertStatus);
+	
+	//Transition alert status to ALERT_DOCTOR
+	// takes 1 alerts before transition
+	updateAlertStatus ( 121, 36);
+	TEST_ASSERT_EQUAL_INT (ALERT_DOCTOR, alertStatus);
+
+	// --- TEST 05 ----
+	initAlertStatus ();
+	
+	// Verify the alert status is at NO_ALERT.
+	updateAlertStatus (60, 37);	
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);
+	updateAlertStatus (60, 37);
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);
+	
+	// Transition alert status to ALERT_USER.
+	// takes 2 consecutive alerts before transition
+	updateAlertStatus (42, 35);
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);	
+	updateAlertStatus (42, 35);
+	TEST_ASSERT_EQUAL_INT (ALERT_USER, alertStatus);
+	
+	//Transition alert status to ALERT_DOCTOR
+	// takes 1 alerts before transition
+	updateAlertStatus ( 121, 36);
+	TEST_ASSERT_EQUAL_INT (ALERT_DOCTOR, alertStatus);
+
+	//Transition alert status to NO_ALERT
+	// takes 3 alerts before transition
+	updateAlertStatus ( 60, 37);
+	TEST_ASSERT_EQUAL_INT (ALERT_DOCTOR, alertStatus);
+	updateAlertStatus ( 60, 37);
+	TEST_ASSERT_EQUAL_INT (ALERT_DOCTOR, alertStatus);
+	updateAlertStatus ( 60, 37);
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);
+	
+	
+	// --- TEST 06 ----
+	initAlertStatus ();
+	
+	// Verify the alert status is at NO_ALERT.
+	updateAlertStatus (60, 37);	
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);
+	updateAlertStatus (60, 37);
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);
+	
+	// Transition alert status to ALERT_USER.
+	// takes 2 consecutive alerts before transition
+	updateAlertStatus (42, 35);
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);	
+	updateAlertStatus (42, 35);
+	TEST_ASSERT_EQUAL_INT (ALERT_USER, alertStatus);
+	
+	//Transition alert status to ALERT_DOCTOR
+	// takes 1 alerts before transition
+	updateAlertStatus ( 121, 36);
+	TEST_ASSERT_EQUAL_INT (ALERT_DOCTOR, alertStatus);
+
+	
+	//Transition alert status to ALERT_USER
+	// takes 2 alerts before transition
+	updateAlertStatus ( 100, 37);
+	TEST_ASSERT_EQUAL_INT (ALERT_DOCTOR, alertStatus);
+	// THIS LINE FAILS 
+	updateAlertStatus ( 100, 37);
+	TEST_ASSERT_EQUAL_INT (ALERT_USER, alertStatus);
+	//extra rechecks just in case
+	updateAlertStatus ( 100, 37);
+	TEST_ASSERT_EQUAL_INT (ALERT_USER, alertStatus);
+	updateAlertStatus ( 100, 37);
+	TEST_ASSERT_EQUAL_INT (ALERT_USER, alertStatus);
+
+	/*
+	// --- TEST 07 ----
+	initAlertStatus ();
+	
+	// Verify the alert status is at NO_ALERT.
+	updateAlertStatus (60, 37);	
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);
+	updateAlertStatus (60, 37);
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);
+	
+	// Transition alert status to ALERT_USER.
+	// takes 2 consecutive alerts before transition
+	updateAlertStatus (42, 35);
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);	
+	updateAlertStatus (42, 35);
+	TEST_ASSERT_EQUAL_INT (ALERT_USER, alertStatus);
+	
+	//Transition alert status to ALERT_DOCTOR
+	// takes 1 alerts before transition
+	updateAlertStatus ( 121, 36);
+	TEST_ASSERT_EQUAL_INT (ALERT_DOCTOR, alertStatus);
+
+	//Transition alert status to ALERT_USER
+	// takes 2 alerts before transition
+	updateAlertStatus ( 91, 37);
+	TEST_ASSERT_EQUAL_INT (ALERT_DOCTOR, alertStatus);
+	updateAlertStatus ( 91, 37);
+	TEST_ASSERT_EQUAL_INT (ALERT_USER, alertStatus);
+	
+	//Transition alert status to NO_ALERT
+	// takes 3 alerts before transition	
+		updateAlertStatus (60, 37);	
+	TEST_ASSERT_EQUAL_INT (ALERT_USER, alertStatus);
+	updateAlertStatus (60, 37);
+	TEST_ASSERT_EQUAL_INT (ALERT_USER, alertStatus);	
+	updateAlertStatus (60, 37);	
+	TEST_ASSERT_EQUAL_INT (NO_ALERT, alertStatus);
+*/
 }
 
