@@ -59,6 +59,7 @@ void updateAlertStatus (uint8_t heartRate, uint8_t temperature)
 }
 
 // returnTemperatureConcern returns a concern level based on the user's temperature.
+/*
 concernLevel_t returnTemperatureConcern (uint8_t temperature)
 {	
 	if (temperature <= 33)
@@ -82,8 +83,33 @@ concernLevel_t returnTemperatureConcern (uint8_t temperature)
 		return SERIOUS;
 	}
 }
+*/
+concernLevel_t returnTemperatureConcern (uint8_t temperature)
+{	
+	if (temperature <= 33)
+	{
+		return SERIOUS;
+	}
+	else if (temperature <= 35)
+	{
+		return FAIR;
+	}
+	else if (temperature <= 38)
+	{
+		return GOOD;
+	}
+	else if (temperature <= 40)
+	{
+		return FAIR;
+	}
+	else
+	{
+		return SERIOUS;
+	}
+}
 
 // returnHeartRateConcern returns a concern level based on the user's heart rate. 
+/*
 concernLevel_t returnHeartRateConcern (uint8_t heartRate)
 {	
 	if (heartRate < 40)
@@ -99,6 +125,30 @@ concernLevel_t returnHeartRateConcern (uint8_t heartRate)
 		return GOOD;
 	}
 	else if (heartRate < 120)
+	{
+		return FAIR;
+	}
+	else
+	{
+		return SERIOUS;
+	}
+}
+*/
+concernLevel_t returnHeartRateConcern (uint8_t heartRate)
+{	
+	if (heartRate < 40)
+	{
+		return SERIOUS;
+	}
+	else if (heartRate < 60)
+	{
+		return FAIR;
+	}
+	else if (heartRate < 91)
+	{
+		return GOOD;
+	}
+	else if (heartRate < 121)
 	{
 		return FAIR;
 	}
