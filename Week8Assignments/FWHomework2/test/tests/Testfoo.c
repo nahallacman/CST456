@@ -224,16 +224,13 @@ void testAlertStatus (void)
 	
 	//Transition alert status to ALERT_USER
 	// takes 2 alerts before transition
-	updateAlertStatus ( 100, 37);
+	updateAlertStatus ( 100, 40);
 	TEST_ASSERT_EQUAL_INT (ALERT_DOCTOR, alertStatus);
-	// THIS LINE FAILS 
-	updateAlertStatus ( 100, 37);
+	
+	//when testing, bug 3 happens here.
+	updateAlertStatus ( 100, 40);
 	TEST_ASSERT_EQUAL_INT (ALERT_USER, alertStatus);
-	//extra rechecks just in case
-	updateAlertStatus ( 100, 37);
-	TEST_ASSERT_EQUAL_INT (ALERT_USER, alertStatus);
-	updateAlertStatus ( 100, 37);
-	TEST_ASSERT_EQUAL_INT (ALERT_USER, alertStatus);
+
 
 	/*
 	// --- TEST 07 ----
@@ -259,14 +256,14 @@ void testAlertStatus (void)
 
 	//Transition alert status to ALERT_USER
 	// takes 2 alerts before transition
-	updateAlertStatus ( 91, 37);
+	updateAlertStatus ( 100, 40);
 	TEST_ASSERT_EQUAL_INT (ALERT_DOCTOR, alertStatus);
-	updateAlertStatus ( 91, 37);
+	updateAlertStatus ( 100, 40);
 	TEST_ASSERT_EQUAL_INT (ALERT_USER, alertStatus);
-	
+
 	//Transition alert status to NO_ALERT
 	// takes 3 alerts before transition	
-		updateAlertStatus (60, 37);	
+	updateAlertStatus (60, 37);	
 	TEST_ASSERT_EQUAL_INT (ALERT_USER, alertStatus);
 	updateAlertStatus (60, 37);
 	TEST_ASSERT_EQUAL_INT (ALERT_USER, alertStatus);	

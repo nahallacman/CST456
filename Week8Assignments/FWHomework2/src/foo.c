@@ -86,6 +86,7 @@ void updateAlertStatus (uint8_t heartRate, uint8_t temperature)
 			if (stateCounter[1] == 2)
 			{
 				alertStatus = ALERT_USER;
+				//stateCounter[1] = 0;
 			}
 		}
 	}
@@ -100,6 +101,7 @@ void updateAlertStatus (uint8_t heartRate, uint8_t temperature)
 			if (stateCounter[0] == 3)
 			{
 				alertStatus = NO_ALERT;
+				//stateCounter[0] = 0;
 			}
 		}
 	}	

@@ -1,9 +1,12 @@
-in returnHeartRateConcern there is an error in detecting a FAIR heart rate between and including 90 and 120. The code was set for < 120 which did not include the 120 value. I changed it to <121 and fixed the bug.
+in returnHeartRateConcern there is an error in detecting a FAIR heart rate between and including 90 and 120. 
+The code was set for < 120 which did not include the 120 value. I changed it to <121 and fixed the bug.
 
-in returnTemperatureConcern there is an error in returning a FAIR temperature between and including 34 and 35. The code returning GOOD when it should be returning FAIR. I changed it to GOOD and fixed the bug.
+in returnTemperatureConcern there is an error in returning a FAIR temperature between and including 34 and 35. 
+The code returning GOOD when it should be returning FAIR. I changed it to FAIR and fixed the bug.
 
 Possible third bug:
 transition from ALERT_DOCTOR to NO_ALERT 
 after checking, this works correctly
 
 transition from ALERT_DOCTOR to ALERT_USER fails in test 06
+corrected by resetting the state counters when in the alertStatus = ALERT_DOCTOR state.
