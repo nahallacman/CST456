@@ -1,4 +1,4 @@
-Unity Installation and Setup (Windows)
+﻿Unity Installation and Setup (Windows)
 
 1) Download and extract Unity.
 	https://github.com/ThrowTheSwitch/Unity/archive/master.zip
@@ -8,6 +8,8 @@ Unity Installation and Setup (Windows)
 	
 3) Download and install MinGW. Only the mingw32-base package is needed. Ensure that there is a an environment path to MinGW so that "gcc.exe" can be run from the command line.
 	http://sourceforge.net/projects/mingw/files/latest/download?source=files
+
+	Make sure to add C:/MinGW/bin
 	
 4) In the Windows command prompt (cmd.exe) go to “\Unity-master\auto\” and execute “ruby generate_module.rb foo”. This will create the source file and header named foo in the “\src” directory, and Testfoo.c in the “\test” directory.
 
